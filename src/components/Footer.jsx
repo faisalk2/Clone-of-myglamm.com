@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< Updated upstream
 import "./footer1.css";
 const Footer = () => {
     return (
@@ -233,6 +234,28 @@ const Footer = () => {
             </div>
         </div>
         
+=======
+import "./footer";
+const Footer = () => {
+  return (
+      <div className='footer'>
+          
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+
+    </div>
+>>>>>>> Stashed changes
   )
 }
 
