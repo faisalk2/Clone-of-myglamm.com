@@ -3,7 +3,7 @@ import React from 'react'
 import theme from '../theme'
 import { useTheme } from "@chakra-ui/react";
 import { ArrowForwardIcon } from '@chakra-ui/icons';
-
+import "./CheckOut.css"
 export const CheckOut = () => {
     const theme = useTheme();
   return (
@@ -18,7 +18,7 @@ export const CheckOut = () => {
         <Box textAlign={"center"} paddingLeft="40%" paddingTop="10%" paddingBottom={10}>
         <Flex>
             <Text>Already have an Account?</Text>
-            <Text paddingLeft={30} >SIGN IN</Text>
+            <Text marginLeft="15%"   fontSize='12px' padding="12px 40px 12px 40px" className='mujhko' top='0'border="1.5px solid black" >SIGN IN</Text>
         </Flex>
     </Box>
             <Text fontWeight={500}>YOUR ORDERS</Text>
@@ -45,20 +45,20 @@ export const CheckOut = () => {
             </Flex>
             <Text fontWeight={500} textAlign="left">Order Summary</Text>
         <Box lineHeight='200%' paddingBottom={7}>
-        <Flex>
+        <Flex justifyContent="space-between">
             <Box>Actual Amount</Box>
             <Box textAlign="right">Amount</Box>
         </Flex>
-        <Flex>
+        <Flex justifyContent="space-between">
         <Box>Shipping Charges</Box>
-            <Box textAlign="right">FREE</Box>
+            <Box align="right">FREE</Box>
         </Flex>
-        <Flex>
+        <Flex justifyContent="space-between">
         <Box>Discount coupon</Box>
             <Text  textAlign="center" > discount amount</Text>
         </Flex>
         </Box>
-        <Flex>
+        <Flex justifyContent="space-between">
         <Box lineHeight='150%' paddingBottom={7}>
                 <Box fontWeight={500} textAlign="left">Amount to Pay</Box>
                 <Box color={theme.colors.primary.main}>Note: Inclusive of all taxes</Box>
