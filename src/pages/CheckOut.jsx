@@ -8,16 +8,16 @@ export const CheckOut = () => {
     const theme = useTheme();
   return (
     <Box  initialColorMode='light' >
-    <Text fontSize='3xl' paddingBottom={10} fontFamily='inherit'>Checkout</Text>
+    <Text fontSize='3xl' paddingBottom={10} fontFamily='cascadia'>Checkout</Text>
   
     <Flex>
       
       
       
         <Box w='55%'>
-        <Box textAlign={"center"} paddingLeft="40%" paddingTop="10%" paddingBottom={10}>
+        <Box textAlign={"center"} paddingLeft="40%" paddingTop="5%" paddingBottom={10}>
         <Flex>
-            <Text>Already have an Account?</Text>
+            <Text paddingTop='10px'>Already have an Account?</Text>
             <Text marginLeft="15%"   fontSize='12px' padding="12px 40px 12px 40px" className='mujhko' top='0'border="1.5px solid black" >SIGN IN</Text>
         </Flex>
     </Box>
@@ -65,7 +65,7 @@ export const CheckOut = () => {
         </Box>
             <Box float="right" fontWeight={500}>Final amount</Box>
         </Flex>
-        <Button bg='black' w='100%'color='white'>PROCEED TO PAYMENT <ArrowForwardIcon/></Button>
+        <Box bg='black' padding='3px'w='100%'color='white' className='mujhko'>PROCEED TO PAYMENT <ArrowForwardIcon/></Box>
         </Box>
       
     </Flex>
