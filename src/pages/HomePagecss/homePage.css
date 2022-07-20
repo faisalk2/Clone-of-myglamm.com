@@ -1,0 +1,21 @@
+
+
+.flexBoxForHome{
+    padding:15px;
+    direction:row;
+    margin:auto;
+    width:80%;
+    gap:30px;
+    /* border:1px solid red; */
+}
+
+.grandientUnderLine{
+    background-image:linear-gradient(white, #fbbcbc);
+    height:20px;
+    margin:auto;
+    margin-top:-20px
+}
+
+.boxShadow{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
