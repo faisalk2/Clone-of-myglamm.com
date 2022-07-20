@@ -78,3 +78,19 @@ footer input {
   background-color: black;
   border-radius: 20%;
 }
+.social{
+  background-color: aliceblue;
+  
+  margin-left: 40px;
+  margin-top: 20px;
+}
+.twitter social{
+  color: rgb(98, 121, 173);
+}
+.social-container{
+  word-spacing: 0%;
+justify-items: center;
+}
+.youtube social{
+  color: red;
+}

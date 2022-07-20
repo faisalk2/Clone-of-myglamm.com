@@ -1,5 +1,12 @@
 import React from 'react'
 import "./footer1.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faYoutube,
+  faFacebook,
+  faTwitter,
+  faInstagram
+} from "@fortawesome/free-brands-svg-icons";
 const Footer = () => {
     return (
       <div>
@@ -213,12 +220,37 @@ const Footer = () => {
                 <div id="footerBottom">
             <div id="sect1">
                 <form action="">
-                    <label className='form1' for="">SUBSCRIBE FOR MYGLAMM EMAILS</label>
+                    <label for="">SUBSCRIBE FOR MYGLAMM EMAILS</label>
                     <br />
-                    <input type="text" placeholder="Please enter valid email" />
-                    <button className='btn'>SUBSCRIBE NOW</button>
+                    <input type="text" placeholder="Please enter valid email ID" />
+                    <button>SUBSCRIBE NOW</button>
                 </form>
-            </div>
+                    </div>
+                    <div className='social'>
+                         <p className="social-container">
+        <a
+          href="https://www.youtube.com/c/jamesqquick"
+          className="youtube social"
+        >
+          <FontAwesomeIcon icon={faYoutube} size="2x" />
+        </a>
+        <a
+          href="https://www.facebook.com/learnbuildteach/"
+          className="facebook social"
+        >
+          <FontAwesomeIcon icon={faFacebook} size="2x" />
+        </a>
+        <a
+          href="http://www.instagram.com/larnbuildteach"
+          className="instagram social"
+        >
+          <FontAwesomeIcon icon={faInstagram} size="2x" />
+        </a>
+        <a href="https://wwww.twitter.com" className="twitter social">
+          <FontAwesomeIcon icon={faTwitter} size="2x" />
+        </a>
+      </p>
+                    </div>
             <div id="sect2">
                 <label for="">EXPERIENCE THE MYGLAMM MOBILE APP</label>
                 <br />
