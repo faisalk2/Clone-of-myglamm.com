@@ -1,3 +1,17 @@
+
+.dropbtn {
+  color: black;
+  padding: 16px;
+  font-size: 12px;
+  /* font-weight: 400; */
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+
 .App {
   text-align: center;
   font-family: din-2014, sans-serif;
@@ -14,34 +28,42 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  /* border: 1px solid black; */
+  display: none;
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+  min-height: 380px;
+  min-width: 1200px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-sticky {
+  position: sticky;
+  top:0px;
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Change color of dropdown links on hover */
+/* .dropdown-content a:hover {background-color: #ddd;} */
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {background-color: ;} */
+
