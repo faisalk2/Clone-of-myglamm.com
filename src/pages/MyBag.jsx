@@ -29,7 +29,7 @@ export const MyBag = () => {
           </Flex> 
 
           <Box bg='black' padding='10px'w='30%'color='white' marginLeft='35%' className='mujhko'>PROCEED TO PAYMENT <ArrowForwardIcon/></Box>
-          <FooterC/>
+         
     </Box>
   )
 }

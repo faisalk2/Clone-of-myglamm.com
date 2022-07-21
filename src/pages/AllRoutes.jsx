@@ -5,8 +5,11 @@ import Home from './Home';
 import Footer from '../components/Footer';
 import { CheckOut } from './CheckOut';
 import { MyBag } from './MyBag';
-import NavbarC from '../components/NavbarC';
+import NavbarBag from '../components/NavbarBag';
 import { FooterC } from '../components/FooterC';
+import NavbarCheckout from '../components/NavbarCheckout';
+import { Address } from './Address';
+import NavbarAddress from '../components/NavbarAddress';
 
 
 
@@ -19,16 +22,13 @@ const AllRoutes = () => {
      
         <Routes>
             <Route path='/' element={  <> <Navbar/><Home/> <Footer/>    </>}></Route>
-            <Route path='/checkout' element={<CheckOut/>}></Route>
-            <Route path='mybag' element={<><MyBag/><FooterC/></>}/>
+            <Route path='/checkout' element={<><NavbarCheckout/><CheckOut/><FooterC/></>}></Route>
+            <Route path='/mybag' element={<><NavbarBag/><MyBag/><FooterC/></>}/>
+            <Route path='/address' element={<><NavbarAddress/><Address/><FooterC/></>}/>
         </Routes>
      
 
-        
-        {/* <NavbarC/>
-        <Routes>
-      
-        </Routes> */}
+       
     </div>
   )
 }
