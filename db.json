@@ -1,0 +1,135 @@
+{
+  "carouselData":[
+    {
+    "id": 1,
+    "image": "https://files.myglamm.com/site-images/400x400/OTTP-(1).jpg",
+    "name": "MyGlamm LIT Liquid Matte Lipstick - OTP",
+    "subtitle": "Moringa Oil Enriched Matte Lipstick",
+    "avg-rating": "4.9",
+    "total-ratings": "12044",
+    "offerPrice": "395",
+    "actualPrice": ""
+    },
+    {
+    "id": 2,
+    "image": "https://files.myglamm.com/site-images/400x400/Soft-Matte-post-1-Poppy-Pink.jpg",
+    "name": "Manish Malhotra Soft Matte Lipstick - Poppy Pink",
+    "subtitle": "Hydrating Long-wear Lipstick",
+    "avg-rating": "4.9",
+    "total-ratings": "584",
+    "offerPrice": "665",
+    "actualPrice": "950"
+    },
+    {
+    "id": 3,
+    "image": "https://files.myglamm.com/site-images/400x400/Facewash_3.jpg",
+    "name": "MyGlamm WIPEOUT Germ Killing Face Wash",
+    "subtitle": "Tea Tree Oil & Vitamin E-infused Face Wash",
+    "avg-rating": "4.9",
+    "total-ratings": "658",
+    "offerPrice": "89",
+    "actualPrice": "119"
+    },
+    {
+    "id": 5,
+    "image": "https://files.myglamm.com/site-images/400x400/OTTP-(1).jpg",
+    "name": "MyGlamm LIT Liquid Matte Lipstick - OTP",
+    "subtitle": "Moringa Oil Enriched Matte Lipstick",
+    "avg-rating": "4.9",
+    "total-ratings": "12044",
+    "offerPrice": "395",
+    "actualPrice": ""
+    },
+    {
+    "id": 6,
+    "image": "https://files.myglamm.com/site-images/400x400/Soft-Matte-post-1-Poppy-Pink.jpg",
+    "name": "Manish Malhotra Soft Matte Lipstick - Poppy Pink",
+    "subtitle": "Hydrating Long-wear Lipstick",
+    "avg-rating": "4.9",
+    "total-ratings": "584",
+    "offerPrice": "665",
+    "actualPrice": "950"
+    },
+    {
+    "id": 7,
+    "image": "https://files.myglamm.com/site-images/400x400/Hi-Shine-Post-1-Mauve-Struck.jpg",
+    "name": "Manish Malhotra Hi-Shine Lipstick - Mauve Struck",
+    "subtitle": "Lightweight, Long-wear Lipsticks",
+    "avg-rating": "4.9",
+    "total-ratings": "1125",
+    "offerPrice": "712",
+    "actualPrice": "950"
+    },
+    {
+    "id": 8,
+    "image": "https://files.myglamm.com/site-images/400x400/MHML-(1).jpg",
+    "name": "MyGlamm LIT Creamy Matte Lipstick - Manhattan",
+    "subtitle": "Precision Perfect Matte Slimstick",
+    "avg-rating": "4.9",
+    "total-ratings": "605",
+    "offerPrice": "416",
+    "actualPrice": "595"
+    },
+    {
+    "id": 9,
+    "image": "https://files.myglamm.com/site-images/400x400/Soft-Matte-post-1-Poppy-Pink.jpg",
+    "name": "Manish Malhotra Soft Matte Lipstick - Poppy Pink",
+    "subtitle": "Hydrating Long-wear Lipstick",
+    "avg-rating": "4.9",
+    "total-ratings": "584",
+    "offerPrice": "665",
+    "actualPrice": "950"
+    },
+    {
+    "id": 10,
+    "image": "https://files.myglamm.com/site-images/400x400/Facewash_3.jpg",
+    "name": "MyGlamm WIPEOUT Germ Killing Face Wash",
+    "subtitle": "Tea Tree Oil & Vitamin E-infused Face Wash",
+    "avg-rating": "4.9",
+    "total-ratings": "658",
+    "offerPrice": "89",
+    "actualPrice": "119"
+    },
+    {
+    "id": 11,
+    "image": "https://files.myglamm.com/site-images/400x400/Body-wash_4.jpg",
+    "name": "MyGlamm WIPEOUT Germ Killing Body Wash",
+    "subtitle": "Tea Tree Oil-infused Skin-regenerating Body Wash",
+    "avg-rating": "5",
+    "total-ratings": "121",
+    "offerPrice": "169",
+    "actualPrice": "199"
+    },
+    {
+    "id": 12,
+    "image": "https://files.myglamm.com/site-images/400x400/Facewash_3.jpg",
+    "name": "MyGlamm WIPEOUT Germ Killing Face Wash",
+    "subtitle": "Tea Tree Oil & Vitamin E-infused Face Wash",
+    "avg-rating": "4.9",
+    "total-ratings": "658",
+    "offerPrice": "89",
+    "actualPrice": "119"
+    },
+    {
+    "id": 13,
+    "image": "https://files.myglamm.com/site-images/400x400/Hi-Shine-Post-1-Mauve-Struck.jpg",
+    "name": "Manish Malhotra Hi-Shine Lipstick - Mauve Struck",
+    "subtitle": "Lightweight, Long-wear Lipsticks",
+    "avg-rating": "4.9",
+    "total-ratings": "1125",
+    "offerPrice": "712",
+    "actualPrice": "950"
+    },
+    {
+    "id": 15,
+    "image": "https://files.myglamm.com/site-images/400x400/Artboard-1-(1)-(1).jpg",
+    "name": "MyGlamm SUPERFOODS Kajal - Indigo - 0.35g",
+    "subtitle": "Long-Wear Smudge-Proof Kajal Infused With Natural Superfood Extracts",
+    "avg-rating": "4.9",
+    "total-ratings": "1153",
+    "offerPrice": "296",
+    "actualPrice": "395"
+    }
+    ] 
+    
+}
