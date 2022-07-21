@@ -4,6 +4,7 @@ import theme from '../theme'
 import { useTheme } from "@chakra-ui/react";
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import "./CheckOut.css"
+
 export const CheckOut = () => {
     const theme = useTheme();
   return (
