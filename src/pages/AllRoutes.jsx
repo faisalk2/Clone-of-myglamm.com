@@ -5,6 +5,7 @@ import Home from './Home';
 import Footer from '../components/Footer';
 import { CheckOut } from './CheckOut';
 import { MyBag } from './MyBag';
+import NavbarC from '../components/NavbarC';
 
 
 
@@ -17,10 +18,15 @@ const AllRoutes = () => {
         <Routes>
             <Route path='/' element={<Home/>}></Route>
             <Route path='/checkout' element={<CheckOut/>}></Route>
-            <Route path='mybag' element={<MyBag/>}/>
+          
         </Routes>
         <Footer/>
+
         
+        <NavbarC/>
+        <Routes>
+        <Route path='mybag' element={<MyBag/>}/>
+        </Routes>
     </div>
   )
 }
