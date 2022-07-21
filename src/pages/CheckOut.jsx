@@ -8,7 +8,7 @@ export const CheckOut = () => {
     const theme = useTheme();
   return (
     <Box  initialColorMode='light' >
-    <Text fontSize='3xl' paddingBottom={10} fontFamily='cascadia'>Checkout</Text>
+    <Text fontSize='3xl' paddingBottom={10} fontFamily='sans-serif'>Checkout</Text>
   
     <Flex>
       
