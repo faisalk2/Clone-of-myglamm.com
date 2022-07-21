@@ -1,7 +1,16 @@
 .App {
   text-align: center;
+  font-family: din-2014, sans-serif;
+  background: #f4f4f4;
 }
 
+
+
+
+
+.Textbag{
+  background-image: "linear-gradient(180deg, white, pink)";
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
