@@ -11,7 +11,7 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 import { AiOutlineUser} from "react-icons/ai";
 import { FaShoppingBag } from "react-icons/fa";
 import { OfferBar } from './OfferBar'
-import '../AdilApp.css';
+import '../App.css';
 
 const Navbar = () => {
   return <Box className='navbar-sticky'   width='100%' >

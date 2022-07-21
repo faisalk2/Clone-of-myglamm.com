@@ -1,5 +1,5 @@
 import React from 'react'
-import '../AdilApp.css';
+import '../App.css';
 import { 
     Flex,
     Box,
