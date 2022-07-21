@@ -39,6 +39,7 @@ export default function CCheck() {
 
   return (
     <Box 
+    
       position={'relative'}
       height={'450px'}
       marginBottom="-50px"
@@ -90,6 +91,7 @@ export default function CCheck() {
         {cards.map((url, index) =>
         (
           <Box
+          cursor={"pointer"}
             key={index}
             height={'sm'}
             position="relative"

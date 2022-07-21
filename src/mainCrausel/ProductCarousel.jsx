@@ -61,6 +61,7 @@ export default function ProductCarousel() {
 
   return (
     <Box
+    
       margin={"auto"}
       position={"relative"}
       height={"550px"}
@@ -115,6 +116,7 @@ export default function ProductCarousel() {
       <Slider height="400px" {...settings} ref={(slider) => setSlider(slider)}>
         {data.map((item, index) => (
           <Box
+          cursor={"pointer"}
           className="box"
             key={index}
           >
