@@ -1,5 +1,5 @@
 import React from 'react'
-import '../App.css';
+import '../AdilApp.css';
 import { 
     Flex,
     Box,
@@ -15,17 +15,18 @@ import SanitizerCareCards from './SanitizerCareCards';
 import CollectionCards from './CollectionCards';
 export const MenuBar = () => {
   return (
-    <Flex width='80%' margin='auto' >
+    <Flex width='70%' margin='auto' >
+
         <Box fontFamily="Roboto" className="dropdown">
-            <Box className="dropbtn">HOME</Box>
-            <Box className="dropdown-content" > 
-             
-            </Box>
+            <Box className="dropbtn"> HOME </Box>
+            <Box className="dropdown-content" > </Box>
         </Box>
         <Spacer/>  
+
         {/* 2      */}
         <Box className="dropdown">
-            <Box fontFamily="Roboto" className="dropbtn">MAKEUP</Box>
+            <Box 
+                fontFamily="Roboto" className="dropbtn">MAKEUP</Box>
             <Box className="dropdown-content" marginLeft='-60px' > 
 
                 <Box width='1200px' >
@@ -35,14 +36,13 @@ export const MenuBar = () => {
                         <Flex>
                         <VStack 
                         fontFamily="Roboto" 
-                         
                         display='flex' flexDirection='column' 
                         justifyContent='start' 
                         alignItems='flex-start' 
                         ml='20px' 
                         lineHeight='19px' 
                         gap='0px'
-                        
+
                         >
                         <Heading fontSize='14px' color='rgb(255,183,161)' >LIPS</Heading>
                             <Text>Lips</Text>

@@ -1,7 +1,8 @@
 .dropbtn {
   color: black;
   padding: 16px;
-  font-size: 16px;
+  font-size: 12px;
+  font-weight: 400;
   border: none;
 }
 
@@ -30,6 +31,14 @@
   display: block;
 }
 
+.navbar-sticky {
+  position: sticky;
+  top:0px;
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
 /* Change color of dropdown links on hover */
 /* .dropdown-content a:hover {background-color: #ddd;} */
 
@@ -38,3 +47,4 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 /* .dropdown:hover .dropbtn {background-color: ;} */
+

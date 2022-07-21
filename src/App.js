@@ -1,5 +1,3 @@
-
-import './App.css';
 import AllRoutes from './pages/AllRoutes';
 
 function App() {
