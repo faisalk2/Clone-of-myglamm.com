@@ -5,6 +5,8 @@ import Home from './Home';
 import Footer from '../components/Footer';
 import { CheckOut } from './CheckOut';
 import { MyBag } from './MyBag';
+import NavbarC from '../components/NavbarC';
+import { FooterC } from '../components/FooterC';
 
 
 
@@ -12,16 +14,22 @@ import { MyBag } from './MyBag';
 
 
 const AllRoutes = () => {
+
   return (
     <div>
-        <Navbar/>
+     
         <Routes>
-            <Route path='/' element={<Home/>}></Route>
+            <Route path='/' element={  <> <Navbar/><Home/> <Footer/>    </>}></Route>
             <Route path='/checkout' element={<CheckOut/>}></Route>
-            <Route path='mybag' element={<MyBag/>}/>
+            <Route path='mybag' element={<><MyBag/><FooterC/></>}/>
         </Routes>
-        <Footer/>
+     
+
         
+        {/* <NavbarC/>
+        <Routes>
+      
+        </Routes> */}
     </div>
   )
 }
