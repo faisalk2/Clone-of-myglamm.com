@@ -10,6 +10,8 @@ import { FooterC } from '../components/FooterC';
 import NavbarCheckout from '../components/NavbarCheckout';
 import { Address } from './Address';
 import NavbarAddress from '../components/NavbarAddress';
+import Payment from './Payment';
+import Navbarpayment from '../components/NavbarPayment';
 
 
 
@@ -26,6 +28,7 @@ const AllRoutes = () => {
             <Route path='/checkout' element={<><NavbarCheckout/><CheckOut/><FooterC/></>}></Route>
             <Route path='/mybag' element={<><NavbarBag/><MyBag/><FooterC/></>}/>
             <Route path='/address' element={<><NavbarAddress/><Address/><FooterC/></>}/>
+            <Route path='/payment' element={<><Navbarpayment/><Payment/></>}/>
         </Routes>
      
 

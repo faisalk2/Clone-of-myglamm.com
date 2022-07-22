@@ -8,7 +8,7 @@ import "./CheckOut.css"
 export const CheckOut = () => {
     const theme = useTheme();
   return (
-    <Box  initialColorMode='light' >
+    <Box  initialColorMode='light' mt='10' >
     <Text fontSize='3xl' paddingBottom={10} fontFamily='sans-serif'>Checkout</Text>
   
     <Flex>
