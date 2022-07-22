@@ -1,4 +1,4 @@
-import { Box, Flex, FormControl, Input, Select, Text } from '@chakra-ui/react'
+import { Box, Button, Checkbox, Flex, FormControl, Input, Select, Text } from '@chakra-ui/react'
 import React from 'react'
 import './CheckOut.css'
 export const Address = () => {
@@ -30,6 +30,12 @@ export const Address = () => {
         <Input  h='55' bg='#FBFBFB' fontSize='13'type='text' placeholder='city'></Input>
         <Input  h='55' bg='#FBFBFB' fontSize='13'type='text'placeholder='state'></Input>
         <Input mr='7' h='55' bg='#FBFBFB' fontSize='13'type='text'placeholder='landmark'></Input>
+      </Flex>
+      <Flex justifyContent={"end"} mr='7' pb='5'>
+      <Checkbox >Mark as default</Checkbox></Flex>
+      <Flex gap='5' justifyContent={"end"} mr='7' pb='5'>
+      <Button p='0px 50px 0px 50px' h='55' bg='#FBFBFB' borderRadius='2%' fontSize='13'>BACK</Button>
+      <Button p='0px 50px 0px 50px' h='55' bg='lightgray'borderRadius='2%'fontSize='13'>CONTINUE</Button>
       </Flex>
       </FormControl>
      </Box>

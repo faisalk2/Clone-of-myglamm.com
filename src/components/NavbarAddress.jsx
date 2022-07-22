@@ -10,7 +10,7 @@ function NavbarAddress(value) {
 
     <Box display="flex" className='shaanc'>
       <Box>
-      <Img alt="logo" className="m-auto"marginTop='3%' h='50px'marginLeft="150%"src="https://files.myglamm.com/site-images/original/MyGlamm-Logo_1.jpg" />
+      <Img alt="logo" className="m-auto"marginTop='10%' h='40px'marginLeft="200%"src="https://files.myglamm.com/site-images/original/MyGlamm-Logo_1.jpg" />
       </Box>
     <Box padding="20px 300px 30px 300px"   width="100%">
       <Slider paddingBottom='100px'
