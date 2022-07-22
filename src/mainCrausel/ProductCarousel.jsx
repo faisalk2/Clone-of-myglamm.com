@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from 'react'
 import './productCrousel.css'
 import {
   Box,
@@ -9,7 +8,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-
+import {carouselData} from "../pages/HomePagecss/homepageData"
 
 
 
@@ -38,20 +37,9 @@ export default function ProductCarousel() {
   // As we have used custom buttons, we need a reference variable to
   // change the state
   const [slider, setSlider] = React.useState();
-  const [data, setData] = useState([]);
+ 
 
-  const carouselData = () => {
-    axios
-      .get("http://localhost:8080/carouselData")
-      .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
-  };
-
-  useEffect(() => {
-    if (data.length === 0) {
-      carouselData();
-    }
-  }, [data]);
+ 
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
@@ -114,7 +102,7 @@ export default function ProductCarousel() {
       </IconButton>
       {/* Slider */}
       <Slider height="400px" {...settings} ref={(slider) => setSlider(slider)}>
-        {data.map((item, index) => (
+        {carouselData.map((item, index) => (
           <Box
           cursor={"pointer"}
           className="box"
@@ -141,13 +129,13 @@ export default function ProductCarousel() {
                   </Box>
                   <Flex justifyContent={"space-evenly"}>
                     <Text fontWeight={"bold"}>
-                      {item["avg-rating"]}{" "}
+                      {item["avgrating"]}{" "}
                       <StarIcon fontSize={"17px"} color={"#ff9797"} />{" "}
                     </Text>
                     <Text
                       className="carouselTotalRating"
                     >
-                      {item["total-ratings"]} ratings
+                      {item["totalratings"]} ratings
                     </Text>
                   </Flex>
                 </Box>

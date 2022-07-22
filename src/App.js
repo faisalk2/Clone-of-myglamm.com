@@ -6,8 +6,8 @@ import Payment from './pages/Payment';
 function App() {
   return (
     <div className="App">
-      {/* <AllRoutes/> */}
-      <Payment/>
+      <AllRoutes/>
+      {/* <Payment/> */}
     </div>
   );
 }
