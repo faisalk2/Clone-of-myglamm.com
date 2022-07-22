@@ -12,7 +12,7 @@ function NavbarCheckout(value) {
 
     <Box display="flex" className="shaanc">
       <Box>
-      <Img alt="logo" className="m-auto"marginTop='3%' h='50px'marginLeft="150%"src="https://files.myglamm.com/site-images/original/MyGlamm-Logo_1.jpg" />
+      <Img alt="logo" className="m-auto"marginTop='10%' h='40px'marginLeft="200%"src="https://files.myglamm.com/site-images/original/MyGlamm-Logo_1.jpg" />
       </Box>
     <Box padding="20px 300px 30px 300px"   width="100%">
       <Slider paddingBottom='100px'
@@ -30,7 +30,7 @@ function NavbarCheckout(value) {
       <SliderMark value={40} mt='2' ml='-2.5' fontSize='sm'>
       SELECT ADDRESS
       </SliderMark>
-      <SliderMark value={60} mt='2' ml='-2.5' fontSize='sm' cursor='pointer' border="1px solid black">
+      <SliderMark value={60} mt='2' ml='-2.5' fontSize='sm' cursor='pointer'>
         <Routerlink to='/checkout' >  CHECKOUT</Routerlink>
       </SliderMark>
       <SliderMark value={80} mt='2' ml='-2.5' fontSize='sm'>

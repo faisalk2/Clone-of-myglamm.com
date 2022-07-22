@@ -1,0 +1,22 @@
+.image1{
+    width: 350px;
+    height: auto;
+    margin-left: 650px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+h5{
+    margin-top: 20px;
+    color: black;
+    font-weight: 800;
+   font-family: 'Times New Roman', Times, serif;
+}
+.ch{
+    margin-left: 50px;
+}
+.btn1{
+    margin-top: 30px;
+    color: aliceblue;
+    font-weight: bolder;
+    background-color: black;
+    width: 300px;
+}

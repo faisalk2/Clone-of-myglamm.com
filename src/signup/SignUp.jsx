@@ -1,18 +1,25 @@
 import React from 'react'
 import "../css/login.css";
+import {useNavigate } from 'react-router-dom';
+import Otp from './Otp';
 const SignUp = () => {
+  
+  const navigate = useNavigate();
+  const nav = () => {
+    navigate("/otp");
+ }
   return (
       <div>
           <div className='log'>
               <h5>Get 15 % Good Points Back on every order</h5>
               <img src='https://www.myglamm.com/images/myglamm-logo.png' />
               <div className='mobile'>
-                <h5>Mobile Number</h5>
+                Mobile Number
               </div>
-              <div>
+             
                   <hr></hr>
-              </div>
               
+        
               <div className='option'>
                        <select className='select'>
                        <option value="0" className='op'>Country Code</option>
@@ -26,10 +33,13 @@ const SignUp = () => {
                   <input className='input' type="number"/>
               </div>
               <br></br>
-              <button className='btn'>Continue</button>
+        <button className='btn' onClick={nav}>Continue</button>
+        <br></br>
+        <p>By Signing up you agree to our <b>Terms & Conditions</b></p>
 
               
-          </div>
+      </div>
+     
     </div>
   )
 }
