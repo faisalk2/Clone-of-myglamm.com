@@ -21,14 +21,17 @@ export const CATEGORIES=[
   export const kitsAndCombo=[
     {
       image:"https://files.myglamm.com/site-images/original/desktop-mk-combo.jpg",
-      name:"Makeup Combos"
+      name:"Makeup Combos",
+      data:"makeup"
     },{
       image:"https://files.myglamm.com/site-images/original/desktop-skin-combo.jpg",
-      name:"SkinCare Combos"
+      name:"SkinCare Combos",
+      data:"skincare"
     }
     ,{
       image:"https://files.myglamm.com/site-images/original/Desktop-combo.jpg",
-      name:"Beaut Kits Under 499"
+      name:"Beaut Kits Under 499",
+      data:"makeup"
     }
   
   ];
@@ -49,11 +52,11 @@ export const CATEGORIES=[
 
   export const ESSENTIALBUDGETBUYS=[
     {image:"https://files.myglamm.com/site-images/original/combo-Banner--700-x-488_1.jpg",
-    name:"Wipeout"},
+    name:"Wipeout",data:"facewash"},
     {image:"https://files.myglamm.com/site-images/original/Glamm-Picks-700x488.jpg",
-    name:"Under 499 Store"},
+    name:"Under 499 Store",data:"LIPSTICK"},
     {image:"https://files.myglamm.com/site-images/original/Glamm-Must-haves-desktop.jpg",
-    name:"Under 999 Store"}
+    name:"Under 999 Store",data:"lipstick"}
   ];
 
   export const WALLETOFFERS=[
