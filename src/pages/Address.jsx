@@ -5,7 +5,7 @@ export const Address = () => {
   return (
     <Box mt='10'>
      <Box className='Babulal'>
-     <Text pb='5' p='3'borderBottom='1px solid lightgray' width='80%' margin="auto"textAllign="center" fontWeight={550}>Shipping Address</Text>
+     <Text pb='5' p='3'borderBottom='1px solid lightgray' width='70%' margin="auto"textAllign="center" fontWeight={550}>Shipping Address</Text>
       <FormControl pt='5'>
       <Flex  pb='5'gap='7'>
         <Input type='name' h='55' bg='#FBFBFB' ml='7'placeholder="Name*" fontSize='13' isRequired></Input>
