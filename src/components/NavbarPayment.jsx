@@ -2,22 +2,25 @@ import { Box, Flex, Img, Slider, SliderFilledTrack, SliderMark, SliderThumb, Sli
 import React from 'react'
 import './ShaanCss.css'
 import {Link as Routerlink} from 'react-router-dom'
-function NavbarCheckout(value) {
-  const [sliderValue, setSliderValue] = React.useState(value=20)
+function Navbarpayment() {
+  const [sliderValue, setSliderValue] = React.useState(20)
  
+
+
+
 
   return (
 
 
 
-    <Box display="flex" className="shaanc">
+    <Box display="flex"  className="shaanc">
       <Box>
       <Img alt="logo" className="m-auto"marginTop='3%' h='50px'marginLeft="150%"src="https://files.myglamm.com/site-images/original/MyGlamm-Logo_1.jpg" />
       </Box>
     <Box padding="20px 300px 30px 300px"   width="100%">
       <Slider paddingBottom='100px'
       id='slider'
-      defaultValue={63}
+      defaultValue={83}
       min={0}
       max={100}
       colorScheme='teal'
@@ -43,10 +46,8 @@ function NavbarCheckout(value) {
         hasArrow
         bg='teal.500'
         color='white'
-        placement='top'
-        
-       
-      >
+        placement='top'     
+       >
         <SliderThumb borderRadius='50%' border='5px solid lightgray'/>
       </Tooltip>
     </Slider>
@@ -54,4 +55,4 @@ function NavbarCheckout(value) {
     </Box>
   )
 }
-export default NavbarCheckout
+export default Navbarpayment

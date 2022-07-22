@@ -20,14 +20,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 const Payment = () => {
   return (
-    <Box bgColor={"white"}>
+    <Box mt='-12' >
       <Box
         height={"150px"}
         display="flex"
         alignItems={"center"}
         justifyContent="center"
       >
-        <Text fontSize={"30px"}>Payment</Text>
+        <Text fontSize={"30px"} mb='-7'>Payment</Text>
       </Box>
       <Box>
         <Flex direction={"row"}>

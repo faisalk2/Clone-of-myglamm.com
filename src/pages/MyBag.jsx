@@ -5,7 +5,7 @@ import { FooterC } from '../components/FooterC'
 
 export const MyBag = () => {
   return (
-    <Box>
+    <Box mt='10'>
         <Text  fontSize='3xl'  paddingBottom={10}>MY BAG(1)</Text>
         <Box bg='black' padding='10px' marginBottom={10}w='100%'color='white' marginLeft='15%' justifyContent="center"display='flex'  width="70%"  >
           <Text fontWeight="500" paddingRight="10px">Congrats! </Text>
