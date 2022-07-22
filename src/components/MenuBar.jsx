@@ -8,25 +8,30 @@ import {
     Text,
     VStack,
 } from '@chakra-ui/react'
-
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import HairCareCards from './HairCareCards';
 import SanitizerCareCards from './SanitizerCareCards';
 import CollectionCards from './CollectionCards';
+import {Link as RouteLink} from 'react-router-dom';
+
+
+
+
+
+
 export const MenuBar = () => {
   return (
     <Flex width='70%' margin='auto' >
 
         <Box fontFamily="Roboto" className="dropdown">
-            <Box className="dropbtn"> HOME </Box>
-            <Box className="dropdown-content" > </Box>
+            <RouteLink to={"/"} ><Box className="dropbtn"> HOME </Box></RouteLink>
+            {/* <Box className="dropdown-content" > </Box> */}
         </Box>
         <Spacer/>  
 
         {/* 2      */}
         <Box className="dropdown">
-            <Box 
-                fontFamily="Roboto" className="dropbtn">MAKEUP</Box>
+            <RouteLink to={"/product/makeup"} > <Box fontFamily="Roboto" className="dropbtn">MAKEUP</Box></RouteLink>
             <Box className="dropdown-content" marginLeft='-60px' > 
 
                 <Box width='1200px' >
@@ -146,7 +151,7 @@ export const MenuBar = () => {
         <Spacer/>
 {/* 3 */}
         <Box className="dropdown">
-            <Box fontFamily="Roboto" className="dropbtn">HAIRCARE</Box>
+          <Box fontFamily="Roboto" className="dropbtn">HAIRCARE</Box>
             <Box className="dropdown-content" marginLeft='-160px' > 
 
             <Box width='1200px'  >
@@ -186,7 +191,7 @@ export const MenuBar = () => {
         <Spacer/> 
 {/* 4 */}
         <Box className="dropdown">
-            <Box fontFamily="Roboto" className="dropbtn">SKINCARE</Box>
+            <RouteLink to={"/product/skincare"} ><Box fontFamily="Roboto" className="dropbtn">SKINCARE</Box></RouteLink>
             <Box className="dropdown-content" marginLeft='-298px' > 
 
             <Box width='1200px'  >
@@ -281,7 +286,7 @@ export const MenuBar = () => {
         <Spacer/>
 {/* 6                */}
         <Box className="dropdown">
-            <Box fontFamily="Roboto" className="dropbtn">COLLECTION</Box>
+           <Box fontFamily="Roboto" className="dropbtn">COLLECTION</Box>
             <Box className="dropdown-content" marginLeft='-600px' > 
 
             <Box width='1200px'  >

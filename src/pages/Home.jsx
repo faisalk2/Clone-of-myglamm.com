@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Image, Text, AspectRatio } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, AspectRatio, Link } from "@chakra-ui/react";
 import Check from "../mainCrausel/Check";
 import "./HomePagecss/homePage.css";
 import "../App.css";
@@ -12,6 +12,12 @@ import {
   WALLETOFFERS,
   BANKPARTNER,
 } from "./HomePagecss/homepageData";
+import {Link as RouteLink} from "react-router-dom";
+
+
+
+
+
 
 const Home = () => {
   return (
@@ -112,7 +118,8 @@ const Home = () => {
         <Flex className="flexBoxForHome">
           {ESSENTIALBUDGETBUYS.map((item) => {
             return (
-              <Box
+           <RouteLink to={`/product/${item.data}`} >
+               <Box
                 width="400px"
                 bgPosition="center"
                 bgRepeat="no-repeat"
@@ -127,6 +134,7 @@ const Home = () => {
                   <Text className="popUpText" opacity={"0%"} >{item.name}</Text>
                 </Box>
               </Box>
+           </RouteLink>
             );
           })}
         </Flex>
@@ -154,7 +162,8 @@ const Home = () => {
           >
             {CATEGORIES.map((item) => {
               return (
-                <Box>
+                <RouteLink to={`/product/${item.name}`} >
+                  <Box>
                   <Box
                     borderRadius={"50%"}
                     padding="5px"
@@ -171,6 +180,7 @@ const Home = () => {
                     {item.name}
                   </Text>
                 </Box>
+                </RouteLink>
               );
             })}
           </Flex>
@@ -232,15 +242,17 @@ const Home = () => {
         >
           {kitsAndCombo.map((item) => {
             return (
-              <Box
+         <RouteLink to={`/product/${item.data}`} > 
+               <Box>
+                <Box
                 lineHeight={"40px"}
                 borderRadius="10px"
-                width="30%"
+                width="100%"
                 height="350px"
                 bgColor={"white"}
                 className="boxShadow"
               >
-                {/* <Box> */}
+        
                 <Image
                   width={"100%"}
                   height="70%"
@@ -248,12 +260,14 @@ const Home = () => {
                   borderTopRightRadius="10px"
                   src={item.image}
                 ></Image>
-                {/* </Box> */}
+             
 
                 <Text fontWeight={"bold"}>{item.name}</Text>
                 <Text fontSize={"13px"}>{item.name}</Text>
               </Box>
-              // </Box>
+             </Box>
+         </RouteLink>
+             
             );
           })}
         </Flex>
@@ -287,6 +301,7 @@ const Home = () => {
           })}
         </Flex>
       </Box>
+      <Link href="https://www.myglamm.com/refer?icid=home_homepage_multimedia-carousel-6_refer%20and%20earn_12_refer%20and%20earn_1">
       <Box padding={"30px"} cursor="pointer">
         <Flex
           direction={"column"}
@@ -304,7 +319,9 @@ const Home = () => {
           </Box>
         </Flex>
       </Box>
-      <Box padding={"30px"}>
+      </Link>
+   <Link href="https://www.myglamm.com/brand-statement">
+   <Box padding={"30px"}>
         <Flex
           cursor={"pointer"}
           direction={"column"}
@@ -322,6 +339,7 @@ const Home = () => {
           </Box>
         </Flex>
       </Box>
+   </Link>
       <Box>
         <AspectRatio maxW="100%" height="600px" ratio={1}>
           <iframe

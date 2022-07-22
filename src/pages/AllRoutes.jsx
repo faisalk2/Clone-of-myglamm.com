@@ -10,7 +10,10 @@ import { FooterC } from '../components/FooterC';
 import NavbarCheckout from '../components/NavbarCheckout';
 import { Address } from './Address';
 import NavbarAddress from '../components/NavbarAddress';
-
+import Payment from './Payment';
+import Productpage from './Productpage';
+import { Text } from '@chakra-ui/react';
+import NotFound from './NotFound';
 
 
 
@@ -22,10 +25,13 @@ const AllRoutes = () => {
     <div>
      
         <Routes>
-            <Route path='/' element={  <> <Navbar/><Home/> <Footer/>    </>}></Route>
+            <Route path='/' element={  <> <Navbar/><Home/> <Footer/></>}></Route>
+            <Route path='/product/:type' element={<><Navbar/><Productpage/><Footer/></>}></Route>
             <Route path='/checkout' element={<><NavbarCheckout/><CheckOut/><FooterC/></>}></Route>
             <Route path='/mybag' element={<><NavbarBag/><MyBag/><FooterC/></>}/>
             <Route path='/address' element={<><NavbarAddress/><Address/><FooterC/></>}/>
+            <Route path='/payment' element={<><NavbarAddress/><Payment/><FooterC/></>}></Route>
+            <Route path='*' element={<NotFound/>}></Route>
         </Routes>
      
 
