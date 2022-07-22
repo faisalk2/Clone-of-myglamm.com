@@ -51,6 +51,7 @@
 }
 
 .navbar-sticky {
+  z-index: 1;
   position: sticky;
   top:0px;
   width: 100%;
