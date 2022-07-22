@@ -2,6 +2,8 @@ import { Box, Button, Checkbox, Flex, FormControl, Input, Select, Text } from '@
 import React from 'react'
 import './CheckOut.css'
 export const Address = () => {
+
+  
   return (
     <Box mt='10'>
      <Box className='Babulal'>

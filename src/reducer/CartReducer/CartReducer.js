@@ -1,4 +1,4 @@
-import { localdata,savedata } from "../../../utils/localStorage";
+import { localdata,savedata } from "../../utils/localStorage";
 import {
   ADD_TO_CART,
   DEC_QTY,

@@ -4,6 +4,8 @@ import React from 'react'
 import { FooterC } from '../components/FooterC'
 
 export const MyBag = () => {
+
+  
   return (
     <Box mt='10'>
         <Text  fontSize='3xl'  paddingBottom={10}>MY BAG(1)</Text>
