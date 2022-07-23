@@ -13,27 +13,27 @@ export const ProductItem = () => {
          <div className="product_wraper">
             {products.map((e) => {
                 return (
-                    <Link to={`${e._id}`}>
+                    <Link to={`${e.id}`}>
                         <div className="per_product_card">
                             <div className="per_prod_img">
-                                <img src={e.prod_img} alt="" />
+                                <img src={e.img} alt="" />
                             </div>
                             <div>
-                                <h2>{e.product-name}</h2>
-                                <h3>{e.short-des}</h3>
+                                <h2>{e.name}</h2>
+                                <h3>{e.description}</h3>
                             </div>
                             <div className="shade_wrapper">
                                 <div>
-                                    <img src="{e.plus-icon}" alt="" />
+                                    <img src="{e.plus}" alt="" />
                                 </div>
-                                <h2>{e.shade-count}</h2>
+                                <h2>{e.count}</h2>
                             </div>
                             <div>
                                 <p>
-                                    MRP <s>{e.offer_price}</s>
+                                    MRP <s>{e.offerPrice}</s>
                                 </p>
                             </div>
-                            <h5>{e.actual-price}</h5>
+                            <h5>{e.actualPrice}</h5>
                         </div>
                     </Link>
                 );
