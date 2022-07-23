@@ -8,7 +8,7 @@ function NavbarAddress(value) {
 
 
 
-    <Box display="flex" className='shaanc'>
+    <Box display="flex" style={{zIndex:1}}className='shaanc'>
       <Box>
       <Img alt="logo" className="m-auto"marginTop='10%' h='40px'marginLeft="200%"src="https://files.myglamm.com/site-images/original/MyGlamm-Logo_1.jpg" />
       </Box>

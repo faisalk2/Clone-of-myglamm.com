@@ -1,11 +1,12 @@
 import { Box, Button, Checkbox, Flex, FormControl, Input, Select, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import './CheckOut.css'
-
 import axios from 'axios'
 import { AddressCard } from './AddressCard'
+import { useNavigate } from 'react-router-dom'
 
 export const Address = () => {
+  const navigate=useNavigate()
   const[ ok,setOk]=useState(false)
   const [addresshe,setAddresshe]=useState({})
   const [add,setAdd]=useState("")
@@ -35,7 +36,7 @@ getkro()
 
  
   return (
-    <Box mt='10'>
+    <Box mt='10' >
    {
     ok==true &&    <Flex fontSize='14' mb='10'justifyContent='center'>HOMESHOPPING / BAGCHOOSE /<Text fontWeight="600"> SHIPPING ADDRESS</Text></Flex>
    }
@@ -82,14 +83,18 @@ getkro()
 
     add.map((item)=>(
      
-       <>
-       <AddressCard   item={item}/>
-       </>
-      )) &&
-      
-      <Button onClick={()=>setOk(false)}></Button>
+       <Box  key={item.id}>
+       <AddressCard {...item}/>
+       </Box>
+      )) 
    }
-  
+  {
+    ok==true &&
+    <Flex>
+        <Button className='pehchanlo' bg='black' color='white'onClick={()=>window.location.reload()} >Add new address</Button>
+    <Button color='gray'  onClick={()=>setOk(false)}>BACK</Button>
+    </Flex>
+  }
   </Box>
     
      </Box>
