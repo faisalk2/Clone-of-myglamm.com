@@ -8,16 +8,17 @@ function NavbarAddress(value) {
 
 
 
-    <Box display="flex" style={{zIndex:1}}className='shaanc'>
+    <Box display="flex"  className='shaanc shaand'>
       <Box>
       <Img alt="logo" className="m-auto"marginTop='10%' h='40px'marginLeft="200%"src="https://files.myglamm.com/site-images/original/MyGlamm-Logo_1.jpg" />
       </Box>
-    <Box padding="20px 300px 30px 300px"   width="100%">
+    <Box padding="20px 300px 30px 300px" className='shaand'  width="100%">
       <Slider paddingBottom='100px'
       id='slider'
       defaultValue={45}
       min={0}
       max={100}
+      className='shaand'
       colorScheme='teal'
       onChange={(v) => setSliderValue(v)}
    
@@ -45,7 +46,7 @@ function NavbarAddress(value) {
         
        
       >
-        <SliderThumb borderRadius='50%' border='5px solid lightgray'/>
+        <SliderThumb borderRadius='50%'  className='shaand' border='5px solid lightgray'/>
       </Tooltip>
     </Slider>
     </Box>

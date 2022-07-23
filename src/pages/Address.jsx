@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, Flex, FormControl, Input, Select, Text } from '@chakra-ui/react'
+import { Box, Button, Checkbox, Flex, FormControl, Grid, Input, Select, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import './CheckOut.css'
 import axios from 'axios'
@@ -36,7 +36,7 @@ getkro()
 
  
   return (
-    <Box mt='10' >
+    <Box mt='10'className='mehudon' style={{zIndex:"-1"}} >
    {
     ok==true &&    <Flex fontSize='14' mb='10'justifyContent='center'>HOMESHOPPING / BAGCHOOSE /<Text fontWeight="600"> SHIPPING ADDRESS</Text></Flex>
    }
@@ -52,8 +52,8 @@ getkro()
     </Flex>
     <Flex gap='7'  pb='5'>
     <Select placeholder='Other'  onChange={(e)=>handleChange(e.target)}h='55' name="type" bg='#FBFBFB' fontSize='13' ml='7'>
-<option value='option1'>Home</option>
-<option value='option2'>Office</option>
+<option value='Home'>Home</option>
+<option value='Office'>Office</option>
 </Select>
 <Input h='55'  onChange={(e)=>handleChange(e.target)}bg='#FBFBFB' name="add" fontSize='13'type='address' placeholder='Flat no. /House no. / Apt Name*
 '></Input>
@@ -78,19 +78,21 @@ getkro()
     </FormControl>
    }
   <Box>
-  {
+ <Grid marginLeft='35px'  templateColumns='repeat(3,1fr)' gap={3}>
+ {
     ok===true && 
 
     add.map((item)=>(
      
-       <Box  key={item.id}>
+       <Grid  gap={2} key={item.id}>
        <AddressCard {...item}/>
-       </Box>
+       </Grid>
       )) 
    }
+ </Grid>
   {
     ok==true &&
-    <Flex>
+    <Flex ml='5%' gap='10'pt='10'pb='10'>
         <Button className='pehchanlo' bg='black' color='white'onClick={()=>window.location.reload()} >Add new address</Button>
     <Button color='gray'  onClick={()=>setOk(false)}>BACK</Button>
     </Flex>
