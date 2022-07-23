@@ -1,17 +1,14 @@
 .image1{
     width: 350px;
-    height: auto;
-    margin-left: 650px;
+    height: 350px;
+    margin-left: 600px;
+    margin-top: 40px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
-h5{
-    margin-top: 20px;
-    color: black;
-    font-weight: 800;
-   font-family: 'Times New Roman', Times, serif;
-}
+
 .ch{
-    margin-left: 50px;
+    margin-left: 80px;
+    color: blue;
 }
 .btn1{
     margin-top: 30px;
@@ -19,4 +16,22 @@ h5{
     font-weight: bolder;
     background-color: black;
     width: 300px;
+}
+.img1{
+    margin-left: 90px;
+}
+.resend{
+    margin-left: -20px;
+    color: black;
+    margin-top: 20px;
+    font-weight: 700;
+}
+.top1{
+    color: rgb(26, 6, 6);
+    font-style: inherit;
+    font-family: 'Times New Roman', Times, serif;
+}
+.sentotp{
+color: black;
+font-family: 'Times New Roman', Times, serif;
 }

@@ -10,13 +10,15 @@ const Otp = () => {
 
   }
   return (
-      <div className='image1'>
-          <h6>VERIFY YOUR MOBILE NUMBER TO SIGNIN</h6>
+    <div className='image1'>
+      <div className='top1'>VERIFY YOUR MOBILE NUMBER TO SIGNIN</div>
+          
           <br></br>
-          <div>
+          <div className='img1'>
               <img src='https://www.myglamm.com/images/mob-otp.png' />
-          </div>
-          <h5>ENTER OTP SENT ON MOBILE</h5>
+      </div>
+      <div className='sentotp'>ENTER OTP SENT ON MOBILE</div>
+          {/* <h5></h5> */}
     <HStack className='ch'>
   <PinInput>
     <PinInputField />
@@ -24,8 +26,9 @@ const Otp = () => {
     <PinInputField />
     <PinInputField />
   </PinInput>
-          </HStack>
-          <h5>RESEND OTP</h5>
+      </HStack>
+      <div className='resend'>RESEND OTP</div>
+          {/* <h5>RESEND OTP</h5> */}
           <button className='btn1'onClick={pop}>VERIFY</button>
       </div>
       
