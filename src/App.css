@@ -3,14 +3,20 @@
   color: black;
   padding: 16px;
   font-size: 12px;
+  cursor: pointer;
   /* font-weight: 400; */
   border: none;
 }
-
+.dropbtn:hover{
+border-color: #feb0a9;
+  padding-bottom: value;
+    border-bottom-style: solid;
+}
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 .App {
   text-align: center;

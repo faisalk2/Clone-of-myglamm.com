@@ -9,9 +9,10 @@ import {
   NumberDecrementStepper,
 } from '@chakra-ui/react'
 import { FooterC } from '../components/FooterC'
+import { Navigate as Mavigate, useNavigate } from 'react-router-dom';
 
 export const MyBag = () => {
-
+const navigate=useNavigate()
   
   return (
     <Box mt='10' mb='10'>
@@ -54,7 +55,7 @@ export const MyBag = () => {
 
           </Flex> 
 
-          <Box bg='black' padding='10px'w='30%'color='white' marginLeft='35%' className='mujhko'>PROCEED TO PAYMENT <ArrowForwardIcon/></Box>
+          <Box bg='black' padding='10px'w='30%'color='white' marginLeft='35%' className='mujhko' onClick={()=>navigate("/address")}>PROCEED TO PAYMENT <ArrowForwardIcon/></Box>
          
     </Box>
   )

@@ -9,7 +9,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import {carouselData} from "../pages/HomePagecss/homepageData"
-
+import {Link as RouteLink} from 'react-router-dom'
 
 
 
@@ -103,7 +103,8 @@ export default function ProductCarousel() {
       {/* Slider */}
       <Slider height="400px" {...settings} ref={(slider) => setSlider(slider)}>
         {carouselData.map((item, index) => (
-          <Box
+          <RouteLink to="/product/MAKEUP">
+            <Box
           cursor={"pointer"}
           className="box"
             key={index}
@@ -157,6 +158,7 @@ export default function ProductCarousel() {
               </Box>
             </Box>
           </Box>
+          </RouteLink>
         ))}
       </Slider>
     </Box>
