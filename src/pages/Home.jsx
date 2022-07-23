@@ -340,8 +340,8 @@ const Home = () => {
         </Flex>
       </Box>
    </Link>
-      <Box>
-        <AspectRatio maxW="100%" height="600px" ratio={1}>
+      <Box marginBottom={"100px"}>
+        <AspectRatio maxW="100%" height="750px" ratio={1}>
           <iframe
             src="https://www.youtube.com/embed/GdcxfyKNiDg?vq=hd1080&autoplay=1&loop=1&modestbranding=1&rel=0&cc_load_policy=1&iv_load_policy=3&fs=0&color=white&controls=0&disablekb=1&playlist=GdcxfyKNiDg"
             width="560"
