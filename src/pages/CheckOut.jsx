@@ -4,9 +4,11 @@ import theme from '../theme'
 import { useTheme } from "@chakra-ui/react";
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import "./CheckOut.css"
+import { useNavigate } from 'react-router-dom';
 
 export const CheckOut = () => {
     const theme = useTheme();
+    const navigate=useNavigate()
   return (
     <Box  initialColorMode='light' mt='10' >
     <Text fontSize='3xl' paddingBottom={10} fontFamily='sans-serif'>Checkout</Text>
@@ -66,7 +68,7 @@ export const CheckOut = () => {
         </Box>
             <Box float="right" fontWeight={500}>Final amount</Box>
         </Flex>
-        <Box bg='black' padding='3px'w='100%'color='white' className='mujhko'>PROCEED TO PAYMENT <ArrowForwardIcon/></Box>
+        <Box bg='black' padding='3px'w='100%'color='white' onClick={()=>navigate("/payment")}className='mujhko'>PROCEED TO PAYMENT <ArrowForwardIcon/></Box>
         </Box>
       
     </Flex>
