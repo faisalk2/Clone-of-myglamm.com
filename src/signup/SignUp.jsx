@@ -1,18 +1,23 @@
 import React from 'react'
 import "../css/login.css";
-import {useNavigate } from 'react-router-dom';
+
+
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Otp from './Otp';
 const SignUp = () => {
-  
+  // const { isOpen, onOpen, onClose } = useDisclosure()
   const navigate = useNavigate();
   const nav = () => {
     navigate("/otp");
  }
   return (
       <div>
-          <div className='log'>
-              <h5>Get 15 % Good Points Back on every order</h5>
-              <img src='https://www.myglamm.com/images/myglamm-logo.png' />
+      <div className='log'>
+        <div>Get 15 % Good Points Back on every order</div>
+          
+              <div className="image">
+          <img src='https://www.myglamm.com/images/myglamm-logo.png' />
+          </div>
               <div className='mobile'>
                 Mobile Number
               </div>
@@ -33,9 +38,9 @@ const SignUp = () => {
                   <input className='input' type="number"/>
               </div>
               <br></br>
-        <button className='btn' onClick={nav}>Continue</button>
+        <button className='btnp' onClick={nav}>Continue</button>
         <br></br>
-        <p>By Signing up you agree to our <b>Terms & Conditions</b></p>
+        <p>By Signing up you agree to our <b>Terms and Conditions</b></p>
 
               
       </div>
