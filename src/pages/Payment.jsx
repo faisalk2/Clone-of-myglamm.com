@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./HomePagecss/payment.css";
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Box,
   Image,
@@ -18,9 +19,24 @@ import {
   faMoneyBill1Wave,
   faCreditCard,
 } from "@fortawesome/free-solid-svg-icons";
+import { ToastContainer,toast, Slide } from "react-toastify";
+import { Navigate, useNavigate } from "react-router-dom";
 const Payment = () => {
+const navigate=useNavigate()
+  
+  const [paisa, setPaisa] = useState(0);
+  useEffect(() => {
+    let x = JSON.parse(localStorage.getItem("total"));
+    setPaisa(x);
+  }, []);
+  const notify = () =>{
+    toast(" ✅ Payment successfull")
+    setTimeout(()=>{
+        navigate("/")
+    },3000)
+  }
   return (
-    <Box mt='-12' ml='7%' w='90%' >
+    <Box mt='-12' ml='5%' w='90%' >
       <Box
         height={"150px"}
         display="flex"
@@ -81,7 +97,7 @@ const Payment = () => {
                 padding={"15px"}
               >
                 <Text fontWeight={"bold"}>Amount Payable</Text>
-                <Text fontWeight={"bold"}>₹1033.33</Text>
+                <Text fontWeight={"bold"}>₹ {paisa}.00</Text>
               </Flex>
             </Box>
             <Box width={"80%"} lineHeight="80px">
@@ -164,9 +180,22 @@ const Payment = () => {
         display={"flex"}
         justifyContent="center"
       >
-        <Button width={"220px"} color="white" height="60px" bgColor={"#595959"}>
-          Pay ₹1273.00
+        <Button width={"220px"}onClick={notify} color="white" height="60px" bgColor={"#595959"}>
+          Pay ₹{paisa}.00
         </Button>
+        <ToastContainer 
+        position="top-center"
+        autoClose={3000}
+        transition={Slide}
+        type="success"
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+         />
       </Box>
     
     </Box>
