@@ -1,8 +1,9 @@
 import { Box, Button, Checkbox, Flex, FormControl, Input, Select, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import './CheckOut.css'
-import {address} from './Add.js'
+
 import axios from 'axios'
+import { AddressCard } from './AddressCard'
 
 export const Address = () => {
   const[ ok,setOk]=useState(false)
@@ -22,6 +23,7 @@ export const Address = () => {
   const getkro= async()=>{
    await axios.get("https://aditya-fake-server.herokuapp.com/addresses",addresshe).then((res)=>{
       setAdd(res.data)
+      console.log(add)
     
   }).catch((e)=>console.log(e))
   }
@@ -78,13 +80,18 @@ getkro()
   {
     ok===true && 
 
-    add.map(({name,mobile, email, type,add, pincode,city,state})=>(
-     <>
-       
-        <Button onClick={()=>setOk(false)}></Button></>
-      ))
+    add.map((item)=>(
+     
+       <>
+       <AddressCard   item={item}/>
+       </>
+      )) &&
+      
+      <Button onClick={()=>setOk(false)}></Button>
    }
+  
   </Box>
+    
      </Box>
 
 
