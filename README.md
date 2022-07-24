@@ -20,11 +20,11 @@
 
 #We were team of 3 have done 
 
-1)Homepage
+1)Homepage - Faisal Khan
 
-2)Login ,SignUp
+2)Login ,SignUp - Faisal Khan
 
-3)Bag and checkout
+3)Bag,checkout,address and payment - <a href='https://github.com/Santanu55555'>Santanu Mohapatra</a>
 
 Netlify Link - https://potent-voyaga-8716.netlify.app
 
