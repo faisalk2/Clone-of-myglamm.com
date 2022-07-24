@@ -12,10 +12,9 @@ import { Address } from './Address';
 import NavbarAddress from '../components/NavbarAddress';
 import Payment from './Payment';
 import Productpage from './Productpage';
-import { Text } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 import NotFound from './NotFound';
 import Navbarpayment from '../components/NavbarPayment';
-import SignUp from '../signup/SignUp';
 
 
 
@@ -24,7 +23,7 @@ import SignUp from '../signup/SignUp';
 const AllRoutes = () => {
 
   return (
-    <div>
+    <Box>
      
         <Routes>
             <Route path='/' element={  <> <Navbar/><Home/> <Footer/></>}></Route>
@@ -32,15 +31,12 @@ const AllRoutes = () => {
             <Route path='/checkout' element={<><NavbarCheckout/><CheckOut/><FooterC/></>}></Route>
             <Route path='/mybag' element={<><NavbarBag/><MyBag/><FooterC/></>}/>
             <Route path='/address' element={<><NavbarAddress/><Address/><FooterC/></>}/>
-            <Route path='/payment' element={<><NavbarAddress/><Payment/><FooterC/></>}></Route>
-            <Route path='*' element={<NotFound/>}></Route>
+            <Route path='/payment' element={<><Navbarpayment/><Payment/><FooterC/></>}></Route>
+            <Route path='*' element={<><Navbar/><NotFound/><Footer/></>}></Route>
             <Route path='/payment' element={<><Navbarpayment/><Payment/></>}/>
-            <Route path="/signup" element={<SignUp/>}/>
         </Routes>
-     
-
-       
-    </div>
+  
+    </Box>
   )
 }
 

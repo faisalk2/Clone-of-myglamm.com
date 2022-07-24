@@ -34,6 +34,9 @@ getkro()
   
 },[])
 
+const handleClick=()=>{
+
+}
  
   return (
     <Box mt='10'className='mehudon' style={{zIndex:"-1"}} >
@@ -85,7 +88,7 @@ getkro()
     add.map((item)=>(
      
        <Grid  gap={2} key={item.id}>
-       <AddressCard {...item}/>
+       <AddressCard  onClick={(handleClick(item.id))} {...item}/>
        </Grid>
       )) 
    }

@@ -15,21 +15,44 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '../App.css';
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 
+
+import SignupChakra from '../signup/SignupChakra'
+import { useSelector } from 'react-redux/es/exports'
+import Profile from '../signup/Profile'
+import { useNavigate } from 'react-router-dom'
+
 const Navbar = () => {
-  return <Box className='navbar-sticky'   width='100%' >
+  
+  const navigate=useNavigate()
+const {isAuth}=useSelector((state)=>state.auth);
+console.log(isAuth);
+
+
+  return   (
+    <Box className='navbar-sticky'   width='100%' >
     <OfferBar/>
     <Flex width='70%' direction='row' height='60px' margin='auto' pt='12px' >
       <Box> <Logo/> </Box>
       <Box> <SearchBar/> </Box>
       <Spacer/>
       <Flex justifyContent={"space-between"} width="100px" >
-      <Box cursor={"pointer"} > <FaShoppingBag style={{color: 'black', border:'1px', fontSize: '25px'}}/> </Box>
-      <Box cursor={"pointer"} > <AiOutlineUser style={{color: 'black', fontSize: '25px'}}/> </Box>
+
+      {/* <Box  cursor={"pointer"} > <FaShoppingBag style={{color: 'black', border:'1px', fontSize: '25px'}}/> </Box>
+      <Box cursor={"pointer"} > <AiOutlineUser style={{color: 'black', fontSize: '25px'}}/> </Box> */}
+
+      <Box onClick={()=>navigate("/mybag")}cursor={"pointer"} > <FaShoppingBag style={{color: 'black', border:'1px', fontSize: '25px'}}/> </Box>
+      <Box cursor={"pointer"} > {isAuth ? <Profile/>:<SignupChakra/>} </Box>
+
       </Flex>
     </Flex>
     <MenuBar/>
     
   </Box>
+   )
+
 }
+ 
+
+
 
 export default Navbar

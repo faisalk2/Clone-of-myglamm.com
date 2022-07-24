@@ -1,0 +1,9 @@
+.profiletext{
+    font-size:15px;
+    width: "20px";
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    background-color: white;
+    /* font-size: 100px; */
+}

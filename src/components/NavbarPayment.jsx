@@ -3,7 +3,7 @@ import React from 'react'
 import './ShaanCss.css'
 import {Link as Routerlink} from 'react-router-dom'
 function Navbarpayment() {
-  const [sliderValue, setSliderValue] = React.useState(20)
+  const [sliderValue, setSliderValue] = React.useState(80)
  
 
 
