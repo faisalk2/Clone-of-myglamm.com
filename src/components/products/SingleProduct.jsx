@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {  useParams } from "react-router-dom";
-import "./SinglrProduct.css";
+import {  useParams } from "react-router-dom"; 
+import "./SingleProduct.css";
 
-const bagFromLocalStorage = JSON.parse(localStorage.getItem("bag") || "[]");
+ const bagFromLocalStorage = JSON.parse(localStorage.getItem("bag") || "[]");
 
-export const SingleProduct = () => {
-  const [SingleProduct, setSingleProduct] = useState({});
+const SingleProduct = () => {
+  const [singleProduct, setsingleProduct] = useState({});
   const [bag, setBag] = useState(bagFromLocalStorage);
   const { id } = useParams();
   console.log("id", id);
@@ -14,7 +14,7 @@ export const SingleProduct = () => {
     axios
       .get(``)
       .then(({ data }) => {
-        setSingleProduct(data);
+        setsingleProduct(data);
         console.log(data);
       });
   }, []);
@@ -23,27 +23,32 @@ export const SingleProduct = () => {
     localStorage.setItem("bag", JSON.stringify(bag));
   }, [bag]);
 
-  const addToBag = (SingleProduct) => {
-    setBag([...bag, SingleProduct]);
+  const addToBag = (singleProduct) => {
+    setBag([...bag, singleProduct]);
     alert("Added to Bag");
-  };
+  }; 
 
   return (
-    <div className="prod_det">
-      <div className="prod_det_img">
-        <img src={SingleProduct.img} alt="" />
+   <div className="container">
+      <div className="left">
+          <img src={singleProduct.img} alt=""/>
       </div>
-      <div className="prod_det_des">
-        <h3>{SingleProduct.name}</h3>
-        <h4>{SingleProduct.actualPrice}</h4>
-        <p>
-          MRP <s>{SingleProduct.offerPrice}</s>
-        </p>
-        
-
+      <div className="right">
+        <p className="name">{singleProduct.name}</p>
+        <p className="description">{singleProduct.description}</p>
+        <div className="rating">
+          <p className="rONE">4.9</p>
+           <p className="vertical">|</p>
+          <p className="noOR">1200 ratings</p>
+        </div>
+          <div className="price">
+          <p className="amount">{singleProduct.actualPrice}</p>
+        <p className="pDes">(MRP incl. of all taxes)</p>
+          </div>
+          
         <button onClick={() => addToBag(SingleProduct)}>Add To Bag</button>
       </div>
-      
-    </div>
+   </div>
   );
 };
+export default SingleProduct

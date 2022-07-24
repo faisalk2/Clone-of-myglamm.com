@@ -1,0 +1,94 @@
+.container{
+    margin: auto;
+    /* border: 1px solid blue; */
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    font-family: din-2014, sans-serif;
+  }
+  .left{
+    height:100%;
+    width: 42%;
+    /* border:1px solid blueviolet */
+  }
+  .right{
+    height: 100%;
+    width: 58%;
+    /* border:1px solid red; */
+    text-align: left;
+    padding-left: 20px;
+  }
+  .left > img{
+    width: 100%;
+  }
+  
+    .description{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    color: #909090;
+    text-align: left;
+    margin: auto;
+    padding-left: 20px;
+  }
+  .name{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    color: #373738 ;
+    text-align: left;
+    padding-left: 20px;
+  }
+  .rating{
+    display: flex;
+    padding-left: 20px;
+    justify-content: space-evenly;
+    width:50%;
+    color: #333333;
+  }
+  .rONE{
+    font-weight: 600;
+    font-size: 18px;
+   
+  }
+  .vertical{
+    font-size: 28;
+   
+    font-weight: 600;
+  }
+  .noor{
+    
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 12px;
+  }
+  .price{
+  
+   justify-content: space-around;
+   width: 100%;
+   /* background-color: #909090; */
+  }
+  .pDes{
+   
+  /* border: 2px solid red; */
+  margin:0px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .amount{
+   margin: 0px;
+  
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    /* border: 2px solid red; */
+  }
+  button{
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 120px;
+    margin-top: 20px;
+  }
