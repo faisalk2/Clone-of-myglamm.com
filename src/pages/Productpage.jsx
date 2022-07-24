@@ -1,13 +1,14 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
-import Product from "../components/products/Product"
+// import React from 'react'
+// import { useParams } from 'react-router-dom'
+// import ProductItem from '../components/products/Product'
 
-const Productpage = () => {
-const {type}=useParams()
-let name=type.toUpperCase()
-  return (
-    <ProductItem />
-  )
-}
 
-export default Productpage
+// const Productpage = () => {
+
+// let name=type.toUpperCase()
+//   return (
+//     <ProductItem {...type} />
+//   )
+// }
+
+// export default Productpage

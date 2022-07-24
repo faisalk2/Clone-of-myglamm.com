@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Products.css";
+import { getdata } from "../../reducer/AppReducer/action";
+import "./Product.css";
 
-const ProductItem = () => {
+const ProductItem = ({type}) => {
+
   const [products, setProducts] = useState([]);
+  
   useEffect(() => {
-    getData();
+    getdata(type);
   }, []);
 
   return (

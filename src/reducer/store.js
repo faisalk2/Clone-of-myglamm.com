@@ -2,12 +2,12 @@ import { applyMiddleware, combineReducers, compose, legacy_createStore } from "r
 import thunk from "redux-thunk";
 import { appReducer } from "./AppReducer/appReducer";
 import { authReducer } from "./AuthReducer/authReducer";
-import { cartReducer } from "./CartReducer/CartReducer";
+// import { cartReducer } from "./CartReducer/CartReducer";
 
 const rootReducer=combineReducers({
     auth:authReducer,
     app:appReducer,
-    cartdata:cartReducer
+  
 });
 
 const composeEnhancers =
