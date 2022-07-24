@@ -368,5 +368,168 @@
         "offer-price": "₹ 349",
         "actual-price": ""
         }
-        ]
+        ],
+        "lipstick" : [
+            {
+             "id" : "1",
+              "img": "https://files.myglamm.com/site-images/800x800/open-product-with-side-bar_2.jpg",
+              "name": "POPxo Makeup - Mini Lip Kit",
+              "description": "Mini Lipstick kit with 3 creamy-matte nude lipsticks",
+              "plus": "https://www.myglamm.com/images/plus-icon.png",
+              "count": "5 Shades",
+              "offerPrice": "₹ 244",
+              "actualPrice": "₹ 349"
+            },
+            {
+             "id" : "2",
+              "img": "https://files.myglamm.com/site-images/800x800/Cosmo-(1).jpg",
+              "name": "Perfect Curves",
+              "description": "Moisturising Matte Lipstick",
+              "plus": "https://www.myglamm.com/images/plus-icon.png",
+              "count": "10 Shades",
+              "offerPrice": "₹ 486",
+              "actualPrice": "₹ 695"
+            },
+            {
+             "id" : "3",
+              "img": "https://files.myglamm.com/site-images/800x800/CHRls-(1).jpg",
+              "name": "K.Play Flavoured Lipstick",
+              "description": "Cherry Flavoured Vitamin E-enriched Creamy Lipstick",
+              "plus": "https://www.myglamm.com/images/plus-icon.png",
+              "count": "11 Shades",
+              "offerPrice": "₹ 545",
+              "actualPrice": ""
+            },
+            {
+             "id" : "4",
+              "img": "https://files.myglamm.com/site-images/800x800/Lststr-(1).jpg",
+              "name": "LIT Satin Matte Lipstick",
+              "description": "Hi-Wattage 3D Satin Matte Finish Lipstick With Intense Colour Payoff",
+              "plus": "https://www.myglamm.com/images/plus-icon.png",
+              "count": "19 Shades",
+              "offerPrice": "₹ 371",
+              "actualPrice": "₹ 495"
+            },
+            {
+             "id" : "5",
+              "img": "https://files.myglamm.com/site-images/800x800/Hi-Shine-Post-1-Regal-Crimson_1.jpg",
+              "name": "Manish Malhotra Hi-Shine Lipstick",
+              "description": "Lightweight, Long-wear Lipsticks",
+              "plus": "https://www.myglamm.com/images/plus-icon.png",
+              "count": "24 Shades",
+              "offerPrice": "₹ 712",
+              "actualPrice": "₹ 950"
+            },
+            {
+             "id" : "6",
+              "img": "https://files.myglamm.com/site-images/800x800/Nudemave-(1).jpg",
+              "name": "POSE HD Lipstick",
+              "description": "HD Long-wear Matte Lipstick",
+              "plus": "https://www.myglamm.com/images/plus-icon.png",
+              "count": "19 Shades",
+              "offerPrice": "₹ 599",
+              "actualPrice": ""
+            },
+            {
+             "id" : "7",
+              "img": "https://files.myglamm.com/site-images/800x800/Vamp-(1).jpg",
+              "name": "Ultimatte Long-Stay Matte Lipstick",
+              "description": "Hyaluronic Acid-enriched, Moisturising, Matte Slim Lipstick",
+              "plus": "https://www.myglamm.com/images/plus-icon.png",
+              "count": "11 Shades",
+              "offerPrice": "₹ 524",
+              "actualPrice": "₹ 699"
+            },
+            {
+             "id" : "7",
+              "img": "https://files.myglamm.com/site-images/800x800/Soft-Matte-post-1-Violet-Dream.jpg",
+              "name": "Manish Malhotra Soft Matte Lipstick",
+              "description": "Hydrating Long-wear Lipstick",
+              "plus": "https://www.myglamm.com/images/plus-icon.png",
+              "count": "17 Shades",
+              "offerPrice": "₹ 712",
+              "actualPrice": "₹ 950"
+            },
+            {
+             "id" : "8",
+              "img": "https://files.myglamm.com/site-images/800x800/Liquid-Matte-Lipstick-post-1-Night-Aura.jpg",
+              "name": "Manish Malhotra Liquid Matte Lipstick",
+              "description": "Long-stay Velvet Matte Lip Colour",
+              "plus": "https://www.myglamm.com/images/plus-icon.png",
+              "count": "19 Shades",
+              "offerPrice": "₹ 696",
+              "actualPrice": "₹ 995"
+            },
+            {
+             "id" : "9",
+              "img": "https://files.myglamm.com/site-images/800x800/stargazer-7.jpeg",
+              "name": "LIT 2 in 1 Liquid Matte Lipstick",
+              "description": "Intense, transfer-proof, long-lasting liquid lipstick duos",
+              "plus": "https://www.myglamm.com/images/plus-icon.png",
+              "count": "11 Shades",
+              "offerPrice": "₹ 381",
+              "actualPrice": "₹ 545"
+            },
+            {
+             "id" : "10",
+              "img": "https://files.myglamm.com/site-images/800x800/NDE.jpg",
+              "name": "Ultimatte Long Lasting Liquid Lipstick",
+              "description": "Vitamin E Enriched Non-Drying Formula | Up To 8 Hours Stay",
+              "plus": "https://www.myglamm.com/images/plus-icon.png",
+              "count": "14 Shades",
+              "offerPrice": "₹ 599",
+              "actualPrice": ""
+            },
+            {
+             "id" : "11",
+              "img": "https://files.myglamm.com/site-images/800x800/Flirtini_6.jpg",
+              "name": "LIT Creamy Matte Lipstick",
+              "description": "Precision Perfect Matte Slimstick",
+              "plus": "https://www.myglamm.com/images/plus-icon.png",
+              "count": "17 Shades",
+              "offerPrice": "₹ 416",
+              "actualPrice": "₹ 595"
+            },
+            {
+             "id" : "12",
+              "img": "https://files.myglamm.com/site-images/800x800/French-(1).jpg",
+              "name": "Clean Beauty Cocoa Butter Lip & Cheek Pencil",
+              "description": "Moisturising and Nourishing 2 in 1 Lip & Cheek Jumbo Pencil",
+              "plus": "https://www.myglamm.com/images/plus-icon.png",
+              "count": "1 Shade",
+              "offerPrice": "₹ 711",
+              "actualPrice": "₹ 790"
+            },
+            {
+             "id" : "13",
+              "img": "https://files.myglamm.com/site-images/800x800/Kuwtk-(1)-(1).jpg",
+              "name": "LIT Satin Matte Lipstick + LIT Matte Lipliner Pencil",
+              "description": "Hi-Wattage 3D Satin Matte Finish Lipstick With Intense Colour Payoff & Intensely Pigmented, Defining Lipliner",
+              "plus": "",
+              "count": "",
+              "offerPrice": "₹ 564",
+              "actualPrice": "₹ 940"
+            },
+            {
+             "id" : "14",
+              "img": "https://files.myglamm.com/site-images/800x800/Mai-tai-with-Swatch.jpg",
+              "name": "LIT Creamy Matte Lipstick Set Of 2",
+              "description": "Precision Perfect Matte Slimstick",
+              "plus": "",
+              "count": "",
+              "offerPrice": "₹ 714",
+              "actualPrice": "₹ 1190"
+            },
+            {
+             "id" : "15",
+              "img": "https://files.myglamm.com/site-images/800x800/org-(1)-1.jpg",
+              "name": "K.Play Flavoured Lipstick Set Of 2",
+              "description": "Orange Flavoured Vitamin E-enriched Creamy Lipstick",
+              "plus": "",
+              "count": "",
+              "offerPrice": "₹ 708",
+              "actualPrice": "₹ 1090"
+            }
+           
+           ]
 }
