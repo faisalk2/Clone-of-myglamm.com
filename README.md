@@ -1,9 +1,14 @@
 #Our Plans —
+
+
 1)Breaking the whole project into the smallest divisions according to skills of individual.
 2)Setting up the particular time for particular module.
 3)Helping team mate when he/she is not able to finish the task within a specified time.
 4)Proper commits in Github.
 5)Along with every standup forming meeting’s as needed.
+
+
+
 
 #We were team of 3 have done 
 1)Homepage
@@ -11,6 +16,9 @@
 3)Bag and checkout
 
 Netlify Link - https://potent-voyaga-8716.netlify.app
+
+
+
 ![image](https://user-images.githubusercontent.com/99542723/180635982-c1c48b2c-fc50-4a0f-93fd-3e3fce86d860.png)
 
 ![image](https://user-images.githubusercontent.com/99542723/180635905-9194df1b-8d53-4108-b2db-744f1cc8badb.png)
