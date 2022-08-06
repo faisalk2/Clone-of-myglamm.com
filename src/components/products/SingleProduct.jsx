@@ -1,23 +1,33 @@
+import { Button } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {  useParams } from "react-router-dom"; 
+import { getdata } from "../../reducer/AppReducer/action";
 import "./SingleProduct.css";
 
  const bagFromLocalStorage = JSON.parse(localStorage.getItem("bag") || "[]");
 
 const SingleProduct = () => {
-  const [singleProduct, setsingleProduct] = useState({});
+  // const [singleProduct, setsingleProduct] = useState([]);
   const [bag, setBag] = useState(bagFromLocalStorage);
   const { id } = useParams();
-  console.log("id", id);
-  useEffect(() => {
-    axios
-      .get(``)
-      .then(({ data }) => {
-        setsingleProduct(data);
-        console.log(data);
-      });
-  }, []);
+const dispatch=useDispatch();
+const data=useSelector((state)=>state.app.data)
+const singleProduct=data.find((ele)=>{
+  if(ele.id===Number(id))
+  {
+    return ele;
+  }
+})
+// setsingleProduct(single);
+console.log(singleProduct);
+  // useEffect(() => {
+  //  if(data.length===0)
+  //  {
+  //   dispatch(getdata())
+  //  }
+  // }, [data]);
 
   useEffect(() => {
     localStorage.setItem("bag", JSON.stringify(bag));
@@ -42,13 +52,13 @@ const SingleProduct = () => {
           <p className="noOR">1200 ratings</p>
         </div>
           <div className="price">
-          <p className="amount">{singleProduct.actualPrice}</p>
+          <p className="amount">{`₹ ${singleProduct.offerPrice}`}</p>
         <p className="pDes">(MRP incl. of all taxes)</p>
           </div>
           
-        <button onClick={() => addToBag(SingleProduct)}>Add To Bag</button>
+        <Button bgColor={"black"} onClick={() => addToBag(singleProduct)}>Add To Bag</Button>
       </div>
    </div>
   );
 };
-export default SingleProduct
+export default SingleProduct;

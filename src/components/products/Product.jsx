@@ -2,13 +2,17 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getdata } from "../../reducer/AppReducer/action";
 import "./Product.css";
-
-const ProductItem = ({type}) => {
-
+import {useDispatch, useSelector} from "react-redux";
+import { useParams } from 'react-router-dom'
+const ProductItem = () => {
+const {type}=useParams();
   const [products, setProducts] = useState([]);
-  
+  const dispatch=useDispatch()
+  const {data}=useSelector((state)=>state.app)
+  console.log(data);
+  console.log(type);
   useEffect(() => {
-    getdata(type);
+    dispatch(getdata(type));
   }, []);
 
   return (
@@ -16,7 +20,7 @@ const ProductItem = ({type}) => {
       <div className="PageName">{type}</div>
       <div className="ProductPart">
         <div className="product_wraper">
-          {products.map((e) => {
+          {data.map((e) => {
                 return (
                     <Link to={`${e.id}`}>
           <div className="per_product_card">
@@ -25,7 +29,7 @@ const ProductItem = ({type}) => {
             </div>
             <div>
               <p className="name">{e.name}</p>
-              <p className="description">{e.description}</p>
+              <p className="description">{e["short-des"]}</p>
             </div>
             <div className="shade_wrapper">
               <div>
@@ -39,7 +43,7 @@ const ProductItem = ({type}) => {
             <div className="price_wrapper">
               <p>{e.actualPrice}</p>
               <p className="mrp">
-                <s>{e.offerPrice}</s>
+                <s>{e["offerPrice"]}</s>
               </p>
             </div>
           </div>

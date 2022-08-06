@@ -534,6 +534,7 @@
            ],
            "shampoo":[
             {
+              "id":1,
               "img": "https://files.myglamm.com/site-images/800x800/Artboard-1-(1).jpg",
               "name": "MyGlamm SUPERFOODS Onion & Moringa Shampoo",
               "description": "For Hair Fall Control",
@@ -541,6 +542,7 @@
               "actualPrice": "₹ 299"
             },
             {
+              "id":2,
               "img": "https://files.myglamm.com/site-images/800x800/SHP-(1).jpg",
               "name": "MyGlamm SUPERFOODS Cacao, Coffee & Coconut Shampoo",
               "description": "Anti-Dandruff & Moisturising Hair Cleanser",
@@ -548,6 +550,7 @@
               "actualPrice": "₹ 399"
             },
             {
+              "id":3,
               "img": "https://files.myglamm.com/site-images/800x800/Passion-Fruit--Rosemary-Shampoo.jpg",
               "name": "MyGlamm SUPERFOODS Passion Fruit & Rosemary Shampoo",
               "description": "Nourishing & Cleansing Shampoo with extracts from natural superfoods",
@@ -555,6 +558,7 @@
               "actualPrice": "₹ 499"
             },
             {
+              "id":4,
               "img": "https://files.myglamm.com/site-images/800x800/Passion-Fruit--Rosemary-Shampoo.jpg",
               "name": "MyGlamm SUPERFOODS Passion Fruit & Rosemary Shampoo",
               "description": "Nourishing & Cleansing Shampoo with extracts from natural superfoods",
@@ -562,6 +566,7 @@
               "actualPrice": "₹ 499"
             },
             {
+              "id":5,
               "img": "https://files.myglamm.com/site-images/800x800/SMP-(1).jpg",
               "name": "MyGlamm SUPERFOODS Cacao, Coconut & Coffee Shampoo with SUPERFOODS Pouch",
               "description": "Anti-Dandruff & Moisturising Hair Cleanser",
@@ -569,6 +574,7 @@
               "actualPrice": "₹ 464"
             },
             {
+              "id":6,
               "img": "https://files.myglamm.com/site-images/800x800/Product-1_13.jpg",
               "name": "MyGlamm SUPERFOODS Onion & Moringa Shampoo - Flat Price",
               "description": "For Hair Fall Control",
@@ -576,6 +582,7 @@
               "actualPrice": "₹ 299"
             },
             {
+              "id":7,
               "img": "https://files.myglamm.com/site-images/800x800/SF--Hair-Fall-Control-2.jpg",
               "name": "MyGlamm SUPERFOODS Hair Fall Control Combo",
               "description": "Hair Fall Control With Extracts From Natural Superfoods",
@@ -585,6 +592,7 @@
            ],
            "sunscreen":[
             {
+              "id":8,
               "img": "https://files.myglamm.com/site-images/800x800/Beach-bum-(1)_1.png",
               "name": "POPxo Beach Bum Ultra-Light Sunscreen Spray SPF 50 PA+++ 50ml",
               "description": "Sunscreen For Girls On The Go",
@@ -592,6 +600,7 @@
               "actualPrice": "₹ 349"
             },
             {
+              "id":9,
               "img": "https://files.myglamm.com/site-images/800x800/Kiwi---Coconut-Sunscreen-1_1.jpg",
               "name": "MyGlamm SUPERFOODS Kiwi & Coconut Sunscreen",
               "description": "Broad-Spectrum, Lightweight & Non-greasy Sunscreen With SPF 30 PA+++",
@@ -599,6 +608,7 @@
               "actualPrice": "₹ 499"
             },
             {
+              "id":10,
               "img": "https://files.myglamm.com/site-images/800x800/GGL1-(4)_1.png",
               "name": "POPxo Glow Goals Illuminating Sunscreen SPF 30 PA+++ 30g",
               "description": "Sunscreen For Sun-chasers",
@@ -606,6 +616,7 @@
               "actualPrice": ""
             },
             {
+              "id":11,
               "img": "https://files.myglamm.com/site-images/800x800/HHDR-(4).png",
               "name": "POPxo H2O Booster Sunscreen Gel SPF 30 PA+++ 30g",
               "description": "Sunscreen For Dew Lovers",
@@ -613,6 +624,7 @@
               "actualPrice": ""
             },
             {
+              "id":12,
               "img": "https://files.myglamm.com/site-images/800x800/DDCF-(1)_1.jpg",
               "name": "MyGlamm SUPERFOODS Cacao & Berries SPF Day Cream",
               "description": "Nourishing & Protecting Day Cream With SPF",
@@ -620,6 +632,7 @@
               "actualPrice": "₹ 399"
             },
             {
+              "id":13,
               "img": "https://files.myglamm.com/site-images/800x800/BCHBU.png",
               "name": "POPxo Beach Bum Multi-use Sunscreen Spray SPF 50 PA+++ 50ml",
               "description": "Sunscreen For Girls On The Go",
@@ -627,6 +640,7 @@
               "actualPrice": ""
             },
             {
+              "id":14,
               "img": "https://files.myglamm.com/site-images/800x800/GG1.png",
               "name": "POPxo Glow Goals Illuminating Sunscreen SPF 30",
               "description": "Sunscreen For Sun-chasers",
@@ -634,6 +648,7 @@
               "actualPrice": "₹ 349"
             },
             {
+              "id":15,
               "img": "https://files.myglamm.com/site-images/800x800/Beach-bum-(1)_1.png",
               "name": "POPxo Beach Bum Ultra-Light Sunscreen Spray SPF 50",
               "description": "Sunscreen For Girls On The Go",
@@ -644,6 +659,7 @@
            ,
     "eyeliner":[
       {
+        "id":1,
         "img": "https://files.myglamm.com/site-images/800x800/Artboard-1-(1)-(1).jpg",
         "name": "SUPERFOODS Kajal",
         "description": "Long-Wear Smudge-Proof Kajal Infused With Natural Superfood Extracts",
@@ -653,6 +669,7 @@
         "actualPrice": "₹ 395"
       },
       {
+        "id":2,
         "img": "https://files.myglamm.com/site-images/800x800/6-Precision-Liquid-Felt-Tip-Eyeliner-post-1-Black-Diamond.jpg",
         "name": "Manish Malhotra Precision Liquid Felt Tip Eyeliner",
         "description": "Intense Longwear Liquid Eyeliner Pen | Made in Germany",
@@ -662,6 +679,7 @@
         "actualPrice": "₹ 895"
       },
       {
+        "id":3,
         "img": "https://files.myglamm.com/site-images/800x800/GRENSR-(1)_1.jpg",
         "name": "MyGlamm LIT Glossy Liquid Eyeliner",
         "description": "Up To 24HR Smudge-Proof Coloured Eyeliner",
@@ -671,6 +689,7 @@
         "actualPrice": ""
       },
       {
+        "id":4,
         "img": "https://files.myglamm.com/site-images/800x800/Savag-(1).jpg",
         "name": "LIT Matte Eyeliner Pencil",
         "description": "Precision Eyeliner with Intense Colour Payoff",
@@ -680,6 +699,7 @@
         "actualPrice": ""
       },
       {
+        "id":5,
         "img": "https://files.myglamm.com/site-images/800x800/Noir-(1).jpg",
         "name": "Jet Set Eyes Kajal Eyeliner",
         "description": "Long-wear Kohl Pencil",
@@ -689,6 +709,7 @@
         "actualPrice": "₹ 750"
       },
       {
+        "id":6,
         "img": "https://files.myglamm.com/site-images/800x800/7-Glitter-Eyeliner-Post-1-Black-Moon.jpg",
         "name": "Manish Malhotra Glitter Eyeliner",
         "description": "Shimmer Eyeliner Pencil",
@@ -698,6 +719,7 @@
         "actualPrice": "₹ 850"
       },
       {
+        "id":7,
         "img": "https://files.myglamm.com/site-images/800x800/Stydfnd-(1).jpg",
         "name": "Stay Defined",
         "description": "2 in 1 Waterproof Matte Eyeliner + HD Brow Powder",
@@ -707,6 +729,7 @@
         "actualPrice": "₹ 1095"
       },
       {
+        "id":8,
         "img": "https://files.myglamm.com/site-images/800x800/5-24H-Kajal-Eyeliner-Post-1-Smokey-Diamond.jpg",
         "name": "Manish Malhotra 24H Kajal Eyeliner",
         "description": "Multitasking, Long-wearing Retractable Kajal Pencil | Made in Germany",
@@ -716,6 +739,7 @@
         "actualPrice": "₹ 850"
       },
       {
+        "id":9,
         "img": "https://files.myglamm.com/site-images/800x800/Grnte-(1).jpg",
         "name": "Clean Beauty Chamomile Liquid Eyeliner",
         "description": "Long-lasting, Nourishing Kajal & Eyeliner",
@@ -725,6 +749,7 @@
         "actualPrice": "₹ 850"
       },
       {
+        "id":10,
         "img": "https://files.myglamm.com/site-images/800x800/Slay-(1)-(1).jpg",
         "name": "LIT Matte Eyeliner Pencil Set Of 2",
         "description": "Precision Eyeliner with Intense Colour Payoff",
@@ -733,7 +758,7 @@
         "offerPrice": "₹ 534",
         "actualPrice": "₹ 890"
       },
-      {
+      {"id":11,
         "img": "https://files.myglamm.com/site-images/800x800/Slay-(1)-(1)_1.jpg",
         "name": "LIT Matte Eyeliner Pencil Set Of 3",
         "description": "Precision Eyeliner with Intense Colour Payoff",
@@ -743,6 +768,7 @@
         "actualPrice": "₹ 1335"
       },
       {
+        "id":12,
         "img": "https://files.myglamm.com/site-images/800x800/hunty.jpeg",
         "name": "LIT Stick-On Wing Liner",
         "description": "Glitter Wing Eyeliner Sticker",
@@ -752,6 +778,7 @@
         "actualPrice": "₹ 295"
       },
       {
+        "id":13,
         "img": "https://files.myglamm.com/site-images/800x800/Umber-(1)_2.jpg",
         "name": "SUPERFOODS Kajal Set Of 2",
         "description": "Long-Wear Smudge-Proof Kajal Infused With Natural Superfood Extracts",
@@ -761,6 +788,7 @@
         "actualPrice": "₹ 790"
       },
       {
+        "id":15,
         "img": "https://files.myglamm.com/site-images/800x800/Wheelie-(1).jpg",
         "name": "Wheelie",
         "description": "Precision Eyeliner and Stylist",
