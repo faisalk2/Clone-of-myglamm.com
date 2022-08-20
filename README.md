@@ -30,7 +30,8 @@
 
 5)footer - <a href='https://github.com/starydv7'>Pawan Yadav </a>
 
-Netlify Link - https://potent-voyaga-8716.netlify.app
+Netlify Link - <a href="https://potent-voyaga-8716.netlify.app">https://potent-voyaga-8716.netlify.app</a>
+medium Link - <a href="https://medium.com/@faisal.z.khan5538/clone-of-myglamm-com-4101b57e8448">https://medium.com/@faisal.z.khan5538/clone-of-myglamm-com-4101b57e8448</a>
 
 #Teck Stacks-
 
