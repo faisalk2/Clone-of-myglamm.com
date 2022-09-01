@@ -16,11 +16,11 @@ export const OfferBar = () => {
                 <AiFillGift cursor='pointer' style={{color: 'rgb(255,168,168)', border:'1px', fontSize: '24px'}} />
             </Box>
 
-            <Box fontFamily='Roboto' cursor='pointer' fontWeight='500' fontSize='13px' pl='13px' >  
+            <Box className='flat' fontFamily='Roboto' cursor='pointer' fontWeight='500' fontSize='13px' pl='13px' >  
                 FLAT 199 STORE
             </Box>
 
-            <Box fontFamily='Roboto' cursor='pointer' color= 'rgb(255,168,168)' fontWeight='500' fontSize='13px' pl='12px' >
+            <Box className='flat' fontFamily='Roboto' cursor='pointer' color= 'rgb(255,168,168)' fontWeight='500' fontSize='13px' pl='12px' >
                 SHOP NOW
             </Box>
             <Spacer/>

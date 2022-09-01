@@ -6,29 +6,39 @@
 .PageName{
     color: #333333;
     font-family:din-2014, sans-serif;
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 53px;
+    font-size: 15px;
+    font-weight: 50;
+    line-height: 40px;
   
   }
   .ProductPart{
-    padding-left: 10%;
-    padding-right: 10%;
+    /* padding-left: 10%;
+    padding-right: 10%; */
+    width: 70%;
+    margin: auto;
+    text-align: center;
   }
   .product_wraper{
    
       display: grid;
-      grid-template-columns: repeat(3, 230px);
+      grid-template-columns: repeat(3, 300px);
       grid-gap: 10px;
-      margin-left: 30px;
+      margin:auto;
+      padding:10px
   
   
   }
+  /* .center{
+    width: 80%;
+    text-align: end;
+    margin: auto;
+  } */
   .per_product_card{
-    padding: 15px;
+    /* padding: 15px; */
     border: 1px solid #dfe3e6;
-    border-radius: 10px;
-    height: 470px;
+    border-radius: 5px;
+    height: 400px;
+    text-align: center;
   }
   .per_product_card:hover{
     border: 1px solid teal;
@@ -45,16 +55,25 @@
   .name{
     color: #000000;
     font-family:din-2014, sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 29px;
+    /* font-size: 12px; */
+    /* font-weight: 20; */
+    /* line-height: 29px; */
+
+     font-size:5px;
+    white-space:nowrap; 
+    overflow:hidden;
+    text-overflow:ellipsis;  
   }
   .description{
     color: #000000;
     font-family:din-2014, sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 29px;
+    /* font-size: 15px; */
+    /* font-weight: 400; */
+    /* line-height: 29px; */
+         font-size:5px;
+     white-space:nowrap; 
+     overflow:hidden;
+    text-overflow:ellipsis;  
   }
   .shade_wrapper{
     height: 40px;
@@ -82,7 +101,7 @@
   .price_wrapper{
     color: #000000;
     font-family:din-2014, sans-serif;
-    font-size: 27px;
+    font-size: 18px;
     font-weight: 100;
     line-height: 39px;
     display: flex;

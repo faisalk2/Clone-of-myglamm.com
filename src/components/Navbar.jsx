@@ -33,7 +33,7 @@ console.log(isAuth);
     <OfferBar/>
     <Flex width='70%' direction='row' height='60px' margin='auto' pt='12px' >
       <Box> <Logo/> </Box>
-      <Box> <SearchBar/> </Box>
+      <Box className='searchbar' > <SearchBar/> </Box>
       <Spacer/>
       <Flex justifyContent={"space-between"} width="100px" >
 

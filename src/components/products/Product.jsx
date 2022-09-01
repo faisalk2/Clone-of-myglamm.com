@@ -17,7 +17,7 @@ const {type}=useParams();
 
   return (
     <>
-      <div className="PageName">{type}</div>
+      <div className="PageName">Showing {data.length} results of {type}</div>
       <div className="ProductPart">
         <div className="product_wraper">
           {data.map((e) => {
@@ -27,9 +27,9 @@ const {type}=useParams();
             <div className="per_prod_img">
               <img src={e.img} alt="" />
             </div>
-            <div>
+            <div className="center">
               <p className="name">{e.name}</p>
-              <p className="description">{e["short-des"]}</p>
+              <p className="description">{e.description}</p>
             </div>
             <div className="shade_wrapper">
               <div>

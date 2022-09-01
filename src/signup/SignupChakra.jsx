@@ -74,7 +74,7 @@ const [mobile,setMobile]=useState();
             </Flex>
           </ModalBody>
           <ModalFooter display={"flex"} alignItems={"center"}>
-            {mobile?.length>=10 && <OtpChakra cursor="pointer" onClickClose={onClose} />}
+            {mobile?.length==10 && <OtpChakra cursor="pointer" onClickClose={onClose} />}
              {/* <Button margin={"30px 0 0 0"}  width={"1000%"} color="white" bgColor="black" >
               Continue
             </Button>  */}

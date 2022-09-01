@@ -52,6 +52,8 @@ const handleSubmit=()=>{
       dispatch(loginuser(detail.fullName));
       onClickClose();
     }
+  }else{
+    alert("Please Enter Correct OTP")
   }
   
 }

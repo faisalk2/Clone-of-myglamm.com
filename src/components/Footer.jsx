@@ -368,7 +368,6 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div>
         <div id="footerBottom">
           <div id="sect1">
             <form action="">
@@ -422,7 +421,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-      </div>
+      
     </div>
   );
 };

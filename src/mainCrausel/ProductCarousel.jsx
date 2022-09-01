@@ -129,7 +129,7 @@ export default function ProductCarousel() {
                     </Text>
                   </Box>
                   <Flex justifyContent={"space-evenly"}>
-                    <Text fontWeight={"bold"}>
+                    <Text className='avgrating' fontWeight={"bold"}>
                       {item["avgrating"]}{" "}
                       <StarIcon fontSize={"17px"} color={"#ff9797"} />{" "}
                     </Text>
