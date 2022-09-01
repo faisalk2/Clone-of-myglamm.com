@@ -36,3 +36,29 @@ font-size:20px ;
     overflow:hidden;
     text-overflow:ellipsis;
 }
+
+@media only screen and (max-width: 600px) {
+    .carouselTotalRating,.avgrating{
+        display: none;
+    }
+    .carouselSubtitle{
+        font-size:10px;
+        white-space:nowrap;
+        /* overflow:hidden; */
+        text-overflow:ellipsis;
+    }
+    .singleProduct{
+        margin: auto;
+        height:250px;
+        background-color: white;
+        width:100%;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+        border-radius:6px;
+    }
+    .box{
+        padding:10px;
+        height:250px;
+        font-size: 10px;
+        border: 1px solid black 
+    }
+  }

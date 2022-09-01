@@ -100,3 +100,17 @@ justify-items: center;
 .youtube social{
   color: red;
 }
+@media only screen and (max-width: 600px) {
+  #footer{
+display:none;
+  }
+  #footerouter{
+    height: auto;
+  }
+  #footerBottom{
+    display: block;
+    margin-top: 800px;
+    margin-bottom: 50px;
+  }
+  
+}

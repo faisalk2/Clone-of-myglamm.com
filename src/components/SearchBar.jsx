@@ -59,7 +59,7 @@ if(e.keyCode===13)
 
 
   return (
-    <Box display="flex" border={"1px solid #e8e8e9"} borderRadius="5px" >
+    <Box className='media' display="flex" border={"1px solid #e8e8e9"} borderRadius="5px" >
    <Box width={"60px"} bgColor="#f5f5f6">
    <SearchIcon 
       backgroundColor='rgb(245,245,246)' 
