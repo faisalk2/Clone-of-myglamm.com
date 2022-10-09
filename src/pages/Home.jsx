@@ -127,11 +127,12 @@ const Home = () => {
             />
           </Text>
         </Box>
-        <Flex className="flexBoxForHome" direction={["column", "row"]}>
+        <Flex className="flexBoxForHome essentialBudget" direction={["column", "row"]}>
           {ESSENTIALBUDGETBUYS.map((item) => {
             return (
               <RouteLink to={`/product/${item.data}`}>
                 <Box
+                
                   width="400px"
                   bgPosition="center"
                   bgRepeat="no-repeat"
