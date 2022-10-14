@@ -1,66 +1,81 @@
 import { ArrowForwardIcon,CloseIcon } from "@chakra-ui/icons";
-import { Box,  Flex, Heading, Img, Text } from "@chakra-ui/react";
+import { Box,  Button,  Flex, Heading, Img, Input, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-// import {
-//   NumberInput,
-//   NumberInputField,
-//   NumberInputStepper,
-//   NumberIncrementStepper,
-//   NumberDecrementStepper,
-// } from "@chakra-ui/react";
-// import { FooterC } from "../components/FooterC";
+import { useDispatch, useSelector } from "react-redux";
+
 import { useNavigate } from "react-router-dom";
-// import { BiHomeHeart } from "react-icons/bi";
+import { datafrombag, detelebag } from "../reducer/AppReducer/action";
+import { DELETE_BAGDATA_SUCCESS } from "../reducer/AppReducer/type";
+
 
 export const MyBag = () => {
+  // let ab;
   const [data,setData]=useState([]);
-  let ab;
-  let data1 = JSON.parse(localStorage.getItem("bag"));
-  console.log(data1);
-  const navigate = useNavigate();
   const [total, setTotal] = useState(0);
-  // const [value, setValue] = useState(1);
-  // const Biomt = (e) => {
-  //   // setValue(e);
-  //   let x = e * total;
-  //   setTotal(x);
-  //   // console.log("x", x);
-  // };
-  useEffect(() => {
-    localStorage.setItem("total", JSON.stringify(total));
-  }, [total]);
-
-
-
+  const navigate = useNavigate();
+  const dispatch=useDispatch()
+  console.log(data)
+  const bag=useSelector((state)=>state.app.bag)
+  console.log(bag)
 
 const handleDelete=(ele)=>{
-  let data1 = JSON.parse(localStorage.getItem("bag"));
- ab=data1.filter((e,i)=>{
-  if(e.id!==ele.id)
-  {
-    return e
-  }
-})
-localStorage.setItem("bag",JSON.stringify(ab))
- data1 = JSON.parse(localStorage.getItem("bag"));
-setData(data1)
-let amount=data1.reduce((sum,ele)=>{
-  return sum+=ele.offerPrice
+  dispatch(detelebag(ele._id)).then(res=>{
+    if(res.type===DELETE_BAGDATA_SUCCESS)
+    {
+      dispatch(datafrombag())
+    }
+  })
+let amount=data.reduce((sum,ele)=>{
+  return sum+=ele.offerPrice*Number(ele.total)
   },0)
-   console.log(amount)
    setTotal(amount)
 }
 
+// useEffect(()=>{
+ 
+//  let amount=data.reduce((sum,ele)=>{
+//  return sum+=ele.offerPrice*Number(ele.total)
+//  },0)
+//   setTotal(amount)
+// },[])
+
+
+
+
+const Biomt=(e,id)=>{
+
+setData(data=>data.map((ele)=>
+ele._id===id?{...ele,total:Number(ele.total)+e}:ele
+))
+let amount=data.reduce((sum,ele)=>{
+  
+  return sum+=Number(ele.offerPrice)*Number(ele.total)
+  },0)
+   setTotal(amount)
+}
+
+
 useEffect(()=>{
-  setData(data1)
- let amount=data1.reduce((sum,ele)=>{
- return sum+=ele.offerPrice
- },0)
-  setTotal(amount)
-},[data1])
+  dispatch(datafrombag())
+  
+},[])
+useEffect(()=>{
+  setData(bag)
+},[setData,bag])
+useEffect(()=>{
+  let amount=data.reduce((sum,ele)=>{
+    return sum+=ele.offerPrice*Number(ele.total)
+    },0)
+     setTotal(amount)
+},[data,setTotal])
+
+useEffect(() => {
+  localStorage.setItem("total", JSON.stringify(total));
+}, [total]);
 
 
-if(data1.length===0)
+
+if(bag.length===0)
 {
   return(
     <Box padding={"100px"} >
@@ -70,15 +85,10 @@ if(data1.length===0)
   )
 }
 
-
-
-
-
-
   return (
     <Box mt="10" mb="10">
       <Text fontSize="3xl" paddingBottom={10}>
-        MY BAG({data1.length})
+        MY BAG({data.length})
       </Text>
       <Box
         bg="black"
@@ -103,7 +113,7 @@ if(data1.length===0)
       <Flex marginLeft="15%" gap="10" width="70%" mb="10" direction={"column"}>
        {data.map((ele,i)=>{
         return (
-          <Flex display={"flex"} textAlign={"center"} justifyContent="center" >
+          <Flex key={i} display={"flex"} textAlign={"center"} justifyContent="center" >
           <Box width="100px">
           {" "}
           <Img src={ele.img}/>
@@ -116,27 +126,15 @@ if(data1.length===0)
         ₹  {ele.offerPrice}
         </Box>
         <Box mt="3%" w="10%">
-          {/* <NumberInput
-            bg="lightgray"
-            w="20"
-            defaultValue={1}
-            onChange={(e) => Biomt(e)}
-            value={value}
-            min={1}
-            max={30}
-            clampValueOnBlur={false}
-          >
-            <NumberInputField />
-            <NumberInputStepper>
-              <NumberIncrementStepper />
-              <NumberDecrementStepper />
-            </NumberInputStepper>
-          </NumberInput> */}
-        
+     
+       <Flex> 
+        <Button disabled={ele.total==10} onClick={()=>Biomt(1,ele._id)} >+</Button>
+        <Text textAlign={"center"}margin="5px" >{ele.total}</Text>
+        <Button disabled={ele.total<=1}  onClick={()=>Biomt(-1,ele._id)} >-</Button></Flex>
         </Box>
        
-        <Box mt="4%">Total</Box>
-        <Box mt="4%" marginLeft={"5%"} onClick={()=>handleDelete(ele)} ><CloseIcon/></Box>
+        <Box padding={"0px 5px 0px 5px"}  mt="4%">₹  {ele.total*ele.offerPrice}</Box>
+        <Box mt="4%" marginLeft={"5%"} cursor="pointer" onClick={()=>handleDelete(ele)} ><CloseIcon/></Box>
           </Flex>
         )
        })}

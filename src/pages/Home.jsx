@@ -186,7 +186,7 @@ const Home = () => {
           <Flex width={"80%"} margin="auto" justifyContent={"space-between"}>
             {CATEGORIES.map((item) => {
               return (
-                <RouteLink to={`/product/${item.name}`}>
+                <RouteLink to={`/product/${item.name=="Skin" ? "skincare":"" || item.name=="Lips"? "lipstick":"" || item.name==="Hair"? "shampoo":"" || item.name==="Eyes"?"eyeliner":"skincare"}`}>
                   <Box>
                     <Box
                       borderRadius={"50%"}

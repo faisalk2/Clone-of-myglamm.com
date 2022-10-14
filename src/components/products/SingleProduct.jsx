@@ -4,31 +4,42 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Toster } from "../../chakracomponents/Toster";
-import { singledata } from "../../reducer/AppReducer/action";
+import { addtobag, singledata } from "../../reducer/AppReducer/action";
+import { ADDTOBAG_SUCCESS } from "../../reducer/AppReducer/type";
 import "./SingleProduct.css";
 
 
 let bagFromLocalStorage;
 const SingleProduct = () => {
 
-  const { id,type } = useParams();
+  const { _id,type } = useParams();
 
   useEffect(()=>{
   bagFromLocalStorage = JSON.parse(localStorage.getItem("bag")) || []
-  },[id])
+  },[_id])
   const dispatch = useDispatch();
-  const singleData = useSelector((state) => state.app.singleData);
+  let singleData = useSelector((state) => state.app.singleData);
 
+// console.log(singleData)
   useEffect(() => {
-    dispatch(singledata(Number(id),type))
-  }, [id,type,dispatch]);
+   
+    dispatch(singledata(_id,type))
+   
+  }, [_id,type,dispatch]);
 
 
   const addToBag = () => {
-    console.log("hello")
-    let a=[...bagFromLocalStorage,singleData]
-    localStorage.setItem("bag",JSON.stringify(a));
-  
+    // console.log("hello")
+    // let a=[...bagFromLocalStorage,singleData]
+    // localStorage.setItem("bag",JSON.stringify(a));
+    dispatch(addtobag(singleData)).then(res=>{
+      if(res.type===ADDTOBAG_SUCCESS)
+      {
+        alert("added to bag")
+      }else{
+        alert("sorry")
+      }
+    })
   };
 
   return (

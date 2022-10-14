@@ -1,10 +1,11 @@
-import { GETSINGLE_DATA_FAILURE, GETSINGLE_DATA_REQUEST, GETSINGLE_DATA_SUCCESS, GET_DATA_FAILURE, GET_DATA_REQUEST, GET_DATA_SUCCESS } from "./type"
+import { GETSINGLE_DATA_FAILURE, GETSINGLE_DATA_REQUEST, GETSINGLE_DATA_SUCCESS, GET_BAGDATA_SUCCESS, GET_DATA_FAILURE, GET_DATA_REQUEST, GET_DATA_SUCCESS } from "./type"
 
 const init={
     data:[],
     isLoading:false,
     isError:false,
-    singleData:{}
+    singleData:{},
+    bag:[]
 }
 
 
@@ -48,6 +49,11 @@ switch(type){
             ...state,
             isLoading:false,
             isError:true
+        }
+    }
+    case GET_BAGDATA_SUCCESS:{
+        return {
+            ...state,bag:payload
         }
     }
     default:{
