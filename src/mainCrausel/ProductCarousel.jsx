@@ -103,7 +103,7 @@ export default function ProductCarousel() {
       {/* Slider */}
       <Slider height="400px" {...settings} ref={(slider) => setSlider(slider)}>
         {carouselData.map((item, index) => (
-          <RouteLink to="/product/MAKEUP">
+          <RouteLink to="/product/makeup">
             <Box
           cursor={"pointer"}
           className="box"

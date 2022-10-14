@@ -22,6 +22,20 @@ import {
 import { ToastContainer,toast, Slide } from "react-toastify";
 import { Navigate, useNavigate } from "react-router-dom";
 const Payment = () => {
+const [details,setDetails]=useState({
+  name:"",
+  cardNumber:null,
+  month:null,
+  year:null,
+  cv:null
+})
+
+const handleChange=()=>{
+
+}
+
+
+
 const navigate=useNavigate()
   
   const [paisa, setPaisa] = useState(0);
@@ -113,6 +127,10 @@ const navigate=useNavigate()
                 >
                   <label width="300px">Card Number :</label>
                   <Input
+                  name="cardNumber"
+                  value={details.cardNumber}
+                  onChange={(e)=>handleChange(e)}
+                  type={"number"}
                     height={"60px"}
                     width={"80%"}
                     placeholder="xxxx-xxxx-xxxx-xxxx"
@@ -129,6 +147,10 @@ const navigate=useNavigate()
                   <label>Cardholder’s Name :</label>
 
                   <Input
+                    name="name"
+                    value={details.name}
+                    onChange={(e)=>handleChange(e)}
+                  type={"text"}
                     height={"60px"}
                     width={"80%"}
                     placeholder="eg. Jennifer Gomes"
@@ -143,6 +165,9 @@ const navigate=useNavigate()
                   <Box>
                     <label>Validity :</label>
                     <Input
+                      name="month"
+                      value={details.month}
+                      onChange={(e)=>handleChange(e)}
                       height={"60px"}
                       margin="0px 15px 0px 15px"
                       placeholder="MM"
@@ -150,6 +175,9 @@ const navigate=useNavigate()
                       bgColor={"#f7f7f7"}
                     ></Input>
                     <Input
+                      name="year"
+                      value={details.year}
+                      onChange={(e)=>handleChange(e)}
                       height={"60px"}
                       placeholder="YY"
                       width={"100px"}
@@ -159,6 +187,9 @@ const navigate=useNavigate()
                   <Box fontWeight={"bold"}>
                     <label>CV:</label>
                     <Input
+                      name="cv"
+                      value={details.cv}
+                      onChange={(e)=>handleChange(e)}
                       marginLeft="15px"
                       height={"60px"}
                       placeholder="***"
@@ -182,7 +213,7 @@ const navigate=useNavigate()
       >
         <Button width={"220px"}onClick={notify} color="white" height="60px" bgColor={"#595959"}>
           Pay ₹{paisa}.00
-        </Button>
+        </Button >
         <ToastContainer 
         position="top-center"
         autoClose={3000}
