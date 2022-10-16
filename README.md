@@ -28,7 +28,7 @@
 
 4)Navbar and footer - <a href='https://github.com/AdilAhmed976'>Adil Ahmed </a>
 
-5)footer - <a href='https://github.com/starydv7'>Pawan Yadav </a>
+
 
 Netlify Link - <a href="https://myglammprojectunit5.netlify.app/">https://myglammprojectunit5.netlify.app/</a>
 medium Link - <a href="https://medium.com/@faisal.z.khan5538/clone-of-myglamm-com-4101b57e8448">https://medium.com/@faisal.z.khan5538/clone-of-myglamm-com-4101b57e8448</a>
