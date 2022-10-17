@@ -89,7 +89,7 @@ const handleSubmit=()=>{
           <Image
             margin={" 20px 80px 20px 30%"}
             width="200px"
-            src="https://www.myglamm.com/images/mob-otp.png"
+            src="https://files.myglamm.com/site-images/original/MyGlamm-Logo_1.jpg"
           ></Image>
           <Text
             marginLeft="40%"

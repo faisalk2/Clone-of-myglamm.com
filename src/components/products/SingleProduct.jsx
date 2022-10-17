@@ -32,14 +32,7 @@ const SingleProduct = () => {
     // console.log("hello")
     // let a=[...bagFromLocalStorage,singleData]
     // localStorage.setItem("bag",JSON.stringify(a));
-    dispatch(addtobag(singleData)).then(res=>{
-      if(res.type===ADDTOBAG_SUCCESS)
-      {
-        alert("added to bag")
-      }else{
-        alert("sorry")
-      }
-    })
+    dispatch(addtobag(singleData))
   };
 
   return (
