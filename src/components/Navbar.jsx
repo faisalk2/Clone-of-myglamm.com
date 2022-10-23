@@ -2,30 +2,33 @@ import React from 'react'
 import { 
 Spacer,
 Flex,
-Box,
-Input } from '@chakra-ui/react'
+Box } from '@chakra-ui/react'
 import { Logo } from './Logo'
 import { MenuBar } from './MenuBar'
 import { SearchBar } from './SearchBar'
-import { ChevronDownIcon } from '@chakra-ui/icons'
-import { AiOutlineUser} from "react-icons/ai";
+
 import { FaShoppingBag } from "react-icons/fa";
 import { OfferBar } from './OfferBar' ;
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import '../App.css';
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+
 
 
 import SignupChakra from '../signup/SignupChakra'
-import { useSelector } from 'react-redux/es/exports'
+import { useDispatch, useSelector } from 'react-redux/es/exports'
 import Profile from '../signup/Profile'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { datafrombag } from '../reducer/AppReducer/action'
 
 const Navbar = () => {
-  
+  let bag=useSelector((state)=>state.app.bag)
+  const dispatch=useDispatch();
   const navigate=useNavigate()
 const {isAuth}=useSelector((state)=>state.auth);
-console.log(isAuth);
+useEffect(()=>{
+  dispatch(datafrombag())
+},[dispatch])
 
 
   return   (
@@ -40,7 +43,7 @@ console.log(isAuth);
       {/* <Box  cursor={"pointer"} > <FaShoppingBag style={{color: 'black', border:'1px', fontSize: '25px'}}/> </Box>
       <Box cursor={"pointer"} > <AiOutlineUser style={{color: 'black', fontSize: '25px'}}/> </Box> */}
 
-      <Box onClick={()=>navigate("/mybag")}cursor={"pointer"} > <FaShoppingBag style={{color: 'black', border:'1px', fontSize: '25px'}}/> </Box>
+      <Box onClick={()=>navigate("/mybag")}cursor={"pointer"} display="flex" > <FaShoppingBag style={{color: 'black', border:'1px', fontSize: '25px'}}/><span style={{"position":"relative","right":"10px","backgroundColor":"#fee8e8","border-radius":"50%","height":"20px","width":"20px","textAlign":"center"}}  >{bag.length}</span> </Box>
       <Box cursor={"pointer"} > {isAuth ? <Profile/>:<SignupChakra/>} </Box>
 
       </Flex>

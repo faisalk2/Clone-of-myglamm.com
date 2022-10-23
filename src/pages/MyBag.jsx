@@ -1,5 +1,5 @@
 import { ArrowForwardIcon,CloseIcon } from "@chakra-ui/icons";
-import { Box,  Button,  Flex, Heading, Img, Input, Text } from "@chakra-ui/react";
+import { Box,  Button,  Flex, Heading, Img,  Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -16,7 +16,7 @@ export const MyBag = () => {
   const dispatch=useDispatch()
   console.log(data)
   const bag=useSelector((state)=>state.app.bag)
-  console.log(bag)
+ 
 
 const handleDelete=(ele)=>{
   dispatch(detelebag(ele._id)).then(res=>{
@@ -58,7 +58,7 @@ let amount=data.reduce((sum,ele)=>{
 useEffect(()=>{
   dispatch(datafrombag())
   
-},[])
+},[dispatch])
 useEffect(()=>{
   setData(bag)
 },[setData,bag])
@@ -71,6 +71,7 @@ useEffect(()=>{
 
 useEffect(() => {
   localStorage.setItem("total", JSON.stringify(total));
+ 
 }, [total]);
 
 
@@ -128,7 +129,7 @@ if(bag.length===0)
         <Box mt="3%" w="10%">
      
        <Flex> 
-        <Button disabled={ele.total==10} onClick={()=>Biomt(1,ele._id)} >+</Button>
+        <Button disabled={ele.total===10} onClick={()=>Biomt(1,ele._id)} >+</Button>
         <Text textAlign={"center"}margin="5px" >{ele.total}</Text>
         <Button disabled={ele.total<=1}  onClick={()=>Biomt(-1,ele._id)} >-</Button></Flex>
         </Box>
