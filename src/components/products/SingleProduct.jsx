@@ -27,13 +27,13 @@ const SingleProduct = () => {
 
 
   const addToBag = () => {
+
     dispatch(addtobag(singleData)).then(res=>{
       if(res.type===ADDTOBAG_SUCCESS)
       {
           dispatch(datafrombag())
       }
     })
-    
   };
 
 

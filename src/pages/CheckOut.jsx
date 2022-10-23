@@ -5,12 +5,16 @@ import { useTheme } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import "./CheckOut.css";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const CheckOut = () => {
   const theme = useTheme();
+  const [data,setData]=useState([])
   const navigate = useNavigate();
   const [paisa, setPaisa] = useState(0);
+  const bag=useSelector((state)=>state.app.bag)
   useEffect(() => {
+    setData(bag)
     let x = JSON.parse(localStorage.getItem("total"));
     setPaisa(x);
   }, []);
@@ -44,21 +48,22 @@ export const CheckOut = () => {
             </Flex>
           </Box>
           <Text fontWeight="500">YOUR ORDERS</Text>
-        <Flex border='1px solid lightgray' mt='5' justifyContent='center' ml='145' w='70%'>  <Box width="100px">
+      {data.map((ele,i)=>(
+          <Flex key={i} border='1px solid lightgray' mt='5' justifyContent='center' ml='145' w='70%'>  <Box width="100px">
           {" "}
-          <Img pr='2'borderRight="1px solid lightgray" src="https://files.myglamm.com/site-images/original/Twstr-(1).jpg" />
+          <Img pr='2'borderRight="1px solid lightgray" src={ele.img} />
         </Box>
         <Box mt="4%" w="40%"pr='2' borderRight="1px solid lightgray">
           {" "}
-          TWIST IT MASCARA
+         {ele.name}
         </Box>
         <Box mt="4%" w="10%" ml="5%"pr='2' borderRight="1px solid lightgray">
-        ₹ 112
+        ₹  {ele.offerPrice}
         </Box>
-        <Box mt="3%" w="10%">
-         
-        </Box>
-        <Box mt="4%" fontWeight="600">Total :{paisa}</Box></Flex>
+        
+        </Flex>
+      ))
+    }
         </Box>
 
         <Box

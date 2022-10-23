@@ -9,7 +9,6 @@ import { DELETE_BAGDATA_SUCCESS } from "../reducer/AppReducer/type";
 
 
 export const MyBag = () => {
-  // let ab;
   const [data,setData]=useState([]);
   const [total, setTotal] = useState(0);
   const navigate = useNavigate();

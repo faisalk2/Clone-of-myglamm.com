@@ -49,7 +49,7 @@ const [mobile,setMobile]=useState();
           <Image
             margin={" 20px 100px 20px 100px"}
             width="200px"
-            src="https://www.myglamm.com/images/myglamm-logo.png"
+            src="https://files.myglamm.com/site-images/original/MyGlamm-Logo_1.jpg"
           ></Image>
           <Text
             marginLeft="80px"

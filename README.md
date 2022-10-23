@@ -28,11 +28,14 @@
 
 4)Navbar and footer - <a href='https://github.com/AdilAhmed976'>Adil Ahmed </a>
 
-5)footer - <a href='https://github.com/starydv7'>Pawan Yadav </a>
-
-Netlify Link - https://potent-voyaga-8716.netlify.app
 
 
+Netlify Link - <a href="https://myglammprojectunit5.netlify.app/">https://myglammprojectunit5.netlify.app/</a>
+medium Link - <a href="https://medium.com/@faisal.z.khan5538/clone-of-myglamm-com-4101b57e8448">https://medium.com/@faisal.z.khan5538/clone-of-myglamm-com-4101b57e8448</a>
+
+#Teck Stacks-
+
+React, Redux, Chakra-Ui, HTML, CSS, Javascript, GitHub
 
 ![image](https://user-images.githubusercontent.com/99542723/180635982-c1c48b2c-fc50-4a0f-93fd-3e3fce86d860.png)
 
