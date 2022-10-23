@@ -45,7 +45,7 @@ const {type}=useParams();
               </div>
               <p className="count">{e.count}</p>
             </div>
-            <div className="price_wrapper">
+            <div className={e.actualPrice?"price_wrapper" :"center" }>
               <p>₹ {e["offerPrice"]}</p>
               <p className="mrp">
               {e.actualPrice? <s>₹ {e.actualPrice}</s>:""}

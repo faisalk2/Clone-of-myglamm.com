@@ -1,22 +1,20 @@
-import { Button } from "@chakra-ui/react";
+import {  Button } from "@chakra-ui/react";
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Toster } from "../../chakracomponents/Toster";
-import { addtobag, singledata } from "../../reducer/AppReducer/action";
+import { addtobag, datafrombag, singledata } from "../../reducer/AppReducer/action";
 import { ADDTOBAG_SUCCESS } from "../../reducer/AppReducer/type";
 import "./SingleProduct.css";
 
 
-let bagFromLocalStorage;
+// let bagFromLocalStorage;
 const SingleProduct = () => {
 
   const { _id,type } = useParams();
 
-  useEffect(()=>{
-  bagFromLocalStorage = JSON.parse(localStorage.getItem("bag")) || []
-  },[_id])
+ 
   const dispatch = useDispatch();
   let singleData = useSelector((state) => state.app.singleData);
 
@@ -29,11 +27,15 @@ const SingleProduct = () => {
 
 
   const addToBag = () => {
-    // console.log("hello")
-    // let a=[...bagFromLocalStorage,singleData]
-    // localStorage.setItem("bag",JSON.stringify(a));
-    dispatch(addtobag(singleData))
+
+    dispatch(addtobag(singleData)).then(res=>{
+      if(res.type===ADDTOBAG_SUCCESS)
+      {
+          dispatch(datafrombag())
+      }
+    })
   };
+
 
   return (
     <div className="container">
@@ -60,6 +62,7 @@ const SingleProduct = () => {
         >
           <Toster/>
         </Button>
+        
       </div>
     </div>
   );

@@ -108,6 +108,15 @@
     display: flex;
     justify-content: space-evenly;
   }
+  .center{
+    color: #000000;
+    font-family:din-2014, sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 39px;
+    display: flex;
+    justify-content: center;
+  }
   
   s{
     color: #9b9b9b;
