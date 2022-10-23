@@ -1,5 +1,5 @@
 import { ArrowForwardIcon,CloseIcon } from "@chakra-ui/icons";
-import { Box,  Button,  Flex, Heading, Img,  Text } from "@chakra-ui/react";
+import { Alert, AlertIcon, Box,  Button,  Flex, Heading, Img,  Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -9,6 +9,7 @@ import { DELETE_BAGDATA_SUCCESS } from "../reducer/AppReducer/type";
 
 
 export const MyBag = () => {
+  const [remove,setRemove]=useState(false)
   const [data,setData]=useState([]);
   const [total, setTotal] = useState(0);
   const navigate = useNavigate();
@@ -22,6 +23,10 @@ const handleDelete=(ele)=>{
     if(res.type===DELETE_BAGDATA_SUCCESS)
     {
       dispatch(datafrombag())
+      setRemove(true);
+      setTimeout(()=>{
+        setRemove(false)
+      },3000)
     }
   })
 let amount=data.reduce((sum,ele)=>{
@@ -87,6 +92,12 @@ if(bag.length===0)
 
   return (
     <Box mt="10" mb="10">
+      {remove && <Box width={"50%"} margin="auto" >
+      <Alert status='success'>
+    <AlertIcon />
+    Item Remove From The Bag
+  </Alert>
+      </Box>}
       <Text fontSize="3xl" paddingBottom={10}>
         MY BAG({data.length})
       </Text>

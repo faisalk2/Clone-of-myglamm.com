@@ -17,6 +17,7 @@ import NotFound from './NotFound';
 import Navbarpayment from '../components/NavbarPayment';
 import ProductItem from '../components/products/Product';
 import SingleProduct from '../components/products/SingleProduct';
+import Totoside from '../components/Totoside';
 
 
 
@@ -38,7 +39,7 @@ const AllRoutes = () => {
             <Route path='*' element={<><Navbar/><NotFound/><Footer/></>}></Route>
             <Route path='/payment' element={<><Navbarpayment/><Payment/></>}/>
         </Routes>
-  
+  <Totoside  />
     </Box>
   )
 }
