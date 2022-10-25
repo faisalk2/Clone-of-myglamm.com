@@ -1,4 +1,4 @@
-import { ADDTOBAG_FAILURE, ADDTOBAG_REQUEST, ADDTOBAG_SUCCESS, DELETE_BAGDATA_FAILURE, DELETE_BAGDATA_REQUEST, DELETE_BAGDATA_SUCCESS, GETSINGLE_DATA_FAILURE, GETSINGLE_DATA_REQUEST, GETSINGLE_DATA_SUCCESS, GET_BAGDATA_FAILURE, GET_BAGDATA_REQUEST, GET_BAGDATA_SUCCESS, GET_DATA_FAILURE, GET_DATA_REQUEST, GET_DATA_SUCCESS } from "./type"
+import { ADDTOBAG_FAILURE, ADDTOBAG_REQUEST, ADDTOBAG_SUCCESS, DELETE_BAGDATA_FAILURE, DELETE_BAGDATA_REQUEST, DELETE_BAGDATA_SUCCESS, GETSINGLE_DATA_FAILURE, GETSINGLE_DATA_REQUEST, GETSINGLE_DATA_SUCCESS, GET_BAGDATA_FAILURE, GET_BAGDATA_REQUEST, GET_BAGDATA_SUCCESS, GET_DATA_FAILURE, GET_DATA_REQUEST, GET_DATA_SUCCESS, UPDATE_BAGDATA_FAILURE, UPDATE_BAGDATA_REQUEST, UPDATE_BAGDATA_SUCCESS } from "./type"
 import axios from 'axios';
 
 
@@ -15,9 +15,9 @@ return axios.get(`https://myglamm.herokuapp.com?cetegory=${name}&limit=${page}`)
 
 export const singledata=(_id,name)=>(dispatch)=>{
     console.log(_id)
-    // console.log(id,name)
-    dispatch({type:GETSINGLE_DATA_REQUEST});
-    return axios.get(`https://myglamm.herokuapp.com?cetegory=${name}&_id=${_id}`).then((res)=>dispatch({type:GETSINGLE_DATA_SUCCESS,payload:res.data})).catch(err=>dispatch({type:GETSINGLE_DATA_FAILURE}));
+    console.log(_id,name)
+    dispatch({type:GETSINGLE_DATA_REQUEST})
+    return axios.get(`https://myglamm.herokuapp.com?_id=${_id}`).then(res=>dispatch({type:GETSINGLE_DATA_SUCCESS,payload:res.data})).catch(err=>dispatch({type:GETSINGLE_DATA_FAILURE}));
     }
 
     export const addtobag=(payload)=>(dispatch)=>{
@@ -41,4 +41,11 @@ export const singledata=(_id,name)=>(dispatch)=>{
         return  axios.delete(`https://myglamm.herokuapp.com/bag/delete/${_id}`)
         .then(res=>dispatch({type:DELETE_BAGDATA_SUCCESS}))
         .catch(err=>dispatch({type:DELETE_BAGDATA_FAILURE}))
+    }
+
+    export const update=(id,payload)=>(dispatch)=>{
+        dispatch({type:UPDATE_BAGDATA_REQUEST});
+        return axios.patch(`https://myglamm.herokuapp.com/bag/update/${id}`,payload)
+        .then(res=>dispatch({type:UPDATE_BAGDATA_SUCCESS}))
+        .catch(err=>dispatch({type:UPDATE_BAGDATA_FAILURE}))
     }

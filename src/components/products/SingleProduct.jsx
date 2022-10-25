@@ -18,12 +18,8 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
   let singleData = useSelector((state) => state.app.singleData);
 
-// console.log(singleData)
-  useEffect(() => {
-   
-    dispatch(singledata(_id,type))
-   
-  }, [_id,type,dispatch]);
+console.log(singleData)
+ 
 
 
   const addToBag = () => {
@@ -35,7 +31,9 @@ const SingleProduct = () => {
       }
     })
   };
-
+  useEffect(() => {
+        dispatch(singledata(_id))
+   }, [_id,dispatch]);
 
   return (
     <div className="container">

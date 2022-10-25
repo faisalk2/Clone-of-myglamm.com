@@ -11,8 +11,6 @@ const {type}=useParams();
   // const [products, setProducts] = useState([]);
   const dispatch=useDispatch()
   const {data}=useSelector((state)=>state.app)
-  console.log(data);
-  console.log(type);
   const handlePage=()=>{
     setPage((item)=>item+3)
   }

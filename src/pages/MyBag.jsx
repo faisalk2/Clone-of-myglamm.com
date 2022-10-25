@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useNavigate } from "react-router-dom";
-import { datafrombag, detelebag } from "../reducer/AppReducer/action";
-import { DELETE_BAGDATA_SUCCESS } from "../reducer/AppReducer/type";
+import { datafrombag, detelebag, update } from "../reducer/AppReducer/action";
+import { DELETE_BAGDATA_SUCCESS, UPDATE_BAGDATA_SUCCESS } from "../reducer/AppReducer/type";
 
 
 export const MyBag = () => {
@@ -48,14 +48,29 @@ let amount=data.reduce((sum,ele)=>{
 
 const Biomt=(e,id)=>{
 
-setData(data=>data.map((ele)=>
-ele._id===id?{...ele,total:Number(ele.total)+e}:ele
-))
-let amount=data.reduce((sum,ele)=>{
+// setData(data=>data.map((ele)=>
+// ele._id===id?{...ele,total:Number(ele.total)+e}:ele
+// ))
+// let amount=data.reduce((sum,ele)=>{
   
-  return sum+=Number(ele.offerPrice)*Number(ele.total)
-  },0)
-   setTotal(amount)
+//   return sum+=Number(ele.offerPrice)*Number(ele.total)
+//   },0)
+//    setTotal(amount)
+let da=data.filter((ele)=>{
+  if(ele._id===id)
+  {
+    return ele
+  }
+})
+
+let single={...da[0],total:da[0].total+e}
+console.log(single);
+dispatch(update(id,single)).then(res=>{
+  if(res.type===UPDATE_BAGDATA_SUCCESS)
+  {
+    dispatch(datafrombag())
+  }
+})
 }
 
 
