@@ -1,32 +1,30 @@
 #Our Plans —
 
 
-1)Breaking the whole project into the smallest divisions according to skills of individual.
+1)Breaking the whole project into the smallest divisions according to the skills of the individual.
 
 
-2)Setting up the particular time for particular module.
+2)Setting up a particular time for a particular module.
 
 
-3)Helping team mate when he/she is not able to finish the task within a specified time.
+3)Helping a teammate when he/she is not able to finish the task within a specified time.
 
 
 4)Proper commits in Github.
 
 
-5)Along with every standup forming meeting’s as needed.
+5)Along with every standup forming meetings as needed.
 
 
 
 
-#We were team of 4 have done 
+#We were a team of 3 have done 
 
-1)Homepage -<a href='https://github.com/faisalk2' >Faisal Khan</a>
+1)Login ,SignUp ,Backend and Homepage - <a href='https://github.com/faisalk2' >Faisal Khan</a>
 
-2)Login ,SignUp ,Backend - <a href='https://github.com/faisalk2' >Faisal Khan</a>
+2)Bag,checkout,address and payment - <a href='https://github.com/Santanu55555'>Santanu Mohapatra</a>
 
-3)Bag,checkout,address and payment - <a href='https://github.com/Santanu55555'>Santanu Mohapatra</a>
-
-4)Navbar and footer - <a href='https://github.com/AdilAhmed976'>Adil Ahmed </a>
+3)Navbar and footer - <a href='https://github.com/AdilAhmed976'>Adil Ahmed </a>
 
 
 
@@ -35,7 +33,7 @@ medium Link - <a href="https://medium.com/@faisal.z.khan5538/clone-of-myglamm-co
 
 #Teck Stacks-
 
-React, Redux, Chakra-Ui, HTML, CSS, Javascript, GitHub
+React, Redux, Chakra-Ui, HTML, CSS, Javascript, GitHub, Express, Nodejs, MongoDB
 
 ![image](https://user-images.githubusercontent.com/99542723/180635982-c1c48b2c-fc50-4a0f-93fd-3e3fce86d860.png)
 
