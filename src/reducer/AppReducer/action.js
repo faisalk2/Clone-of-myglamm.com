@@ -14,15 +14,13 @@ return axios.get(`https://myglamm.herokuapp.com?cetegory=${name}&limit=${page}`)
 
 
 export const singledata=(_id,name)=>(dispatch)=>{
-    console.log(_id)
-    // console.log(id,name)
     dispatch({type:GETSINGLE_DATA_REQUEST});
     return axios.get(`https://myglamm.herokuapp.com?cetegory=${name}&_id=${_id}`).then((res)=>dispatch({type:GETSINGLE_DATA_SUCCESS,payload:res.data})).catch(err=>dispatch({type:GETSINGLE_DATA_FAILURE}));
     }
 
     export const addtobag=(payload)=>(dispatch)=>{
         dispatch({type:ADDTOBAG_REQUEST})
-       return axios.post("https://myglamm.herokuapp.com/bag/post",payload)
+       return axios.post("https://myglamserver-production.up.railway.app/bag/post",payload)
        .then(res=>{
         return dispatch({type:ADDTOBAG_SUCCESS})
        }).catch(err=>dispatch({type:ADDTOBAG_FAILURE}))
@@ -30,7 +28,7 @@ export const singledata=(_id,name)=>(dispatch)=>{
 
     export const datafrombag=()=>(dispatch)=>{
         dispatch({type:GET_BAGDATA_REQUEST});
-      return  axios.get("https://myglamm.herokuapp.com/bag")
+      return  axios.get("https://myglamserver-production.up.railway.app/bag")
       .then(res=>dispatch({type:GET_BAGDATA_SUCCESS,payload:res.data}))
       .catch(err=>dispatch({type:GET_BAGDATA_FAILURE}))
     }
@@ -38,7 +36,7 @@ export const singledata=(_id,name)=>(dispatch)=>{
     export const detelebag=(_id)=>(dispatch)=>{
 
         dispatch({type:DELETE_BAGDATA_REQUEST});
-        return  axios.delete(`https://myglamm.herokuapp.com/bag/delete/${_id}`)
+        return  axios.delete(`https://myglamserver-production.up.railway.app/bag/delete/${_id}`)
         .then(res=>dispatch({type:DELETE_BAGDATA_SUCCESS}))
         .catch(err=>dispatch({type:DELETE_BAGDATA_FAILURE}))
     }
