@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Button, Spinner } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -16,7 +16,7 @@ const SingleProduct = () => {
   const { _id, type } = useParams();
 
   const dispatch = useDispatch();
-  let singleData = useSelector((state) => state.app.singleData);
+  let { singleData, isLoading } = useSelector((state) => state.app);
 
   const addToBag = () => {
     dispatch(addtobag(singleData)).then((res) => {
@@ -29,6 +29,13 @@ const SingleProduct = () => {
   useEffect(() => {
     dispatch(singledata(_id));
   }, [_id, dispatch]);
+
+  if (isLoading)
+    return (
+      <div style={{ padding: "100px" }}>
+        <Spinner size="xl" />
+      </div>
+    );
 
   return (
     <div className="container">
