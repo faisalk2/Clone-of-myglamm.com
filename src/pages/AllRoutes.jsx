@@ -26,9 +26,9 @@ const AllRoutes = () => {
           path="/"
           element={
             <>
-              {" "}
               <Navbar />
-              <Home /> <Footer />
+              <Home />
+              <Footer />
             </>
           }
         ></Route>
