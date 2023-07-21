@@ -7,10 +7,11 @@ import {
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { Button, Input } from "@chakra-ui/react";
 
 const Footer = () => {
   return (
-    <div >
+    <div className="footerMainContainer">
       <div id="footer">
         <ul>
           <li>
@@ -371,15 +372,20 @@ const Footer = () => {
       </div>
       <div id="footerBottom">
         <div id="sect1">
-          <form action="">
-            <label for="">SUBSCRIBE FOR MYGLAMM EMAILS</label>
+            <div>SUBSCRIBE FOR MYGLAMM EMAILS</div>
             <br />
-            <input type="text" placeholder="Please enter valid email ID" />
-            <button>SUBSCRIBE NOW</button>
-          </form>
+            <div style={{ display: "flex" }}>
+              <Input type="text" placeholder="Please enter valid email ID" />
+              <Button
+                style={{ display: "inline-block", width: "300px" }}
+                bgColor={"black"}
+                color={"white"}
+              >
+                SUBSCRIBE NOW
+              </Button>
+            </div>
         </div>
-        <div className="social">
-          <p className="social-container">
+          <div className="social-container social">
             <a
               href="https://www.youtube.com/c/jamesqquick"
               className="youtube social"
@@ -401,8 +407,7 @@ const Footer = () => {
             <a href="https://wwww.twitter.com" className="twitter social">
               <FontAwesomeIcon icon={faTwitter} size="2x" />
             </a>
-          </p>
-        </div>
+          </div>
         <div id="sect2">
           <label for="">EXPERIENCE THE MYGLAMM MOBILE APP</label>
           <br />
