@@ -7,9 +7,10 @@ import {
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+
 const Footer = () => {
   return (
-    <div id="footerouter">
+    <div >
       <div id="footer">
         <ul>
           <li>
@@ -23,17 +24,17 @@ const Footer = () => {
           </li>
           <li>
             <a href="/buy/bath-and-body/body/body-moisturizers">
-              Body Moisurizers
+              Body Moisturizers
             </a>
           </li>
           <li>
-            <a href="/buy/bath-and-body/body/soaps">Soaps</a>
+            <a href="/buy/bath-and-body/body/soaps"></a>
           </li>
           <li>
             <a href="/buy/bath-and-body/body/hand-care">Hand Care</a>
           </li>
           <li>
-            <a href="/buy/bath-and-body/body/foot-care">Foot Care</a>
+            <a href="/buy/bath-and-body/body/foot-care"></a>
           </li>
           <li>
             <a href="/buy/makeup/bath-and-body/sanitizing-kits">
@@ -59,7 +60,7 @@ const Footer = () => {
             <a href="/buy/sanitizing-care/body/face-washes">Face Washes</a>
           </li>
           <li>
-            <a href="/buy/sanitizing-care/body/shower-gels">Shower Gels</a>
+            <a href="/buy/sanitizing-care/body/shower-gels"></a>
           </li>
           <li>
             <a href="/buy/sanitizing-care/body/body-moisturizers">
@@ -120,7 +121,7 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="/buy/skincare/moisturiser">Moisturiser</a>
+            <a href="/buy/skincare/moisturiser">Moisturizer</a>
           </li>
           <li>
             <a href="/buy/skincare/cleanser/face-wash">Face Wash</a>
@@ -152,7 +153,7 @@ const Footer = () => {
           </li>
           <li>
             <a href="/buy/skincare/moisturizer/moisturising-gel">
-              Moisturising Gel
+              Moisturizing Gel
             </a>
           </li>
           <li>
@@ -368,60 +369,59 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-        <div id="footerBottom">
-          <div id="sect1">
-            <form action="">
-              <label for="">SUBSCRIBE FOR MYGLAMM EMAILS</label>
-              <br />
-              <input type="text" placeholder="Please enter valid email ID" />
-              <button>SUBSCRIBE NOW</button>
-            </form>
-          </div>
-          <div className="social">
-            <p className="social-container">
-              <a
-                href="https://www.youtube.com/c/jamesqquick"
-                className="youtube social"
-              >
-                <FontAwesomeIcon icon={faYoutube} size="2x" />
-              </a>
-              <a
-                href="https://www.facebook.com/learnbuildteach/"
-                className="facebook social"
-              >
-                <FontAwesomeIcon icon={faFacebook} size="2x" />
-              </a>
-              <a
-                href="http://www.instagram.com/larnbuildteach"
-                className="instagram social"
-              >
-                <FontAwesomeIcon icon={faInstagram} size="2x" />
-              </a>
-              <a href="https://wwww.twitter.com" className="twitter social">
-                <FontAwesomeIcon icon={faTwitter} size="2x" />
-              </a>
-            </p>
-          </div>
-          <div id="sect2">
-            <label for="">EXPERIENCE THE MYGLAMM MOBILE APP</label>
+      <div id="footerBottom">
+        <div id="sect1">
+          <form action="">
+            <label for="">SUBSCRIBE FOR MYGLAMM EMAILS</label>
             <br />
-            <a href="">
-              <img
-                src="https://www.myglamm.com/images/iosStore.png"
-                alt=""
-                id="img1"
-              />
-            </a>
-            <a href="">
-              <img
-                src="https://www.myglamm.com/images/playStore.png"
-                alt=""
-                id="img2"
-              />
-            </a>
-          </div>
+            <input type="text" placeholder="Please enter valid email ID" />
+            <button>SUBSCRIBE NOW</button>
+          </form>
         </div>
-      
+        <div className="social">
+          <p className="social-container">
+            <a
+              href="https://www.youtube.com/c/jamesqquick"
+              className="youtube social"
+            >
+              <FontAwesomeIcon icon={faYoutube} size="2x" />
+            </a>
+            <a
+              href="https://www.facebook.com/learnbuildteach/"
+              className="facebook social"
+            >
+              <FontAwesomeIcon icon={faFacebook} size="2x" />
+            </a>
+            <a
+              href="http://www.instagram.com/larnbuildteach"
+              className="instagram social"
+            >
+              <FontAwesomeIcon icon={faInstagram} size="2x" />
+            </a>
+            <a href="https://wwww.twitter.com" className="twitter social">
+              <FontAwesomeIcon icon={faTwitter} size="2x" />
+            </a>
+          </p>
+        </div>
+        <div id="sect2">
+          <label for="">EXPERIENCE THE MYGLAMM MOBILE APP</label>
+          <br />
+          <a href="">
+            <img
+              src="https://files.myglamm.com/site-images/original/iosStore.png"
+              alt=""
+              id="img1"
+            />
+          </a>
+          <a href="">
+            <img
+              src="https://files.myglamm.com/site-images/original/playStore.png"
+              alt=""
+              id="img2"
+            />
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,39 +1,34 @@
-import {  Button } from "@chakra-ui/react";
-
+import { Button } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Toster } from "../../chakracomponents/Toster";
-import { addtobag, datafrombag, singledata } from "../../reducer/AppReducer/action";
+import {
+  addtobag,
+  datafrombag,
+  singledata,
+} from "../../reducer/AppReducer/action";
 import { ADDTOBAG_SUCCESS } from "../../reducer/AppReducer/type";
 import "./SingleProduct.css";
 
-
 // let bagFromLocalStorage;
 const SingleProduct = () => {
+  const { _id, type } = useParams();
 
-  const { _id,type } = useParams();
-
- 
   const dispatch = useDispatch();
   let singleData = useSelector((state) => state.app.singleData);
 
-console.log(singleData)
- 
-
-
   const addToBag = () => {
-
-    dispatch(addtobag(singleData)).then(res=>{
-      if(res.type===ADDTOBAG_SUCCESS)
-      {
-          dispatch(datafrombag())
+    dispatch(addtobag(singleData)).then((res) => {
+      if (res.type === ADDTOBAG_SUCCESS) {
+        dispatch(datafrombag());
       }
-    })
+    });
   };
+
   useEffect(() => {
-        dispatch(singledata(_id))
-   }, [_id,dispatch]);
+    dispatch(singledata(_id));
+  }, [_id, dispatch]);
 
   return (
     <div className="container">
@@ -53,14 +48,9 @@ console.log(singleData)
           <p className="pDes">(MRP incl. of all taxes)</p>
         </div>
 
-        <Button
-          bgColor={"black"}
-          color={"white"}
-          onClick={addToBag}
-        >
-          <Toster/>
+        <Button bgColor={"black"} color={"white"} onClick={addToBag}>
+          <Toster />
         </Button>
-        
       </div>
     </div>
   );

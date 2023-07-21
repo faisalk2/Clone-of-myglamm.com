@@ -4,7 +4,6 @@ import {
   ModalOverlay,
   ModalContent,
   useDisclosure,
-  ModalHeader,
   ModalCloseButton,
   ModalBody,
   Select,
@@ -17,23 +16,22 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { AiOutlineUser} from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 import OtpChakra from "./OtpChakra";
+
 function SignupChakra() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-const [mobile,setMobile]=useState();
- 
-
-
-
+  const [mobile, setMobile] = useState();
 
   return (
     <>
-      {/* <Button  onClick={onOpen}></Button> */}
-      <AiOutlineUser onClick={onOpen} style={{color: 'black', fontSize: '25px'}}/>
+      <AiOutlineUser
+        onClick={onOpen}
+        style={{ color: "black", fontSize: "25px" }}
+      />
       <Modal
-      width="500px"
-      border="1px solid red"
+        width="500px"
+        border="1px solid red"
         isCentered
         onClose={onClose}
         isOpen={isOpen}
@@ -70,16 +68,27 @@ const [mobile,setMobile]=useState();
                 <option value="44">UK +44</option>
                 <option value="1">US +1</option>
               </Select>
-              <Input type="text" value={mobile}  onChange={(e)=>setMobile(e.target.value)} placeholder="Mobile Number" />
+              <Input
+                type="text"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+                placeholder="Mobile Number"
+              />
             </Flex>
           </ModalBody>
           <ModalFooter display={"flex"} alignItems={"center"}>
-            {mobile?.length==10 && <OtpChakra cursor="pointer" onClickClose={onClose} />}
-             {/* <Button margin={"30px 0 0 0"}  width={"1000%"} color="white" bgColor="black" >
-              Continue
-            </Button>  */}
+            {mobile?.length == 10 && (
+              <OtpChakra cursor="pointer" onClickClose={onClose} />
+            )}
           </ModalFooter>
-          <Flex><Text fontSize={"12px"} margin={"0px 0px 20px 60px"} >By Signing up you agree to our <span  style={{fontWeight:"bold", cursor:"pointer"}} >Term {"&"} Conditions</span></Text></Flex>
+          <Flex>
+            <Text fontSize={"12px"} margin={"0px 0px 20px 60px"}>
+              By Signing up you agree to our{" "}
+              <span style={{ fontWeight: "bold", cursor: "pointer" }}>
+                Term {"&"} Conditions
+              </span>
+            </Text>
+          </Flex>
         </ModalContent>
       </Modal>
     </>
