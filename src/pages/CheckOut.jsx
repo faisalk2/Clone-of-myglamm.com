@@ -1,6 +1,5 @@
 import { Box, Text, Flex, Button, Input, Img } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import theme from "../theme";
 import { useTheme } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import "./CheckOut.css";
@@ -9,12 +8,12 @@ import { useSelector } from "react-redux";
 
 export const CheckOut = () => {
   const theme = useTheme();
-  const [data,setData]=useState([])
+  const [data, setData] = useState([]);
   const navigate = useNavigate();
   const [paisa, setPaisa] = useState(0);
-  const bag=useSelector((state)=>state.app.bag)
+  const bag = useSelector((state) => state.app.bag);
   useEffect(() => {
-    setData(bag)
+    setData(bag);
     let x = JSON.parse(localStorage.getItem("total"));
     setPaisa(x);
   }, []);
@@ -48,22 +47,35 @@ export const CheckOut = () => {
             </Flex>
           </Box>
           <Text fontWeight="500">YOUR ORDERS</Text>
-      {data.map((ele,i)=>(
-          <Flex key={i} border='1px solid lightgray' mt='5' justifyContent='center' ml='145' w='70%'>  <Box width="100px">
-          {" "}
-          <Img pr='2'borderRight="1px solid lightgray" src={ele.img} />
-        </Box>
-        <Box mt="4%" w="40%"pr='2' borderRight="1px solid lightgray">
-          {" "}
-         {ele.name}
-        </Box>
-        <Box mt="4%" w="10%" ml="5%"pr='2' borderRight="1px solid lightgray">
-        ₹  {ele.offerPrice}
-        </Box>
-        
-        </Flex>
-      ))
-    }
+          {data.map((ele, i) => (
+            <Flex
+              key={i}
+              border="1px solid lightgray"
+              mt="5"
+              justifyContent="center"
+              ml="145"
+              w="70%"
+            >
+              {" "}
+              <Box width="100px">
+                {" "}
+                <Img pr="2" borderRight="1px solid lightgray" src={ele.img} />
+              </Box>
+              <Box mt="4%" w="40%" pr="2" borderRight="1px solid lightgray">
+                {" "}
+                {ele.name}
+              </Box>
+              <Box
+                mt="4%"
+                w="10%"
+                ml="5%"
+                pr="2"
+                borderRight="1px solid lightgray"
+              >
+                ₹ {ele.offerPrice}
+              </Box>
+            </Flex>
+          ))}
         </Box>
 
         <Box
@@ -91,8 +103,6 @@ export const CheckOut = () => {
               APPLY
             </Button>
           </Flex>
-          {/* https://www.myglamm.com/images/discount.svg */}
-
           <Flex id="discountApply">
             <h3>Discount</h3>
             <p id="discountAmount">-₹00.00</p>
@@ -116,14 +126,14 @@ export const CheckOut = () => {
           </Box>
           <Flex justifyContent="space-between">
             <Box lineHeight="150%" paddingBottom={7}>
-              <Box fontWeight='600' textAlign="left">
+              <Box fontWeight="600" textAlign="left">
                 Amount to Pay
               </Box>
               <Box color={theme.colors.primary.main}>
                 Note: Inclusive of all taxes
               </Box>
             </Box>
-            <Box float="right" fontWeight="600" >
+            <Box float="right" fontWeight="600">
               Final amount: {paisa}
             </Box>
           </Flex>

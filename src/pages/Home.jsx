@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Flex, Image, Text, AspectRatio, Link } from "@chakra-ui/react";
-import Check from "../mainCrausel/Check";
+import MainCrausel from "../mainCrausel/MainCrausel";
 import "./HomePagecss/homePage.css";
 import "../App.css";
 import ProductCarousel from "../mainCrausel/ProductCarousel";
@@ -17,34 +17,23 @@ import { Link as RouteLink } from "react-router-dom";
 const Home = () => {
   return (
     <Box>
-      {/* Top main carousel of the website */}
       <Box w="100%" p={4} color="white">
-        <Check />
+        <MainCrausel />
       </Box>
-      <Box padding={"30px"}>
-        <Flex
-          direction={"column"}
-          margin="auto"
-          width="70%"
-          // border={"1px solid red"}
-          gap={"20px"}
-        >
-          <Box>
-            <Image
-              src="https://files.myglamm.com/site-images/original/proposition-banner-2240x614_1.jpg"
-              width={"1100px"}
-              height="250px"
-            ></Image>
-          </Box>
-          <Box>
-            <Image
-              src="https://files.myglamm.com/site-images/original/1920x527-(6).jpg"
-              width={"1100px"}
-              height="250px"
-            ></Image>
-          </Box>
-        </Flex>
-      </Box>
+      <div className="glammZoneImage">
+        <Image
+          src="https://files.myglamm.com/site-images/original/proposition-banner-2240x614_1.jpg"
+          width={"1500px"}
+          height="250px"
+          marginBottom={"30px"}
+        ></Image>
+        <Image
+          src="https://files.myglamm.com/site-images/original/1920x527-(6).jpg"
+          width={"1500px"}
+          height="250px"
+        ></Image>
+      </div>
+
       <Box>
         <Box padding={"10px"} className="flexmedia">
           <Text fontSize={"2xl"} fontWeight="bold">
@@ -127,12 +116,14 @@ const Home = () => {
             />
           </Text>
         </Box>
-        <Flex className="flexBoxForHome essentialBudget" direction={["column", "row"]}>
+        <Flex
+          className="flexBoxForHome essentialBudget"
+          direction={["column", "row"]}
+        >
           {ESSENTIALBUDGETBUYS.map((item) => {
             return (
               <RouteLink to={`/product/${item.data}`}>
                 <Box
-                
                   width="400px"
                   bgPosition="center"
                   bgRepeat="no-repeat"
@@ -186,7 +177,19 @@ const Home = () => {
           <Flex width={"80%"} margin="auto" justifyContent={"space-between"}>
             {CATEGORIES.map((item) => {
               return (
-                <RouteLink to={`/product/${item.name=="Skin" ? "skincare":"" || item.name=="Lips"? "lipstick":"" || item.name==="Hair"? "shampoo":"" || item.name==="Eyes"?"eyeliner":"skincare"}`}>
+                <RouteLink
+                  to={`/product/${
+                    item.name === "Skin"
+                      ? "skincare"
+                      : "" || item.name === "Lips"
+                      ? "lipstick"
+                      : "" || item.name === "Hair"
+                      ? "shampoo"
+                      : "" || item.name === "Eyes"
+                      ? "eyeliner"
+                      : "skincare"
+                  }`}
+                >
                   <Box>
                     <Box
                       borderRadius={"50%"}
@@ -226,7 +229,7 @@ const Home = () => {
           </Text>
         </Box>
         <Flex className="flexBoxForHome" direction={["column", "row"]}>
-          {WALLETOFFERS.map((item) => {
+          {WALLETOFFERS?.map((item) => {
             return (
               <Box
                 width="400px"
@@ -265,7 +268,7 @@ const Home = () => {
           justifyContent="space-between"
           marginBottom={"20px"}
         >
-          {kitsAndCombo.map((item) => {
+          {kitsAndCombo?.map((item) => {
             return (
               <RouteLink to={`/product/${item.data}`}>
                 <Box>
@@ -312,7 +315,7 @@ const Home = () => {
           className="flexBoxForHome flexmedia"
           direction={["column", "row"]}
         >
-          {BANKPARTNER.map((item) => {
+          {BANKPARTNER?.map((item) => {
             return (
               <Box
                 width="400px"
@@ -346,13 +349,12 @@ const Home = () => {
         </Box>
       </Link>
       <Link href="https://www.myglamm.com/brand-statement">
-        <Box padding={"30px"} className="flexmedia" >
+        <Box padding={"30px"} className="flexmedia">
           <Flex
             cursor={"pointer"}
             direction={"column"}
             margin="auto"
             width="71%"
-            // border={"1px solid red"}
             gap={"20px"}
           >
             <Box>

@@ -1,21 +1,14 @@
-#footer{
-    display: flex;
-    padding: 3rem 0px;
-     font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
-     /* border: 1px solid red; */
-     /* background-color: red; */
-     margin-left: 150px;
-     
+#footer {
+  display: flex;
+  padding: 3rem 0px;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+  margin-left: 150px;
 }
-#footerouter{
-  padding: 0 0 70px 0;
-  /* margin-bottom: 300px */
-}
+
 #footer > ul {
   padding: 0px 30px 0px 0px;
   list-style-type: none;
   color: #818181;
-  /* padding: 30px; */
 }
 #footer h4 {
   font-size: 1rem;
@@ -26,7 +19,7 @@
   text-transform: none;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  font-size: 0.80rem;
+  font-size: 0.8rem;
 }
 #sect2 img {
   width: 7.5rem;
@@ -39,8 +32,6 @@
 }
 #img1 {
   float: left;
-  /* position: absolute; */
-  /* right: -80%; */
 }
 #img2 {
   position: absolute;
@@ -51,9 +42,6 @@
 }
 #footerBottom {
   display: flex;
-  padding: 0px 12vw;
-  margin-top: 2.3rem;
-  position: relative;
 }
 footer button {
   height: 2.3rem;
@@ -72,45 +60,44 @@ footer input {
   border: #818181;
   border-radius: 1px solid black;
 }
-.form1{
-  color:black;
+.form1 {
+  color: black;
   font-weight: 350;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-stretch: normal;
 }
-.btn{
+.btn {
   color: rgb(229, 25, 25);
   font-weight: 500;
   background-color: black;
   border-radius: 20%;
 }
-.social{
+.social {
   background-color: aliceblue;
-  
+
   margin-left: 40px;
   margin-top: 20px;
 }
-.twitter social{
+.twitter social {
   color: rgb(98, 121, 173);
 }
-.social-container{
+.social-container {
   word-spacing: 0%;
-justify-items: center;
+  justify-items: center;
 }
-.youtube social{
+.youtube social {
   color: red;
 }
 @media only screen and (max-width: 600px) {
-  #footer{
-display:none;
+  #footer {
+    display: none;
   }
-  #footerouter{
+  #footerouter {
     height: auto;
   }
-  #footerBottom{
+  #footerBottom {
     display: block;
     margin-top: 800px;
     margin-bottom: 50px;
   }
-  
 }

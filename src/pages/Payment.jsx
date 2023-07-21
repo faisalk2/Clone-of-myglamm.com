@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./HomePagecss/payment.css";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import {
   Box,
   Image,
@@ -10,7 +10,6 @@ import {
   Text,
   UnorderedList,
   Button,
-  Divider,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -19,45 +18,44 @@ import {
   faMoneyBill1Wave,
   faCreditCard,
 } from "@fortawesome/free-solid-svg-icons";
-import { ToastContainer,toast, Slide } from "react-toastify";
-import { Navigate, useNavigate } from "react-router-dom";
+import { ToastContainer, toast, Slide } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+
 const Payment = () => {
-const [details,setDetails]=useState({
-  name:"",
-  cardNumber:null,
-  month:null,
-  year:null,
-  cv:null
-})
+  const [details, setDetails] = useState({
+    name: "",
+    cardNumber: null,
+    month: null,
+    year: null,
+    cv: null,
+  });
 
-const handleChange=()=>{
+  const handleChange = () => {};
 
-}
+  const navigate = useNavigate();
 
-
-
-const navigate=useNavigate()
-  
   const [paisa, setPaisa] = useState(0);
   useEffect(() => {
     let x = JSON.parse(localStorage.getItem("total"));
     setPaisa(x);
   }, []);
-  const notify = () =>{
-    toast(" ✅ Payment successfull")
-    setTimeout(()=>{
-        navigate("/")
-    },3000)
-  }
+  const notify = () => {
+    toast(" ✅ Payment successfull");
+    setTimeout(() => {
+      navigate("/");
+    }, 3000);
+  };
   return (
-    <Box mt='-12' ml='5%' w='90%' >
+    <Box mt="-12" ml="5%" w="90%">
       <Box
         height={"150px"}
         display="flex"
         alignItems={"center"}
         justifyContent="center"
       >
-        <Text fontSize={"30px"} mb='-7'>Payment</Text>
+        <Text fontSize={"30px"} mb="-7">
+          Payment
+        </Text>
       </Box>
       <Box>
         <Flex direction={"row"}>
@@ -127,10 +125,10 @@ const navigate=useNavigate()
                 >
                   <label width="300px">Card Number :</label>
                   <Input
-                  name="cardNumber"
-                  value={details.cardNumber}
-                  onChange={(e)=>handleChange(e)}
-                  type={"number"}
+                    name="cardNumber"
+                    value={details.cardNumber}
+                    onChange={(e) => handleChange(e)}
+                    type={"number"}
                     height={"60px"}
                     width={"80%"}
                     placeholder="xxxx-xxxx-xxxx-xxxx"
@@ -149,8 +147,8 @@ const navigate=useNavigate()
                   <Input
                     name="name"
                     value={details.name}
-                    onChange={(e)=>handleChange(e)}
-                  type={"text"}
+                    onChange={(e) => handleChange(e)}
+                    type={"text"}
                     height={"60px"}
                     width={"80%"}
                     placeholder="eg. Jennifer Gomes"
@@ -167,7 +165,7 @@ const navigate=useNavigate()
                     <Input
                       name="month"
                       value={details.month}
-                      onChange={(e)=>handleChange(e)}
+                      onChange={(e) => handleChange(e)}
                       height={"60px"}
                       margin="0px 15px 0px 15px"
                       placeholder="MM"
@@ -177,7 +175,7 @@ const navigate=useNavigate()
                     <Input
                       name="year"
                       value={details.year}
-                      onChange={(e)=>handleChange(e)}
+                      onChange={(e) => handleChange(e)}
                       height={"60px"}
                       placeholder="YY"
                       width={"100px"}
@@ -189,7 +187,7 @@ const navigate=useNavigate()
                     <Input
                       name="cv"
                       value={details.cv}
-                      onChange={(e)=>handleChange(e)}
+                      onChange={(e) => handleChange(e)}
                       marginLeft="15px"
                       height={"60px"}
                       placeholder="***"
@@ -211,24 +209,29 @@ const navigate=useNavigate()
         display={"flex"}
         justifyContent="center"
       >
-        <Button width={"220px"}onClick={notify} color="white" height="60px" bgColor={"#595959"}>
+        <Button
+          width={"220px"}
+          onClick={notify}
+          color="white"
+          height="60px"
+          bgColor={"#595959"}
+        >
           Pay ₹{paisa}.00
-        </Button >
-        <ToastContainer 
-        position="top-center"
-        autoClose={3000}
-        transition={Slide}
-        type="success"
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-         />
+        </Button>
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          transition={Slide}
+          type="success"
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </Box>
-    
     </Box>
   );
 };
