@@ -5,6 +5,12 @@
   margin-left: 150px;
 }
 
+.footerMainContainer {
+  width: "1400px";
+  margin: "auto";
+  margin-bottom: "80px";
+}
+
 #footer > ul {
   padding: 0px 30px 0px 0px;
   list-style-type: none;
