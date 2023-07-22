@@ -3,7 +3,7 @@ import { Input, Box } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { getdata } from "../reducer/AppReducer/action";
+import { getData } from "../reducer/AppReducer/action";
 import { GET_DATA_FAILURE, GET_DATA_SUCCESS } from "../reducer/AppReducer/type";
 
 export const SearchBar = () => {
@@ -30,9 +30,8 @@ export const SearchBar = () => {
         }
       }
 
-      dispatch(getdata(bag)).then((res) => {
+      dispatch(getData(bag)).then((res) => {
         if (res.type === GET_DATA_SUCCESS) {
-          console.log(res.payload);
           navigate(`/product/${search}`);
         } else if (res.type === GET_DATA_FAILURE) {
           navigate("*");

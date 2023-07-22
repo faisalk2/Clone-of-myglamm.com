@@ -1,22 +1,30 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getdata } from "../../reducer/AppReducer/action";
+import { getData } from "../../reducer/AppReducer/action";
 import "./Product.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
+import { GET_DATA_SUCCESS } from "../../reducer/AppReducer/type";
+import Loader from "../custom_component/Loader";
 const ProductItem = () => {
   const [page, setPage] = useState(10);
   const { type } = useParams();
   const dispatch = useDispatch();
-  const { data } = useSelector((state) => state.app);
-  console.log(data)
+  const { data, isLoading } = useSelector((state) => state.app);
   const handlePage = () => {
     setPage((item) => item + 3);
   };
   useEffect(() => {
-    dispatch(getdata(type, page));
+    dispatch(getData(type, page)).then((res) => {
+      if (res.type === GET_DATA_SUCCESS) {
+
+        window.scrollTo(350);
+      }
+    });
   }, [dispatch, type, page]);
+
+  if(isLoading) return <Loader/>
 
   return (
     <>

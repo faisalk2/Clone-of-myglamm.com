@@ -20,7 +20,7 @@ import {
 } from "./type";
 import axios from "axios";
 
-export const getdata = (name, page) => (dispatch) => {
+export const getData = (name, page) => (dispatch) => {
   if (page === undefined) {
     page = 10;
   }

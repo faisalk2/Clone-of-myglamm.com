@@ -24,7 +24,6 @@ export const MyBag = () => {
   const [total, setTotal] = useState(0);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  console.log(data);
   const bag = useSelector((state) => state.app.bag);
 
   const handleDelete = (ele) => {
@@ -51,7 +50,6 @@ export const MyBag = () => {
     });
 
     let single = { ...da[0], total: da[0].total + e };
-    console.log(single);
     dispatch(update(id, single)).then((res) => {
       if (res.type === UPDATE_BAGDATA_SUCCESS) {
         dispatch(datafrombag());
