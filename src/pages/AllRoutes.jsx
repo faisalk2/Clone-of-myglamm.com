@@ -28,7 +28,8 @@ const AllRoutes = () => {
             <>
               {" "}
               <Navbar />
-              <Home /> <Footer />
+              <Home /> 
+              <Footer />
             </>
           }
         ></Route>

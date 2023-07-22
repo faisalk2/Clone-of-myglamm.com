@@ -1,6 +1,5 @@
 import {
   Box,
-  Flex,
   Img,
   Slider,
   SliderFilledTrack,
@@ -11,22 +10,26 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import "./ShaanCss.css";
+import { useNavigate } from "react-router-dom";
 function NavbarBag(value) {
   const [sliderValue, setSliderValue] = React.useState((value = 20));
+const navigate=useNavigate()
+  const handleNavigate = () => {
+   return navigate('/')
+  };
 
   return (
     <Box display="flex" className="shaanc">
-      <Box>
+      <div onClick={()=>handleNavigate()} style={{cursor:'pointer',margin:'0 100px'}}>
         <Img
           alt="logo"
           className="m-auto"
           marginTop="10%"
           h="40px"
-          marginLeft="200%"
           src="https://files.myglamm.com/site-images/original/MyGlamm-Logo_1.jpg"
         />
-      </Box>
-      <Box padding="20px 300px 30px 300px" width="100%">
+      </div>
+      <Box padding={'30px 0px 30px 50px'}  width="60%">
         <Slider
           paddingBottom="100px"
           id="slider"
