@@ -11,16 +11,17 @@ const ProductItem = () => {
   const [page, setPage] = useState(10);
   const { type } = useParams();
   const dispatch = useDispatch();
-  const { data, isLoading } = useSelector((state) => state.app);
+  const { data, isLoading, isError } = useSelector((state) => state.app);
   const handlePage = () => {
     setPage((item) => item + 3);
   };
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    dispatch(getData(type, page))
+    dispatch(getData(type, page));
   }, [dispatch, type, page]);
 
-  if(isLoading) return <Loader/>
+  if (isLoading) return <Loader />;
+  if (isError) return <p>Error...</p>;
 
   return (
     <>

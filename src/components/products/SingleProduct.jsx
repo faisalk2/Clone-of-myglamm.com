@@ -2,11 +2,11 @@ import { Button } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Toster } from "../../chakracomponents/Toster";
+import { Toaster } from "../../chakracomponents/Toaster";
 import {
-  addtobag,
+  addToBag,
   dataFromBag,
-  singledata,
+  singleData,
 } from "../../reducer/AppReducer/action";
 import { ADDTOBAG_SUCCESS } from "../../reducer/AppReducer/type";
 import "./SingleProduct.css";
@@ -16,10 +16,10 @@ const SingleProduct = () => {
   const { _id } = useParams();
 
   const dispatch = useDispatch();
-  let { singleData, isLoading } = useSelector((state) => state.app);
+  let { singleData: data, isLoading,isError } = useSelector((state) => state.app);
 
-  const addToBag = () => {
-    dispatch(addtobag(singleData)).then((res) => {
+  const handleAddToBag = () => {
+    dispatch(addToBag(singleData)).then((res) => {
       if (res.type === ADDTOBAG_SUCCESS) {
         dispatch(dataFromBag());
       }
@@ -28,32 +28,31 @@ const SingleProduct = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    dispatch(singledata(_id));
+    dispatch(singleData(_id));
   }, [_id, dispatch]);
 
-  if (isLoading) return <Loader />
-
+  if (isLoading) return <Loader />;
+  if(isError) return <p>Error...</p>
 
   return (
     <div className="container">
       <div className="left">
-        <img src={singleData.img} alt="" />
+        <img src={data.img} alt="" />
       </div>
       <div className="right">
-        <p className="name">{singleData.name}</p>
-        <p className="description">{singleData.description}</p>
+        <p className="name">{data.name}</p>
+        <p className="description">{data.description}</p>
         <div className="rating">
           <p className="rONE">4.9</p>
           <p className="vertical">|</p>
           <p className="noOR">1200 ratings</p>
         </div>
         <div className="price">
-          <p className="amount">{`₹ ${singleData.offerPrice}`}</p>
+          <p className="amount">{`₹ ${data.offerPrice}`}</p>
           <p className="pDes">(MRP incl. of all taxes)</p>
         </div>
-
-        <Button bgColor={"black"} color={"white"} onClick={addToBag}>
-          <Toster />
+        <Button bgColor={"black"} color={"white"} onClick={handleAddToBag}>
+          <Toaster />
         </Button>
       </div>
     </div>

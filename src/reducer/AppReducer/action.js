@@ -33,7 +33,7 @@ export const getData = (name, page) => (dispatch) => {
     .catch((err) => dispatch({ type: GET_DATA_FAILURE }));
 };
 
-export const singledata = (_id, name) => (dispatch) => {
+export const singleData = (_id, name) => (dispatch) => {
   dispatch({ type: GETSINGLE_DATA_REQUEST });
   return axios
     .get(`https://myglamserver-production.up.railway.app?_id=${_id}`)
@@ -43,7 +43,7 @@ export const singledata = (_id, name) => (dispatch) => {
     .catch((err) => dispatch({ type: GETSINGLE_DATA_FAILURE }));
 };
 
-export const addtobag = (payload) => (dispatch) => {
+export const addToBag = (payload) => (dispatch) => {
   dispatch({ type: ADDTOBAG_REQUEST });
   return axios
     .post("https://myglamserver-production.up.railway.app/bag/post", payload)
