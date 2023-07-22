@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { Toster } from "../../chakracomponents/Toster";
 import {
   addtobag,
-  datafrombag,
+  dataFromBag,
   singledata,
 } from "../../reducer/AppReducer/action";
 import { ADDTOBAG_SUCCESS } from "../../reducer/AppReducer/type";
@@ -21,12 +21,13 @@ const SingleProduct = () => {
   const addToBag = () => {
     dispatch(addtobag(singleData)).then((res) => {
       if (res.type === ADDTOBAG_SUCCESS) {
-        dispatch(datafrombag());
+        dispatch(dataFromBag());
       }
     });
   };
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     dispatch(singledata(_id));
   }, [_id, dispatch]);
 

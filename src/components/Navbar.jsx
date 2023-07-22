@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux/es/exports";
 import Profile from "../signup/Profile";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { datafrombag } from "../reducer/AppReducer/action";
+import { dataFromBag } from "../reducer/AppReducer/action";
 
 const Navbar = () => {
   let bag = useSelector((state) => state.app.bag);
@@ -20,7 +20,7 @@ const Navbar = () => {
   const { isAuth } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    dispatch(datafrombag());
+    dispatch(dataFromBag());
   }, [dispatch]);
 
   return (

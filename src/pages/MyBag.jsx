@@ -12,7 +12,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import { datafrombag, detelebag, update } from "../reducer/AppReducer/action";
+import { dataFromBag, deleteBag, update } from "../reducer/AppReducer/action";
 import {
   DELETE_BAGDATA_SUCCESS,
   UPDATE_BAGDATA_SUCCESS,
@@ -27,9 +27,9 @@ export const MyBag = () => {
   const bag = useSelector((state) => state.app.bag);
 
   const handleDelete = (ele) => {
-    dispatch(detelebag(ele._id)).then((res) => {
+    dispatch(deleteBag(ele._id)).then((res) => {
       if (res.type === DELETE_BAGDATA_SUCCESS) {
-        dispatch(datafrombag());
+        dispatch(dataFromBag());
         setRemove(true);
         setTimeout(() => {
           setRemove(false);
@@ -48,13 +48,13 @@ export const MyBag = () => {
     let single = { ...da[0], total: da[0].total + e };
     dispatch(update(id, single)).then((res) => {
       if (res.type === UPDATE_BAGDATA_SUCCESS) {
-        dispatch(datafrombag());
+        dispatch(dataFromBag());
       }
     });
   };
 
   useEffect(() => {
-    dispatch(datafrombag());
+    dispatch(dataFromBag());
   }, [dispatch]);
 
   useEffect(() => {
@@ -127,7 +127,7 @@ export const MyBag = () => {
       </Box>
 
       <Flex marginLeft="15%" gap="10" width="70%" mb="10" direction={"column"}>
-        {data.map((ele, i) => {
+        {data?.map((ele, i) => {
           return (
             <Flex
               key={i}

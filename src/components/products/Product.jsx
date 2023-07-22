@@ -16,12 +16,8 @@ const ProductItem = () => {
     setPage((item) => item + 3);
   };
   useEffect(() => {
-    dispatch(getData(type, page)).then((res) => {
-      if (res.type === GET_DATA_SUCCESS) {
-
-        window.scrollTo(350);
-      }
-    });
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    dispatch(getData(type, page))
   }, [dispatch, type, page]);
 
   if(isLoading) return <Loader/>

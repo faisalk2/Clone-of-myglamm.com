@@ -53,7 +53,7 @@ export const addtobag = (payload) => (dispatch) => {
     .catch((err) => dispatch({ type: ADDTOBAG_FAILURE }));
 };
 
-export const datafrombag = () => (dispatch) => {
+export const dataFromBag = () => (dispatch) => {
   dispatch({ type: GET_BAGDATA_REQUEST });
   return axios
     .get("https://myglamserver-production.up.railway.app/bag")
@@ -61,7 +61,7 @@ export const datafrombag = () => (dispatch) => {
     .catch((err) => dispatch({ type: GET_BAGDATA_FAILURE }));
 };
 
-export const detelebag = (_id) => (dispatch) => {
+export const deleteBag = (_id) => (dispatch) => {
   dispatch({ type: DELETE_BAGDATA_REQUEST });
   return axios
     .delete(`https://myglamserver-production.up.railway.app/bag/delete/${_id}`)
