@@ -1,0 +1,91 @@
+.container {
+  margin: auto;
+  padding: 100px;
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  font-family: din-2014, sans-serif;
+}
+
+.left {
+  height: 100%;
+  width: 42%;
+}
+
+.right {
+  width: 58%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.left > img {
+  width: 60%;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 50px;
+  color: #909090;
+  text-align: left;
+  margin: auto;
+  padding-left: 20px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 26px;
+  color: #373738;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.rating {
+  display: flex;
+  padding-left: 20px;
+  justify-content: space-evenly;
+  width: 50%;
+  color: #333333;
+}
+
+.rONE {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.vertical {
+  font-size: 28;
+
+  font-weight: 600;
+}
+
+.noor {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 12px;
+}
+
+.price {
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 20px;
+  line-height: 100px;
+}
+
+.pDes {
+  margin: 0px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.amount {
+  margin: 0px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 26px;
+  padding-top: 20px;
+}
+

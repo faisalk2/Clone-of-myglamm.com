@@ -9,14 +9,18 @@ import {
   singleData,
 } from "../../reducer/AppReducer/action";
 import { ADDTOBAG_SUCCESS } from "../../reducer/AppReducer/type";
-import "./SingleProduct.css";
+import Style from "./singleProduct.module.css";
 import Loader from "../custom_component/Loader";
 
 const SingleProduct = () => {
   const { _id } = useParams();
 
   const dispatch = useDispatch();
-  let { singleData: data, isLoading,isError } = useSelector((state) => state.app);
+  let {
+    singleData: data,
+    isLoading,
+    isError,
+  } = useSelector((state) => state.app);
 
   const handleAddToBag = () => {
     dispatch(addToBag(singleData)).then((res) => {
@@ -32,24 +36,24 @@ const SingleProduct = () => {
   }, [_id, dispatch]);
 
   if (isLoading) return <Loader />;
-  if(isError) return <p>Error...</p>
+  if (isError) return <p>Error...</p>;
 
   return (
-    <div className="container">
-      <div className="left">
+    <div className={Style.container}>
+      <div className={Style.left}>
         <img src={data.img} alt="" />
       </div>
-      <div className="right">
-        <p className="name">{data.name}</p>
-        <p className="description">{data.description}</p>
-        <div className="rating">
-          <p className="rONE">4.9</p>
-          <p className="vertical">|</p>
-          <p className="noOR">1200 ratings</p>
+      <div className={Style.right}>
+        <p className={Style.name}>{data.name}</p>
+        <p className={Style.description}>{data.description}</p>
+        <div className={Style.rating}>
+          <p className={Style.rONE}>4.9</p>
+          <p className={Style.vertical}>|</p>
+          <p className={Style.noOR}>1200 ratings</p>
         </div>
-        <div className="price">
-          <p className="amount">{`₹ ${data.offerPrice}`}</p>
-          <p className="pDes">(MRP incl. of all taxes)</p>
+        <div className={Style.price}>
+          <p className={Style.amount}>{`₹ ${data.offerPrice}`}</p>
+          <p className={Style.pDes}>(MRP incl. of all taxes)</p>
         </div>
         <Button bgColor={"black"} color={"white"} onClick={handleAddToBag}>
           <Toaster />

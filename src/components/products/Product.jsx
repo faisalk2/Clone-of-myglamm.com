@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getData } from "../../reducer/AppReducer/action";
-import "./Product.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
 import { GET_DATA_SUCCESS } from "../../reducer/AppReducer/type";
 import Loader from "../custom_component/Loader";
+import Style from './product.module.css'
 const ProductItem = () => {
   const [page, setPage] = useState(10);
   const { type } = useParams();
@@ -26,36 +26,36 @@ const ProductItem = () => {
   return (
     <>
       <div
-        className="PageName"
+        className={Style.PageName}
         style={{ fontWeight: "bold", fontSize: "30px", padding: "20px" }}
       >
         Showing {data.length} results of {type}
       </div>
-      <div className="ProductPart">
-        <div className="product_wraper">
+      <div className={Style.ProductPart}>
+        <div className={Style.productWrapper}>
           {data?.map((e) => {
             return (
               <Link to={`/product/${type}/${e._id}`}>
-                <div className="per_product_card">
-                  <div className="per_prod_img">
+                <div className={Style.productCard}>
+                  <div className={Style.prodImg}>
                     <img src={e.img} alt="" />
                   </div>
-                  <div className="center">
-                    <p className="name">{e.name}</p>
-                    <p className="description">{e.description}</p>
+                  <div className={Style.proDetails}>
+                    <p className={Style.proName}>{e.name}</p>
+                    <p className={Style.proDescription}>{e.description}</p>
                   </div>
-                  <div className="shade_wrapper">
+                  <div className={Style.shadeWrapper}>
                     <div>
                       <img
                         src="https://www.myglamm.com/images/plus-icon.png"
                         alt=""
                       />
                     </div>
-                    <p className="count">{e.count}</p>
+                    <p className={Style.count}>{e.count}</p>
                   </div>
-                  <div className={e.actualPrice ? "price_wrapper" : "center"}>
+                  <div className={e.actualPrice ? Style.priceWrapper : Style.center}>
                     <p>₹ {e["offerPrice"]}</p>
-                    <p className="mrp">
+                    <p className={Style.mrp}>
                       {e.actualPrice ? <s>₹ {e.actualPrice}</s> : ""}
                     </p>
                   </div>
