@@ -13,7 +13,7 @@ import "./SingleProduct.css";
 import Loader from "../custom_component/Loader";
 
 const SingleProduct = () => {
-  const { _id, type } = useParams();
+  const { _id } = useParams();
 
   const dispatch = useDispatch();
   let { singleData, isLoading } = useSelector((state) => state.app);

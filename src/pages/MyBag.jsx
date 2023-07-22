@@ -43,11 +43,7 @@ export const MyBag = () => {
   };
 
   const Biomt = (e, id) => {
-    let da = data.filter((ele) => {
-      if (ele._id === id) {
-        return ele;
-      }
-    });
+    let da = data.filter((ele) => ele._id === id);
 
     let single = { ...da[0], total: da[0].total + e };
     dispatch(update(id, single)).then((res) => {
@@ -244,5 +240,3 @@ export const MyBag = () => {
     </Box>
   );
 };
-
-
