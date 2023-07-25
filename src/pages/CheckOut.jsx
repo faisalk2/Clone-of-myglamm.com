@@ -30,7 +30,7 @@ export const CheckOut = () => {
   }, [bag]);
 
   return (
-    <Box initialColorMode="light" mt="10">
+    <Box initialColorMode="light" mt="10" marginBottom={150}>
       <Text fontSize="3xl" paddingBottom={10} fontFamily="sans-serif">
         Checkout
       </Text>

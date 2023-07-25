@@ -84,7 +84,7 @@ export const MyBag = () => {
 
   if (bag.length === 0) {
     return (
-      <Box padding={"100px"}>
+      <Box padding={"100px"}marginBottom={180}>
         <Heading>Opps Your bag is empty!</Heading>
         <Box
           padding={"30px"}

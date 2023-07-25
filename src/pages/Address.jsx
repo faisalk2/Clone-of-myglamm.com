@@ -60,7 +60,7 @@ export const Address = () => {
 
   const handleClick = () => {};
   return (
-    <Box mt="10" className="mehudon" style={{ zIndex: "-1" }}>
+    <Box mt="10" marginBottom={320} className="mehudon" style={{ zIndex: "-1" }}>
       {ok === true && (
         <Flex fontSize="14" mb="10" justifyContent="center">
           HOMESHOPPING / BAGCHOOSE /

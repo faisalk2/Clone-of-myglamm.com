@@ -3,7 +3,7 @@ import React from "react";
 
 export const FooterC = () => {
   return (
-    <div style={{ position: "fixed", bottom: "0", left: "0", width: "100%" }}>
+    <div >
       <Flex
         h="60px"
         justifyContent="center"

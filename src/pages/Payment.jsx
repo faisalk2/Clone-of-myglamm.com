@@ -55,7 +55,7 @@ const Payment = () => {
     }, 3000);
   };
   return (
-    <Box mt="-12" ml="5%" w="90%">
+    <Box mt="-12" ml="5%" w="90%" marginBottom={100}>
       <Box
         height={"150px"}
         display="flex"
