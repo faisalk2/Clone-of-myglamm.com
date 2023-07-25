@@ -38,7 +38,7 @@ const Navbar = () => {
         <Spacer />
         <Flex justifyContent={"space-between"} width="100px">
           <Box
-            onClick={() => navigate("/mybag")}
+            onClick={() => navigate("/proceed/my-bag")}
             cursor={"pointer"}
             display="flex"
           >
@@ -51,7 +51,7 @@ const Navbar = () => {
                 position: "relative",
                 right: "10px",
                 backgroundColor: "#fee8e8",
-                "border-radius": "50%",
+                borderRadius: "50%",
                 height: "20px",
                 width: "20px",
                 textAlign: "center",

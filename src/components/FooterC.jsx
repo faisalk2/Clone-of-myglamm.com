@@ -1,9 +1,9 @@
-import { Box, Flex, Img, Text } from "@chakra-ui/react";
+import { Flex, Img, Text } from "@chakra-ui/react";
 import React from "react";
 
 export const FooterC = () => {
   return (
-    <Box>
+    <div style={{ position: "fixed", bottom: "0", left: "0", width: "100%" }}>
       <Flex
         h="60px"
         justifyContent="center"
@@ -16,10 +16,10 @@ export const FooterC = () => {
           filter="grayscale(1000%)"
           src="https://i.postimg.cc/D0YNFVRk/download.jpg"
         />
-        <Text paddingTop="3px" className="icon icon-mlogo">
+        <Text padding="3px" >
           © MyGlamm
         </Text>
       </Flex>
-    </Box>
+    </div>
   );
 };

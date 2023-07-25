@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Image, Text, AspectRatio, Link } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, Link } from "@chakra-ui/react";
 import MainCrausel from "../mainCrausel/MainCrausel";
 import "./HomePagecss/homePage.css";
 import "../App.css";

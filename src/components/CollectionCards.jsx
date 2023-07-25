@@ -8,8 +8,8 @@ import {
   Image,
 } from "@chakra-ui/react";
 
-const IMAGE =
-  "https://files.myglamm.com/site-images/400x400/Game-over-Germs_2.jpg";
+// const IMAGE =
+//   "https://files.myglamm.com/site-images/400x400/Game-over-Germs_2.jpg";
 
 export default function CollectionCards({ image, name }) {
   return (

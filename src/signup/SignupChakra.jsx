@@ -1,5 +1,4 @@
 import {
-  Button,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -77,7 +76,7 @@ function SignupChakra() {
             </Flex>
           </ModalBody>
           <ModalFooter display={"flex"} alignItems={"center"}>
-            {mobile?.length == 10 && (
+            {mobile?.length === 10 && (
               <OtpChakra cursor="pointer" onClickClose={onClose} />
             )}
           </ModalFooter>

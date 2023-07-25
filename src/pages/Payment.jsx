@@ -19,7 +19,7 @@ import {
   faCreditCard,
 } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer, toast, Slide } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 const Payment = () => {
   const [details, setDetails] = useState({
@@ -30,17 +30,26 @@ const Payment = () => {
     cv: null,
   });
 
+  const { handleSliderValue, location } = useOutletContext();
+
   const handleChange = () => {};
 
   const navigate = useNavigate();
 
   const [paisa, setPaisa] = useState(0);
+
+  useEffect(() => {
+    if (location.pathname === "/proceed/payment") {
+      handleSliderValue(82);
+    }
+  }, [location]);
+
   useEffect(() => {
     let x = JSON.parse(localStorage.getItem("total"));
     setPaisa(x);
   }, []);
   const notify = () => {
-    toast(" ✅ Payment successfull");
+    toast(" ✅ Payment successful");
     setTimeout(() => {
       navigate("/");
     }, 3000);
@@ -116,7 +125,6 @@ const Payment = () => {
               <Box>
                 <Flex fontSize={"14px"} fontWeight={"bold"}>
                   <label>New Card</label>
-                  <Input display={"none"}></Input>
                 </Flex>
                 <Flex
                   fontSize={"14px"}

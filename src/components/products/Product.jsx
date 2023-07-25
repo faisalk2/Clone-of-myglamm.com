@@ -4,7 +4,6 @@ import { getData } from "../../reducer/AppReducer/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
-import { GET_DATA_SUCCESS } from "../../reducer/AppReducer/type";
 import Loader from "../custom_component/Loader";
 import Style from './product.module.css'
 const ProductItem = () => {

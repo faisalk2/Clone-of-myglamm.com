@@ -11,7 +11,7 @@ import {
 import { ADDTOBAG_SUCCESS } from "../../reducer/AppReducer/type";
 import Style from "./singleProduct.module.css";
 import Loader from "../custom_component/Loader";
-
+import ReactImageMagnify from "react-image-magnify";
 const SingleProduct = () => {
   const { _id } = useParams();
 
@@ -37,27 +37,49 @@ const SingleProduct = () => {
 
   if (isLoading) return <Loader />;
   if (isError) return <p>Error...</p>;
-
+console.log(data.img)
   return (
-    <div className={Style.container}>
-      <div className={Style.left}>
-        <img src={data.img} alt="" />
-      </div>
-      <div className={Style.right}>
-        <p className={Style.name}>{data.name}</p>
-        <p className={Style.description}>{data.description}</p>
-        <div className={Style.rating}>
-          <p className={Style.rONE}>4.9</p>
-          <p className={Style.vertical}>|</p>
-          <p className={Style.noOR}>1200 ratings</p>
+    <div className={Style.mainContainer}>
+      <div className={Style.singleProContainer}>
+        <div className={Style.imgContainer}>
+          <ReactImageMagnify
+          {...{
+            smallImage:{
+              alt:'no Image',
+              isFluidWidth:true,
+              src:data.img
+            },
+            largeImage:{
+              src:data.img,
+              width:2400,
+              height:1500,
+            },
+            enlargedImageContainerStyle: {
+              zIndex: "1500",
+            },
+            enlargedImageContainerDimensions: {
+              width: "100%",
+              height: "100%",
+            },
+          }}
+          />
         </div>
-        <div className={Style.price}>
-          <p className={Style.amount}>{`₹ ${data.offerPrice}`}</p>
-          <p className={Style.pDes}>(MRP incl. of all taxes)</p>
+        <div className={Style.right}>
+          <p className={Style.name}>{data.name}</p>
+          <p className={Style.description}>{data.description}</p>
+          <div className={Style.rating}>
+            <p className={Style.rONE}>4.9</p>
+            <p className={Style.vertical}>|</p>
+            <p className={Style.noOR}>1200 ratings</p>
+          </div>
+          <div className={Style.price}>
+            <p className={Style.amount}>{`₹ ${data.offerPrice}`}</p>
+            <p className={Style.pDes}>(MRP incl. of all taxes)</p>
+          </div>
+          <Button bgColor={"black"} color={"white"} onClick={handleAddToBag}>
+            <Toaster />
+          </Button>
         </div>
-        <Button bgColor={"black"} color={"white"} onClick={handleAddToBag}>
-          <Toaster />
-        </Button>
       </div>
     </div>
   );

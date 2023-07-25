@@ -13,12 +13,14 @@ import React, { useEffect, useState } from "react";
 import "./CheckOut.css";
 import axios from "axios";
 import { AddressCard } from "./AddressCard";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 export const Address = () => {
   const [ok, setOk] = useState(false);
   const [address, setAddress] = useState({});
   const [add, setAdd] = useState("");
-
+  const navigate = useNavigate();
+  const { handleSliderValue, location } = useOutletContext();
   const handleChange = ({ name, value }) => {
     setAddress({
       ...address,
@@ -26,31 +28,40 @@ export const Address = () => {
     });
   };
 
-  const handleAdd = async () => {
-    setOk(true);
-    await axios
-      .post("https://aditya-fake-server.herokuapp.com/addresses", address)
-      .then(() => getData())
-      .catch((e) => console.log(e));
-  };
-  const getData = async () => {
-    await axios
-      .get("https://aditya-fake-server.herokuapp.com/addresses", address)
-      .then((res) => {
-        setAdd(res.data);
-      })
-      .catch((e) => console.log(e));
+  // const handleAdd = async () => {
+  //   setOk(true);
+  //   await axios
+  //     .post("https://aditya-fake-server.herokuapp.com/addresses", address)
+  //     .then(() => getData())
+  //     .catch((e) => console.log(e));
+  // };
+  // const getData = async () => {
+  //   await axios
+  //     .get("https://aditya-fake-server.herokuapp.com/addresses", address)
+  //     .then((res) => {
+  //       setAdd(res.data);
+  //     })
+  //     .catch((e) => console.log(e));
+  // };
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
+  const handleContinue = () => {
+    return navigate("/proceed/checkout");
   };
 
   useEffect(() => {
-    getData();
-  }, []);
+    if (location.pathname === "/proceed/address") {
+      handleSliderValue(45);
+    }
+  }, [location]);
 
   const handleClick = () => {};
-
   return (
     <Box mt="10" className="mehudon" style={{ zIndex: "-1" }}>
-      {ok == true && (
+      {ok === true && (
         <Flex fontSize="14" mb="10" justifyContent="center">
           HOMESHOPPING / BAGCHOOSE /
           <Text fontWeight="600"> SHIPPING ADDRESS</Text>
@@ -205,7 +216,7 @@ export const Address = () => {
                 bg="lightgray"
                 borderRadius="2%"
                 fontSize="13"
-                onClick={handleAdd}
+                onClick={() => handleContinue()}
               >
                 CONTINUE
               </Button>
@@ -215,13 +226,13 @@ export const Address = () => {
         <Box>
           <Grid marginLeft="35px" templateColumns="repeat(3,1fr)" gap={3}>
             {ok === true &&
-              add.map((item) => (
+              add?.map((item) => (
                 <Grid gap={2} key={item.id}>
                   <AddressCard onClick={handleClick(item.id)} {...item} />
                 </Grid>
               ))}
           </Grid>
-          {ok == true && (
+          {ok === true && (
             <Flex ml="5%" gap="10" pt="10" pb="10">
               <Button
                 className="pehchanlo"

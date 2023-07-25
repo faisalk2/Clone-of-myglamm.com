@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useTheme } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import "./CheckOut.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export const CheckOut = () => {
@@ -12,11 +12,22 @@ export const CheckOut = () => {
   const navigate = useNavigate();
   const [paisa, setPaisa] = useState(0);
   const bag = useSelector((state) => state.app.bag);
+  const { handleSliderValue, location} = useOutletContext();
+  const handleProceedPayment = () => {
+    return navigate("/proceed/payment");
+  };
+
+  useEffect(() => {
+    if (location.pathname === "/proceed/checkout") {
+      handleSliderValue(63);
+    }
+  }, [location]);
+
   useEffect(() => {
     setData(bag);
     let x = JSON.parse(localStorage.getItem("total"));
     setPaisa(x);
-  }, []);
+  }, [bag]);
 
   return (
     <Box initialColorMode="light" mt="10">
@@ -47,7 +58,7 @@ export const CheckOut = () => {
             </Flex>
           </Box>
           <Text fontWeight="500">YOUR ORDERS</Text>
-          {data.map((ele, i) => (
+          {data?.map((ele, i) => (
             <Flex
               key={i}
               border="1px solid lightgray"
@@ -91,12 +102,13 @@ export const CheckOut = () => {
             <Img src="https://www.myglamm.com/images/discount.svg" />
             <Input
               type="textarea"
-              class="applyTextArea "
+              className="applyTextArea "
               placeholder="PROMO CODE"
               autocapitalize="true"
               spellcheck="false"
               autocomplete="false"
-              value="GLAMM40"
+              defaultValue={'GLAMM40'}
+              readOnly={true}
             />
             <Button id="applyButton" onclick="promocode()">
               {" "}
@@ -142,7 +154,7 @@ export const CheckOut = () => {
             padding="3px"
             w="100%"
             color="white"
-            onClick={() => navigate("/payment")}
+            onClick={handleProceedPayment}
             className="mujhko"
           >
             PROCEED TO PAYMENT <ArrowForwardIcon />

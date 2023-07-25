@@ -55,7 +55,7 @@ export const AddressCard = ({
         bg="black"
         color="white"
         mt="2"
-        onClick={() => navigate("/checkout")}
+        onClick={() => navigate("/proceed/checkout")}
       >
         Select
       </Button>

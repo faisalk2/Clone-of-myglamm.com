@@ -8,10 +8,10 @@ import {
   Img,
   Text,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import { dataFromBag, deleteBag, update } from "../reducer/AppReducer/action";
 import {
   DELETE_BAGDATA_SUCCESS,
@@ -25,7 +25,7 @@ export const MyBag = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const bag = useSelector((state) => state.app.bag);
-
+  const { handleSliderValue, location } = useOutletContext();
   const handleDelete = (ele) => {
     dispatch(deleteBag(ele._id)).then((res) => {
       if (res.type === DELETE_BAGDATA_SUCCESS) {
@@ -52,6 +52,16 @@ export const MyBag = () => {
       }
     });
   };
+
+  const handleProceed = () => {
+    return navigate("/proceed/address");
+  };
+
+  useEffect(() => {
+    if (location.pathname === "/proceed/my-bag") {
+      handleSliderValue(25);
+    }
+  }, [location]);
 
   useEffect(() => {
     dispatch(dataFromBag());
@@ -162,7 +172,7 @@ export const MyBag = () => {
                     <button
                       style={{
                         padding: "10px 30px 10px 30px",
-                        "font-size": "23px",
+                        fontSize: "23px",
                       }}
                       disabled={ele.total === 10}
                       onClick={() => Biomt(1, ele._id)}
@@ -172,7 +182,7 @@ export const MyBag = () => {
                     <button
                       style={{
                         padding: "10px 30px 10px 30px",
-                        "font-size": "23px",
+                        fontSize: "23px",
                       }}
                       disabled={ele.total <= 1}
                       onClick={() => Biomt(-1, ele._id)}
@@ -233,7 +243,7 @@ export const MyBag = () => {
         color="white"
         marginLeft="35%"
         className="mujhko"
-        onClick={() => navigate("/address")}
+        onClick={handleProceed}
       >
         PROCEED TO ADDRESS <ArrowForwardIcon />
       </Box>

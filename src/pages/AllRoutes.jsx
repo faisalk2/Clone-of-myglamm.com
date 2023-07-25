@@ -5,18 +5,15 @@ import Home from "./Home";
 import Footer from "../components/Footer";
 import { CheckOut } from "./CheckOut";
 import { MyBag } from "./MyBag";
-import NavbarBag from "../components/NavbarBag";
 import { FooterC } from "../components/FooterC";
-import NavbarCheckout from "../components/NavbarCheckout";
 import { Address } from "./Address";
-import NavbarAddress from "../components/NavbarAddress";
 import Payment from "./Payment";
-import { Box, Text } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import NotFound from "./NotFound";
-import Navbarpayment from "../components/NavbarPayment";
 import ProductItem from "../components/products/Product";
 import SingleProduct from "../components/products/SingleProduct";
 import Totoside from "../components/Totoside";
+import ProceedNav from "../components/ProceedNav";
 
 const AllRoutes = () => {
   return (
@@ -28,7 +25,7 @@ const AllRoutes = () => {
             <>
               {" "}
               <Navbar />
-              <Home /> 
+              <Home />
               <Footer />
             </>
           }
@@ -53,46 +50,12 @@ const AllRoutes = () => {
             </>
           }
         ></Route>
-        <Route
-          path="/checkout"
-          element={
-            <>
-              <NavbarCheckout />
-              <CheckOut />
-              <FooterC />
-            </>
-          }
-        ></Route>
-        <Route
-          path="/mybag"
-          element={
-            <>
-              <NavbarBag />
-              <MyBag />
-              <FooterC />
-            </>
-          }
-        />
-        <Route
-          path="/address"
-          element={
-            <>
-              <NavbarAddress />
-              <Address />
-              <FooterC />
-            </>
-          }
-        />
-        <Route
-          path="/payment"
-          element={
-            <>
-              <Navbarpayment />
-              <Payment />
-              <FooterC />
-            </>
-          }
-        ></Route>
+        <Route path="/proceed" element={<ProceedNav />}>
+          <Route path="/proceed/my-bag"  element={<MyBag />} />
+          <Route path="/proceed/address" element={<Address />} />
+          <Route path="/proceed/checkout" element={<CheckOut />} />
+          <Route path="/proceed/payment" element={<Payment />} />
+        </Route>
         <Route
           path="*"
           element={
@@ -103,15 +66,6 @@ const AllRoutes = () => {
             </>
           }
         ></Route>
-        <Route
-          path="/payment"
-          element={
-            <>
-              <Navbarpayment />
-              <Payment />
-            </>
-          }
-        />
       </Routes>
       <Totoside />
     </Box>
