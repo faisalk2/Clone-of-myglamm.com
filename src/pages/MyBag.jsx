@@ -8,7 +8,7 @@ import {
   Img,
   Text,
 } from "@chakra-ui/react";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
 import { useNavigate, useOutletContext } from "react-router-dom";
@@ -242,7 +242,7 @@ export const MyBag = () => {
         w="30%"
         color="white"
         marginLeft="35%"
-        className="mujhko"
+        className="btnStyle"
         onClick={handleProceed}
       >
         PROCEED TO ADDRESS <ArrowForwardIcon />

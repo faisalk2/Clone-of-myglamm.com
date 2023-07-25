@@ -49,7 +49,7 @@ export const CheckOut = () => {
                 marginLeft="15%"
                 fontSize="12px"
                 padding="12px 40px 12px 40px"
-                className="mujhko"
+                className="btnStyle"
                 top="0"
                 border="1.5px solid black"
               >

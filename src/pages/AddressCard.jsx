@@ -7,40 +7,35 @@ import "./CheckOut.css";
 
 export const AddressCard = ({
   name,
-  mobile,
+  mobileNumber,
   email,
-  type,
-  add,
-  pincode,
+  addressType,
+  street,
+  pinCode,
   city,
   state,
 }) => {
   const navigate = useNavigate();
   return (
     <Box
-      className="mehudon shahrukh"
-      lineHeight="10"
+      className="addressCard"
+      lineHeight="8"
       fontSize={15}
-      style={{
-        width: "250px",
-        height: "300px",
-        fontFamily: "Monospace,Monaco",
-      }}
     >
-      <Text fontWeight="600">{type}</Text>
+      <Text fontWeight="600">{addressType}</Text>
       <Text allign="center">{name}</Text>
-      <Text allign="center">{add}</Text>
+      <Text allign="center">{street}</Text>
       <Flex justifyContent="center">
         <Text>{city}</Text>
         <Text>-{state}</Text>
-        <Text>-{pincode}</Text>
+        <Text>-{pinCode}</Text>
       </Flex>
       <Flex justifyContent="center">
         <Box allign="center" mt="3">
           <BiPhoneCall />
         </Box>
         <Text align="center" display="flex">
-          {mobile}{" "}
+          {mobileNumber}{" "}
         </Text>
       </Flex>
       <Flex justifyContent="center">

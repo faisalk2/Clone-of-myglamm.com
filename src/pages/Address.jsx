@@ -8,6 +8,7 @@ import {
   Input,
   Select,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import "./CheckOut.css";
@@ -15,42 +16,67 @@ import axios from "axios";
 import { AddressCard } from "./AddressCard";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
+const initialData = {
+  name: null,
+  addressType: null,
+  email: null,
+  mobileNumber: null,
+  pinCode: null,
+  street: null,
+  neighborhood: null,
+  city: null,
+  state: null,
+  houseNumber: null,
+  landMark: null,
+};
+
 export const Address = () => {
   const [ok, setOk] = useState(false);
-  const [address, setAddress] = useState({});
-  const [add, setAdd] = useState("");
-  const navigate = useNavigate();
+  const [address, setAddress] = useState(initialData);
+  const [add, setAdd] = useState();
+  const toast = useToast();
   const { handleSliderValue, location } = useOutletContext();
-  const handleChange = ({ name, value }) => {
+
+  const handleChange = (name, value) => {
     setAddress({
       ...address,
       [name]: value,
     });
   };
 
-  // const handleAdd = async () => {
-  //   setOk(true);
-  //   await axios
-  //     .post("https://aditya-fake-server.herokuapp.com/addresses", address)
-  //     .then(() => getData())
-  //     .catch((e) => console.log(e));
-  // };
-  // const getData = async () => {
-  //   await axios
-  //     .get("https://aditya-fake-server.herokuapp.com/addresses", address)
-  //     .then((res) => {
-  //       setAdd(res.data);
-  //     })
-  //     .catch((e) => console.log(e));
-  // };
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-
-  const handleContinue = () => {
-    return navigate("/proceed/checkout");
+  const handleAdd = async () => {
+    if (Object.values(address)?.filter(Boolean).length === 0) {
+      toast({
+        title: "",
+        description: "please fill all fields",
+        position: "top",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+      return;
+    }
+    await axios
+      .post("https://myglamserver-production.up.railway.app/address/post", address)
+      .then(() => getData())
+      .catch((e) => console.log(e));
   };
+
+  const getData = async () => {
+    await axios
+      .get("https://myglamserver-production.up.railway.app/address", address)
+      .then((res) => {
+        if (res.data.length > 0) {
+          setOk(true);
+        }
+        setAdd(res.data);
+      })
+      .catch((e) => console.log(e));
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   useEffect(() => {
     if (location.pathname === "/proceed/address") {
@@ -58,16 +84,15 @@ export const Address = () => {
     }
   }, [location]);
 
-  const handleClick = () => {};
   return (
-    <Box mt="10" marginBottom={320} className="mehudon" style={{ zIndex: "-1" }}>
+    <Box mt="10" marginBottom={320} className="" style={{ zIndex: "-1" }}>
       {ok === true && (
         <Flex fontSize="14" mb="10" justifyContent="center">
           HOMESHOPPING / BAGCHOOSE /
           <Text fontWeight="600"> SHIPPING ADDRESS</Text>
         </Flex>
       )}
-      <Box className="Babulal">
+      <Box className="addressForm">
         <Text
           pb="5"
           p="3"
@@ -88,13 +113,12 @@ export const Address = () => {
                 bg="#FBFBFB"
                 ml="7"
                 placeholder="Name*"
-                onChange={(e) => handleChange(e.target)}
-                name="name"
+                onChange={(e) => handleChange("name", e.target.value)}
                 fontSize="13"
                 isRequired
-              ></Input>
+              />
               <Input
-                onChange={(e) => handleChange(e.target)}
+                onChange={(e) => handleChange("mobileNumber", e.target.value)}
                 type="number"
                 name="mobile"
                 h="55"
@@ -102,9 +126,9 @@ export const Address = () => {
                 placeholder="Mobile Number*"
                 fontSize="13"
                 isRequired
-              ></Input>
+              />
               <Input
-                onChange={(e) => handleChange(e.target)}
+                onChange={(e) => handleChange("email", e.target.value)}
                 type="email"
                 name="email"
                 h="55"
@@ -112,12 +136,12 @@ export const Address = () => {
                 mr="7"
                 placeholder="Email Address"
                 fontSize="13"
-              ></Input>
+              />
             </Flex>
             <Flex gap="7" pb="5">
               <Select
                 placeholder="Other"
-                onChange={(e) => handleChange(e.target)}
+                onChange={(e) => handleChange("addressType", e.target.value)}
                 h="55"
                 name="type"
                 bg="#FBFBFB"
@@ -129,73 +153,63 @@ export const Address = () => {
               </Select>
               <Input
                 h="55"
-                onChange={(e) => handleChange(e.target)}
+                onChange={(e) => handleChange("houseNumber", e.target.value)}
                 bg="#FBFBFB"
-                name="add"
                 fontSize="13"
-                type="address"
-                placeholder="Flat no. /House no. / Apt Name*
-"
-              ></Input>
+                placeholder="Flat no. /House no. / Apt Name*"
+              />
               <Input
                 h="55"
-                onChange={(e) => handleChange(e.target)}
+                onChange={(e) => handleChange("street", e.target.value)}
                 bg="#FBFBFB"
                 fontSize="13"
-                type="text"
-                placeholder="Street name*
-"
-              ></Input>
+                placeholder="Street Name*"
+              />
               <Input
                 h="55"
-                onChange={(e) => handleChange(e.target)}
+                onChange={(e) => handleChange("neighborhood", e.target.value)}
                 bg="#FBFBFB"
                 fontSize="13"
-                type="text"
-                placeholder="Neighbourhood*
-"
+                placeholder="Neighborhood*"
                 mr="7"
-              ></Input>
+              />
             </Flex>
             <Flex gap="7" pb="7">
               <Input
                 ml="7"
-                onChange={(e) => handleChange(e.target)}
+                onChange={(e) => handleChange("pinCode", e.target.value)}
                 h="55"
                 bg="#FBFBFB"
-                name="pincode"
                 fontSize="13"
                 type="number"
-                placeholder="Pincode*
+                placeholder="Pin Code*
 "
               ></Input>
               <Input
                 h="55"
-                onChange={(e) => handleChange(e.target)}
+                onChange={(e) => handleChange("city", e.target.value)}
                 bg="#FBFBFB"
-                name="city"
                 fontSize="13"
-                type="text"
-                placeholder="city"
-              ></Input>
+                placeholder="City"
+              />
               <Input
                 h="55"
-                onChange={(e) => handleChange(e.target)}
+                onChange={(e) => handleChange("state", e.target.value)}
                 bg="#FBFBFB"
                 name="state"
                 fontSize="13"
                 type="text"
-                placeholder="state"
-              ></Input>
+                placeholder="State"
+              />
               <Input
                 mr="7"
-                onChange={(e) => handleChange(e.target)}
+                onChange={(e) => handleChange("landMark", e.target.value)}
                 h="55"
                 bg="#FBFBFB"
                 fontSize="13"
                 type="text"
-                placeholder="landmark"
-              ></Input>
+                placeholder="Landmark"
+              />
             </Flex>
             <Flex justifyContent={"end"} mr="7" pb="5">
               <Checkbox>Mark as default</Checkbox>
@@ -207,6 +221,11 @@ export const Address = () => {
                 bg="#FBFBFB"
                 borderRadius="2%"
                 fontSize="13"
+                onClick={() => {
+                  if (add.length > 0) {
+                    setOk(true);
+                  }
+                }}
               >
                 BACK
               </Button>
@@ -216,7 +235,7 @@ export const Address = () => {
                 bg="lightgray"
                 borderRadius="2%"
                 fontSize="13"
-                onClick={() => handleContinue()}
+                onClick={handleAdd}
               >
                 CONTINUE
               </Button>
@@ -228,7 +247,7 @@ export const Address = () => {
             {ok === true &&
               add?.map((item) => (
                 <Grid gap={2} key={item.id}>
-                  <AddressCard onClick={handleClick(item.id)} {...item} />
+                  <AddressCard {...item} />
                 </Grid>
               ))}
           </Grid>
@@ -238,12 +257,9 @@ export const Address = () => {
                 className="pehchanlo"
                 bg="black"
                 color="white"
-                onClick={() => window.location.reload()}
+                onClick={() => setOk(false)}
               >
                 Add new address
-              </Button>
-              <Button color="gray" onClick={() => setOk(false)}>
-                BACK
               </Button>
             </Flex>
           )}

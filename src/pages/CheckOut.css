@@ -1,18 +1,21 @@
-.mujhko:hover {
+.btnStyle:hover {
   background-color: black;
   color: aliceblue;
   cursor: pointer;
 }
-.Babulal {
+.addressForm {
   width: 70%;
   height: auto;
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.mehudon {
+
+.addressCard {
+  height: auto;
+  padding: 10px;
   z-index: 1;
-}
-.shahrukh {
   margin: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 300px;
+  font-family: Monospace, Monaco;
 }
