@@ -23,7 +23,7 @@ const SingleProduct = () => {
   } = useSelector((state) => state.app);
 
   const handleAddToBag = () => {
-    dispatch(addToBag(singleData)).then((res) => {
+    dispatch(addToBag(data)).then((res) => {
       if (res.type === ADDTOBAG_SUCCESS) {
         dispatch(dataFromBag());
       }
@@ -37,7 +37,7 @@ const SingleProduct = () => {
 
   if (isLoading) return <Loader />;
   if (isError) return <p>Error...</p>;
-console.log(data.img)
+
   return (
     <div className={Style.mainContainer}>
       <div className={Style.singleProContainer}>
