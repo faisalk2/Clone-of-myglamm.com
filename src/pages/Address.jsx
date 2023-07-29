@@ -270,12 +270,7 @@ export const Address = () => {
           </Grid>
           {ok === true && (
             <Flex ml="5%" gap="10" pt="10" pb="10">
-              <Button
-                className="pehchanlo"
-                bg="black"
-                color="white"
-                onClick={() => setOk(false)}
-              >
+              <Button bg="black" color="white" onClick={() => setOk(false)}>
                 Add new address
               </Button>
             </Flex>
