@@ -30,7 +30,7 @@ export const CheckOut = () => {
 
   const handlePromo = () => {
     let amount = finalAmount * 0.4;
-    amount = finalAmount - amount;
+    amount = (finalAmount - amount).toFixed(2);
     setFinalAmount(amount);
     setDisableBtn(true);
     toast({
