@@ -1,15 +1,14 @@
-import React from 'react';
-import { Box, IconButton, useBreakpointValue } from '@chakra-ui/react';
+import React from "react";
+import { Box, IconButton, useBreakpointValue } from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 // And react-slick as our Carousel Lib
-import Slider from 'react-slick';
+import Slider from "react-slick";
 
 // Settings for the slider
 const settings = {
   dots: true,
   arrows: false,
-//   fade: true,
   infinite: true,
   autoplay: true,
   speed: 500,
@@ -25,26 +24,26 @@ export default function MainCrausel() {
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
-  const top = useBreakpointValue({ base: '90%', md: '50%' });
-  const side = useBreakpointValue({ base: '10%', md: '20px' });
+  const top = useBreakpointValue({ base: "90%", md: "50%" });
+  const side = useBreakpointValue({ base: "10%", md: "20px" });
 
   // These are the images used in the slide
   const cards = [
-    'https://files.myglamm.com/site-images/original/SK-Survey-1920x527_1.jpg',
-    'https://live.staticflickr.com/65535/49213180047_a4734ec97e_b.jpg',
-    'https://files.myglamm.com/site-images/original/Homepage-desktop-lipstikcks.jpg',
-    'https://files.myglamm.com/site-images/original/1920-x-527.jpg',
-    'https://files.myglamm.com/site-images/original/1920x527.jpg'
+    "https://files.myglamm.com/site-images/original/SK-Survey-1920x527_1.jpg",
+    "https://live.staticflickr.com/65535/49213180047_a4734ec97e_b.jpg",
+    "https://files.myglamm.com/site-images/original/Homepage-desktop-lipstikcks.jpg",
+    "https://files.myglamm.com/site-images/original/1920-x-527.jpg",
+    "https://files.myglamm.com/site-images/original/1920x527.jpg",
   ];
 
   return (
-    <Box 
-    
-      position={'relative'}
-      height={'450px'}
+    <Box
+      position={"relative"}
+      height={"450px"}
       marginBottom="-50px"
-      width={'full'}
-      overflow={'hidden'}>
+      width={"full"}
+      overflow={"hidden"}
+    >
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -66,9 +65,10 @@ export default function MainCrausel() {
         position="absolute"
         left={side}
         top={top}
-        transform={'translate(0%, -50%)'}
+        transform={"translate(0%, -50%)"}
         zIndex={2}
-        onClick={() => slider?.slickPrev()}>
+        onClick={() => slider?.slickPrev()}
+      >
         <BiLeftArrowAlt />
       </IconButton>
       {/* Right Icon */}
@@ -81,19 +81,19 @@ export default function MainCrausel() {
         position="absolute"
         right={side}
         top={top}
-        transform={'translate(0%, -50%)'}
+        transform={"translate(0%, -50%)"}
         zIndex={2}
-        onClick={() => slider?.slickNext()}>
+        onClick={() => slider?.slickNext()}
+      >
         <BiRightArrowAlt />
       </IconButton>
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {cards.map((url, index) =>
-        (
+        {cards.map((url, index) => (
           <Box
-          cursor={"pointer"}
+            cursor={"pointer"}
             key={index}
-            height={'sm'}
+            height={"sm"}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"

@@ -8,7 +8,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { carouselData } from "../pages/HomePagecss/homepageData";
+import { carouselData } from "../pages/homepageData";
 import { Link as RouteLink } from "react-router-dom";
 
 // Here we have used react-icons package for the icons

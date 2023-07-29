@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Flex, Image, Text, Link } from "@chakra-ui/react";
-import MainCrausel from "../mainCrausel/MainCrausel";
-import "./HomePagecss/homePage.css";
+import MainCrausel from "../Crausel/MainCrausel";
+import "./homePage.css";
 import "../App.css";
-import ProductCarousel from "../mainCrausel/ProductCarousel";
+import ProductCarousel from "../Crausel/ProductCarousel";
 import {
   CATEGORIES,
   kitsAndCombo,
@@ -11,7 +11,7 @@ import {
   ESSENTIALBUDGETBUYS,
   WALLETOFFERS,
   BANKPARTNER,
-} from "./HomePagecss/homepageData";
+} from "./homepageData";
 import { Link as RouteLink } from "react-router-dom";
 
 const Home = () => {

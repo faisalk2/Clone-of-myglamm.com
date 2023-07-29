@@ -57,7 +57,10 @@ export const Address = () => {
       return;
     }
     await axios
-      .post("https://myglamserver-production.up.railway.app/address/post", address)
+      .post(
+        "https://myglamserver-production.up.railway.app/address/post",
+        address
+      )
       .then(() => getData())
       .catch((e) => console.log(e));
   };
@@ -70,6 +73,18 @@ export const Address = () => {
           setOk(true);
         }
         setAdd(res.data);
+      })
+      .catch((e) => console.log(e));
+  };
+
+  const handleDelete = async (id) => {
+    await axios
+      .delete(`https://myglamserver-production.up.railway.app/address/delete/${id}`)
+      .then((res) => {
+        if (res.status == 200) {
+          console.log(res);
+          getData();
+        }
       })
       .catch((e) => console.log(e));
   };
@@ -247,7 +262,7 @@ export const Address = () => {
             {ok === true &&
               add?.map((item) => (
                 <Grid gap={2} key={item.id}>
-                  <AddressCard {...item} />
+                  <AddressCard {...item} handleDelete={handleDelete} />
                 </Grid>
               ))}
           </Grid>

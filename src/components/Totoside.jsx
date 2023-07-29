@@ -4,7 +4,7 @@ import { ArrowUpIcon } from "@chakra-ui/icons";
 import { useEffect } from "react";
 import { useState } from "react";
 
-const Totoside = () => {
+const TotoSide = () => {
   const [visible, setVisible] = useState(false);
 
   const handleTop = () => {
@@ -37,4 +37,4 @@ const Totoside = () => {
   );
 };
 
-export default Totoside;
+export default TotoSide;

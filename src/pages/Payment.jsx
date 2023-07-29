@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./HomePagecss/payment.css";
+import "./payment.css";
 import "react-toastify/dist/ReactToastify.css";
 import {
   Box,

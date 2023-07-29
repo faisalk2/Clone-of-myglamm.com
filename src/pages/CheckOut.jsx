@@ -1,4 +1,12 @@
-import { Box, Text, Flex, Button, Input, Img } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Flex,
+  Button,
+  Input,
+  Img,
+  useToast,
+} from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useTheme } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
@@ -10,11 +18,30 @@ export const CheckOut = () => {
   const theme = useTheme();
   const [data, setData] = useState([]);
   const navigate = useNavigate();
-  const [paisa, setPaisa] = useState(0);
+  const [finalAmount, setFinalAmount] = useState(0);
   const bag = useSelector((state) => state.app.bag);
-  const { handleSliderValue, location} = useOutletContext();
+  const [disableBtn, setDisableBtn] = useState(false);
+  const { handleSliderValue, location } = useOutletContext();
+  const toast = useToast();
+
   const handleProceedPayment = () => {
     return navigate("/proceed/payment");
+  };
+
+  const handlePromo = () => {
+    let amount = finalAmount * 0.4;
+    amount = finalAmount - amount;
+    setFinalAmount(amount);
+    setDisableBtn(true);
+    toast({
+      title: "",
+      description: "Promo code applied",
+      position: "top",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
+    localStorage.setItem("total", JSON.stringify(amount));
   };
 
   useEffect(() => {
@@ -26,7 +53,7 @@ export const CheckOut = () => {
   useEffect(() => {
     setData(bag);
     let x = JSON.parse(localStorage.getItem("total"));
-    setPaisa(x);
+    setFinalAmount(x);
   }, [bag]);
 
   return (
@@ -57,38 +84,42 @@ export const CheckOut = () => {
               </Text>
             </Flex>
           </Box>
-          <Text fontWeight="500">YOUR ORDERS</Text>
+          <Text
+            fontWeight="600"
+            fontSize={16}
+            borderBottom="1px solid lightgray"
+            textAlign={"left"}
+            w="70%"
+            justifyContent="center"
+            ml="145"
+            pb={3}
+          >
+            YOUR ORDERS
+          </Text>
           {data?.map((ele, i) => (
             <Flex
               key={i}
-              border="1px solid lightgray"
+              borderBottom="1px solid lightgray"
               mt="5"
               justifyContent="center"
               ml="145"
               w="70%"
             >
-              {" "}
-              <Box width="100px">
-                {" "}
-                <Img pr="2" borderRight="1px solid lightgray" src={ele.img} />
+              <Box width="100px" p={2}>
+                <Img borderRight="1px solid lightgray" src={ele.img} />
               </Box>
-              <Box mt="4%" w="40%" pr="2" borderRight="1px solid lightgray">
-                {" "}
+              <Box mt="4%" w="40%" pr="2">
                 {ele.name}
               </Box>
-              <Box
-                mt="4%"
-                w="10%"
-                ml="5%"
-                pr="2"
-                borderRight="1px solid lightgray"
-              >
+              <Box mt="4%" w="10%" ml="5%" pr="2">
+                {ele.total}
+              </Box>
+              <Box mt="4%" w="10%" ml="5%" pr="2">
                 ₹ {ele.offerPrice}
               </Box>
             </Flex>
           ))}
         </Box>
-
         <Box
           bg={theme.colors.primary.women}
           padding="2%"
@@ -99,7 +130,6 @@ export const CheckOut = () => {
             Apply Promo Code
           </Text>
           <Flex>
-            <Img src="https://www.myglamm.com/images/discount.svg" />
             <Input
               type="textarea"
               className="applyTextArea "
@@ -107,10 +137,14 @@ export const CheckOut = () => {
               autocapitalize="true"
               spellcheck="false"
               autocomplete="false"
-              defaultValue={'GLAMM40'}
+              defaultValue={"GLAMM40"}
               readOnly={true}
             />
-            <Button id="applyButton" onclick="promocode()">
+            <Button
+              id="applyButton"
+              onClick={handlePromo}
+              disabled={disableBtn}
+            >
               {" "}
               APPLY
             </Button>
@@ -146,7 +180,7 @@ export const CheckOut = () => {
               </Box>
             </Box>
             <Box float="right" fontWeight="600">
-              Final amount: {paisa}
+              Final amount: {finalAmount}
             </Box>
           </Flex>
           <Box
@@ -155,7 +189,7 @@ export const CheckOut = () => {
             w="100%"
             color="white"
             onClick={handleProceedPayment}
-            className="mujhko"
+            className="btnStyle"
           >
             PROCEED TO PAYMENT <ArrowForwardIcon />
           </Box>

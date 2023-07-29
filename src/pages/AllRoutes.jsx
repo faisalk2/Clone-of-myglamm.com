@@ -5,14 +5,13 @@ import Home from "./Home";
 import Footer from "../components/Footer";
 import { CheckOut } from "./CheckOut";
 import { MyBag } from "./MyBag";
-import { FooterC } from "../components/FooterC";
 import { Address } from "./Address";
 import Payment from "./Payment";
 import { Box } from "@chakra-ui/react";
 import NotFound from "./NotFound";
 import ProductItem from "../components/products/Product";
 import SingleProduct from "../components/products/SingleProduct";
-import Totoside from "../components/Totoside";
+import TotoSide from "../components/TotoSide";
 import ProceedNav from "../components/ProceedNav";
 
 const AllRoutes = () => {
@@ -23,7 +22,6 @@ const AllRoutes = () => {
           path="/"
           element={
             <>
-              {" "}
               <Navbar />
               <Home />
               <Footer />
@@ -51,7 +49,7 @@ const AllRoutes = () => {
           }
         ></Route>
         <Route path="/proceed" element={<ProceedNav />}>
-          <Route path="/proceed/my-bag"  element={<MyBag />} />
+          <Route path="/proceed/my-bag" element={<MyBag />} />
           <Route path="/proceed/address" element={<Address />} />
           <Route path="/proceed/checkout" element={<CheckOut />} />
           <Route path="/proceed/payment" element={<Payment />} />
@@ -67,7 +65,7 @@ const AllRoutes = () => {
           }
         ></Route>
       </Routes>
-      <Totoside />
+      <TotoSide />
     </Box>
   );
 };
