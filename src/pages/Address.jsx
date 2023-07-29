@@ -14,7 +14,7 @@ import React, { useEffect, useState } from "react";
 import "./CheckOut.css";
 import axios from "axios";
 import { AddressCard } from "./AddressCard";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 const initialData = {
   name: null,
@@ -67,7 +67,7 @@ export const Address = () => {
 
   const getData = async () => {
     await axios
-      .get("https://myglamserver-production.up.railway.app/address", address)
+      .get("https://myglamserver-production.up.railway.app/address")
       .then((res) => {
         if (res.data.length > 0) {
           setOk(true);
@@ -79,7 +79,9 @@ export const Address = () => {
 
   const handleDelete = async (id) => {
     await axios
-      .delete(`https://myglamserver-production.up.railway.app/address/delete/${id}`)
+      .delete(
+        `https://myglamserver-production.up.railway.app/address/delete/${id}`
+      )
       .then((res) => {
         if (res.status == 200) {
           console.log(res);
