@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginuser } from "../reducer/AuthReducer/action";
+import { loginUser } from "../reducer/AuthReducer/action";
 
 function OtpChakra({ onClickClose }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -35,7 +35,7 @@ function OtpChakra({ onClickClose }) {
   const handleSubmit = () => {
     if (bag === "7820") {
       if (detail.email && detail.fullName) {
-        dispatch(loginuser(detail.fullName));
+        dispatch(loginUser(detail.fullName));
         onClickClose();
       }
     } else {

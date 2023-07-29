@@ -18,16 +18,17 @@ import { useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import OtpChakra from "./OtpChakra";
 
-function SignupChakra() {
+function SignupChakra({text=null}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [mobile, setMobile] = useState();
 
   return (
     <>
-      <AiOutlineUser
-        onClick={onOpen}
+      <div onClick={()=>onOpen()} >
+      {text ? text :<AiOutlineUser
         style={{ color: "black", fontSize: "25px" }}
-      />
+      />}
+      </div>
       <Modal
         width="500px"
         border="1px solid red"

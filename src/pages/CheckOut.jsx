@@ -13,6 +13,9 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 import "./CheckOut.css";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { useSelector } from "react-redux";
+import SignupChakra from "../signup/SignupChakra";
+import { AiOutlineMail } from "react-icons/ai";
+import { BsTelephoneFill } from "react-icons/bs";
 
 export const CheckOut = () => {
   const theme = useTheme();
@@ -20,8 +23,11 @@ export const CheckOut = () => {
   const navigate = useNavigate();
   const [finalAmount, setFinalAmount] = useState(0);
   const bag = useSelector((state) => state.app.bag);
+  const { isAuth } = useSelector((state) => state.auth);
   const [disableBtn, setDisableBtn] = useState(false);
   const { handleSliderValue, location } = useOutletContext();
+  const { name, mobileNumber, email, city, street, pinCode, state } =
+    location.state;
   const toast = useToast();
 
   const handleProceedPayment = () => {
@@ -64,26 +70,65 @@ export const CheckOut = () => {
 
       <Flex>
         <Box w="55%">
-          <Box
-            textAlign={"center"}
-            paddingLeft="40%"
-            paddingTop="5%"
-            paddingBottom={10}
-          >
-            <Flex>
-              <Text paddingTop="10px">Already have an Account?</Text>
+          {isAuth ? (
+            <Box>
               <Text
-                marginLeft="15%"
-                fontSize="12px"
-                padding="12px 40px 12px 40px"
-                className="btnStyle"
-                top="0"
-                border="1.5px solid black"
+                fontWeight="600"
+                fontSize={16}
+                borderBottom="1px solid lightgray"
+                textAlign={"left"}
+                w="70%"
+                justifyContent="center"
+                ml="145"
+                pb={3}
               >
-                SIGN IN
+                SHIPPING ADDRESS
               </Text>
-            </Flex>
-          </Box>
+              <Box
+                textAlign={"left"}
+                w="70%"
+                justifyContent="center"
+                ml="145"
+                pb={3}
+              >
+                <p className="useName">{name}</p>
+                <p className={"otherText"}>
+                  {street} ,{city} {pinCode} {state}
+                </p>
+                <div className="contactDetails">
+                  <div>
+                    <BsTelephoneFill />
+                    <span> +{mobileNumber}</span>
+                  </div>
+                  <div>
+                    <AiOutlineMail />
+                    <span> {email}</span>
+                  </div>
+                </div>
+              </Box>
+            </Box>
+          ) : (
+            <Box
+              textAlign={"center"}
+              paddingLeft="40%"
+              paddingTop="5%"
+              paddingBottom={10}
+            >
+              <Flex>
+                <Text paddingTop="10px">Already have an Account?</Text>
+                <Text
+                  marginLeft="15%"
+                  fontSize="12px"
+                  padding="12px 40px 12px 40px"
+                  className="btnStyle"
+                  top="0"
+                  border="1.5px solid black"
+                >
+                  <SignupChakra text={"SIGN IN"} />
+                </Text>
+              </Flex>
+            </Box>
+          )}
           <Text
             fontWeight="600"
             fontSize={16}
@@ -188,10 +233,16 @@ export const CheckOut = () => {
             padding="3px"
             w="100%"
             color="white"
-            onClick={handleProceedPayment}
+            onClick={isAuth ? handleProceedPayment : ""}
             className="btnStyle"
           >
-            PROCEED TO PAYMENT <ArrowForwardIcon />
+            {isAuth ? (
+              <>
+                <span>PROCEED TO PAYMENT</span> <ArrowForwardIcon />
+              </>
+            ) : (
+              <SignupChakra text={"PROCEED TO PAYMENT"} />
+            )}
           </Box>
         </Box>
       </Flex>

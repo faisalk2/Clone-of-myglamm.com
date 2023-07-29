@@ -19,3 +19,24 @@
   width: 300px;
   font-family: Monospace, Monaco;
 }
+
+.useName{
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.otherText{
+  font-size: 12px;
+  text-align: left;
+}
+
+.contactDetails{
+  margin-top: 20px;
+}
+
+.contactDetails div{
+  display: flex;
+  font-size: 12px;
+  text-align: left;
+}

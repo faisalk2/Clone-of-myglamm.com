@@ -55,7 +55,7 @@ export const AddressCard = ({
         bg="black"
         color="white"
         mt="2"
-        onClick={() => navigate("/proceed/checkout")}
+        onClick={() => navigate("/proceed/checkout",{state:{name,street,mobileNumber,email,city,state,pinCode}})}
       >
         Select
       </Button>

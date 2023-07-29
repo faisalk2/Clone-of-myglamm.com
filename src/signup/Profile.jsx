@@ -12,14 +12,14 @@ import React from "react";
 import "./profile.css";
 import { AiOutlineUser } from "react-icons/ai";
 import { useDispatch } from "react-redux/es/exports";
-import { logoutuser } from "../reducer/AuthReducer/action";
+import { logoutUser } from "../reducer/AuthReducer/action";
 
 const Profile = () => {
   const userDetail = localStorage.getItem("userData");
   const dispatch = useDispatch();
   
   const handleLogOut = () => {
-    dispatch(logoutuser());
+    dispatch(logoutUser());
   };
 
   return (
