@@ -163,16 +163,16 @@ export const MyBag = () => {
                   paddingLeft={"10px"}
                   paddingRight="10px"
                   justifyContent={"space-between"}
-                  width="70%"
+                  width="75%"
                 >
-                  <Text fontWeight={"bold"} textAlign={"center"} margin="5px">
+                  <Text fontWeight={"bold"} textAlign={"center"} margin="2px">
                     {ele.total}
                   </Text>
                   <Flex direction={"column"}>
                     <button
                       style={{
-                        padding: "10px 30px 10px 30px",
-                        fontSize: "23px",
+                        padding: "10px 20px 10px 30px",
+                        fontSize: "20px",
                       }}
                       disabled={ele.total === 10}
                       onClick={() => Biomt(1, ele._id)}
@@ -182,7 +182,7 @@ export const MyBag = () => {
                     <button
                       style={{
                         padding: "10px 30px 10px 30px",
-                        fontSize: "23px",
+                        fontSize: "20px",
                       }}
                       disabled={ele.total <= 1}
                       onClick={() => Biomt(-1, ele._id)}
