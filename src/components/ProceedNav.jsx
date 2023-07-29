@@ -12,25 +12,21 @@ import React, { useState } from "react";
 import "./ShaanCss.css";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { FooterC } from "./FooterC";
-function ProceedNav({ value }) {
+
+function ProceedNav() {
   const [sliderValue, setSliderValue] = useState(25);
   const navigate = useNavigate();
-  const location=useLocation()
-  const handleNavigate = () => {
-    return navigate("/");
-  };
+  const location = useLocation();
 
   const handleSliderValue = (value) => {
     setSliderValue(value);
   };
 
-  // console.log(location)
-
   return (
     <>
       <Box display="flex" className="shaanc">
         <div
-          onClick={handleNavigate}
+          onClick={() => navigate("/")}
           style={{ cursor: "pointer", margin: "0 100px" }}
         >
           <Img
@@ -73,7 +69,7 @@ function ProceedNav({ value }) {
         </Box>
       </Box>
       <div>
-        <Outlet context={{handleSliderValue,location}} />
+        <Outlet context={{ handleSliderValue, location }} />
       </div>
       <FooterC />
     </>

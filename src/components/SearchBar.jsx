@@ -2,41 +2,20 @@ import React, { useState } from "react";
 import { Input, Box } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { getData } from "../reducer/AppReducer/action";
-import { GET_DATA_FAILURE, GET_DATA_SUCCESS } from "../reducer/AppReducer/type";
 
 export const SearchBar = () => {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
-  const onValueChange = (e) => {
-    if (e.target.value !== Number) {
+  const onChange = (e) => {
+    if (!e.target.value.match(/^[0-9]$/)) {
       setSearch(e.target.value);
     }
   };
 
   const handleSearch = (e) => {
     if (e.keyCode === 13) {
-      let lower = "abcdefghijklmnopqrstuvwxyz";
-      let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-      let bag = "";
-      for (let i = 0; i < search.length; i++) {
-        for (let j = 0; j < lower.length; j++) {
-          if (search[i] === lower[j] || search[i] === upper[j]) {
-            bag = bag + lower[j];
-          }
-        }
-      }
-
-      dispatch(getData(bag)).then((res) => {
-        if (res.type === GET_DATA_SUCCESS) {
-          navigate(`/product/${search}`);
-        } else if (res.type === GET_DATA_FAILURE) {
-          navigate("*");
-        }
-      });
+      navigate(`/product/${search}`);
     }
   };
 
@@ -60,7 +39,7 @@ export const SearchBar = () => {
       </Box>
       <Input
         value={search}
-        onChange={onValueChange}
+        onChange={onChange}
         onKeyUp={(e) => handleSearch(e)}
         variant="unstyled"
         backgroundColor="rgb(245,245,246)"
