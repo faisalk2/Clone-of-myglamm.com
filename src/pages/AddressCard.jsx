@@ -16,16 +16,16 @@ export const AddressCard = ({
   pinCode,
   city,
   state,
-  handleDelete
+  handleDelete,
 }) => {
   const navigate = useNavigate();
   return (
     <Box className="addressCard" lineHeight="8" fontSize={15}>
       <div
-      onClick={()=>handleDelete(_id)}
-       style={{ display: "flex", justifyContent: "end" }}
-       >
-        <TiDeleteOutline size={22} />
+        onClick={() => handleDelete(_id)}
+        style={{ display: "flex", justifyContent: "end" }}
+      >
+        <TiDeleteOutline size={22} style={{ cursor: "pointer" }} />
       </div>
       <Text fontWeight="600">{addressType}</Text>
       <Text align="center">{name}</Text>

@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  Checkbox,
   Flex,
   FormControl,
   Grid,
@@ -30,39 +29,84 @@ const initialData = {
   landMark: null,
 };
 
+const validation = {
+  name: false,
+  mobileNumber: false,
+  pinCode: false,
+  street: false,
+  city: false,
+  state: false,
+  houseNumber: false,
+};
+
 export const Address = () => {
   const [ok, setOk] = useState(false);
   const [address, setAddress] = useState(initialData);
+  const [validationError, setValidationError] = useState(validation);
   const [add, setAdd] = useState();
   const toast = useToast();
   const { handleSliderValue, location } = useOutletContext();
 
   const handleChange = (name, value) => {
+    setValidationError((validationError) => {
+      return { ...validationError, [name]: false };
+    });
     setAddress({
       ...address,
       [name]: value,
     });
   };
 
-  const handleAdd = async () => {
-    if (Object.values(address)?.filter(Boolean).length === 0) {
-      toast({
-        title: "",
-        description: "please fill all fields",
-        position: "top",
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-      });
-      return;
+  const handleValidation = (address) => {
+    let flag = true;
+    for (let key in address) {
+      if (
+        key == "name" ||
+        key == "mobileNumber" ||
+        key == "city" ||
+        key == "street" ||
+        key == "state" ||
+        key == "houseNumber" ||
+        key == "pinCode"
+      ) {
+        if (!address[key]) {
+          setValidationError((validationError) => {
+            return { ...validationError, [key]: true };
+          });
+          flag = false;
+        } else {
+          setValidationError((validationError) => {
+            return { ...validationError, [key]: false };
+          });
+        }
+      }
     }
-    await axios
-      .post(
-        "https://myglamserver-production.up.railway.app/address/post",
-        address
-      )
-      .then(() => getData())
-      .catch((e) => console.log(e));
+
+    return flag;
+  };
+
+  const handleAdd = async () => {
+    if (handleValidation(address)) {
+      await axios
+        .post(
+          "https://myglamserver-production.up.railway.app/address/post",
+          address
+        )
+        .then((res) => {
+          if (res.status == 200) {
+            toast({
+              description: "Address Added Successfully",
+              position: "top",
+              status: "success",
+              duration: 5000,
+              isClosable: true,
+            });
+            setAddress(initialData);
+            getData();
+          }
+        })
+        .catch((e) => console.log(e));
+    }
   };
 
   const getData = async () => {
@@ -131,23 +175,34 @@ export const Address = () => {
                 ml="7"
                 placeholder="Name*"
                 onChange={(e) => handleChange("name", e.target.value)}
+                value={address?.name ?? ""}
                 fontSize="13"
-                isRequired
+                isRequired={true}
+                isInvalid={validationError?.name}
+                _placeholder={
+                  validationError?.name ? { opacity: 0.4, color: "red" } : {}
+                }
               />
               <Input
                 onChange={(e) => handleChange("mobileNumber", e.target.value)}
                 type="number"
-                name="mobile"
+                value={address?.mobileNumber ?? ""}
                 h="55"
                 bg="#FBFBFB"
                 placeholder="Mobile Number*"
                 fontSize="13"
                 isRequired
+                isInvalid={validationError?.mobileNumber}
+                _placeholder={
+                  validationError?.mobileNumber
+                    ? { opacity: 0.4, color: "red" }
+                    : {}
+                }
               />
               <Input
                 onChange={(e) => handleChange("email", e.target.value)}
                 type="email"
-                name="email"
+                value={address?.email ?? ""}
                 h="55"
                 bg="#FBFBFB"
                 mr="7"
@@ -159,6 +214,7 @@ export const Address = () => {
               <Select
                 placeholder="Other"
                 onChange={(e) => handleChange("addressType", e.target.value)}
+                value={address?.addressType ?? ""}
                 h="55"
                 name="type"
                 bg="#FBFBFB"
@@ -171,23 +227,36 @@ export const Address = () => {
               <Input
                 h="55"
                 onChange={(e) => handleChange("houseNumber", e.target.value)}
+                value={address?.houseNumber ?? ""}
                 bg="#FBFBFB"
                 fontSize="13"
                 placeholder="Flat no. /House no. / Apt Name*"
+                isInvalid={validationError?.houseNumber}
+                _placeholder={
+                  validationError?.houseNumber
+                    ? { opacity: 0.4, color: "red" }
+                    : {}
+                }
               />
               <Input
                 h="55"
                 onChange={(e) => handleChange("street", e.target.value)}
+                value={address?.street ?? ""}
                 bg="#FBFBFB"
                 fontSize="13"
                 placeholder="Street Name*"
+                isInvalid={validationError?.street}
+                _placeholder={
+                  validationError?.street ? { opacity: 0.4, color: "red" } : {}
+                }
               />
               <Input
                 h="55"
                 onChange={(e) => handleChange("neighborhood", e.target.value)}
+                value={address?.neighborhood ?? ""}
                 bg="#FBFBFB"
                 fontSize="13"
-                placeholder="Neighborhood*"
+                placeholder="Neighborhood"
                 mr="7"
               />
             </Flex>
@@ -195,41 +264,53 @@ export const Address = () => {
               <Input
                 ml="7"
                 onChange={(e) => handleChange("pinCode", e.target.value)}
+                value={address?.pinCode ?? ""}
                 h="55"
                 bg="#FBFBFB"
                 fontSize="13"
                 type="number"
-                placeholder="Pin Code*
-"
+                placeholder="Pin Code*"
+                isInvalid={validationError?.pinCode}
+                _placeholder={
+                  validationError?.pinCode ? { opacity: 0.4, color: "red" } : {}
+                }
               ></Input>
               <Input
                 h="55"
                 onChange={(e) => handleChange("city", e.target.value)}
+                value={address?.city ?? ""}
                 bg="#FBFBFB"
                 fontSize="13"
-                placeholder="City"
+                placeholder="City*"
+                isInvalid={validationError?.city}
+                _placeholder={
+                  validationError?.city ? { opacity: 0.4, color: "red" } : {}
+                }
               />
               <Input
                 h="55"
                 onChange={(e) => handleChange("state", e.target.value)}
+                value={address?.state ?? ""}
                 bg="#FBFBFB"
                 name="state"
                 fontSize="13"
                 type="text"
-                placeholder="State"
+                placeholder="State*"
+                isInvalid={validationError?.state}
+                _placeholder={
+                  validationError?.state ? { opacity: 0.4, color: "red" } : {}
+                }
               />
               <Input
                 mr="7"
                 onChange={(e) => handleChange("landMark", e.target.value)}
                 h="55"
+                value={address?.landMark ?? ""}
                 bg="#FBFBFB"
                 fontSize="13"
                 type="text"
                 placeholder="Landmark"
               />
-            </Flex>
-            <Flex justifyContent={"end"} mr="7" pb="5">
-              <Checkbox>Mark as default</Checkbox>
             </Flex>
             <Flex gap="5" justifyContent={"end"} mr="7" pb="5">
               <Button
@@ -238,13 +319,9 @@ export const Address = () => {
                 bg="#FBFBFB"
                 borderRadius="2%"
                 fontSize="13"
-                onClick={() => {
-                  if (add.length > 0) {
-                    setOk(true);
-                  }
-                }}
+                onClick={() => setAddress(initialData)}
               >
-                BACK
+                clear
               </Button>
               <Button
                 p="0px 50px 0px 50px"
